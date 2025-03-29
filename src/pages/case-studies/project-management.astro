@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+---
+
+<Layout title="Project Management Case Studies - SP Consulting">
+  <Navigation />
+  
+  <main class="pt-20">
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Project Management Case Studies</h1>
+        <p class="text-xl">Real-world success stories in project management and process improvement.</p>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="space-y-12">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Fulfillment Center Expansion - eCommerce</h2>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Demand Planning
+              </span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Real Estate
+              </span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Engineering Systems
+              </span>
+            </div>
+            <p class="text-gray-600 mb-6">
+              Streamlining fulfillment center expansion for a rapidly growing eCommerce company.
+            </p>
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold mb-2">Business Challenge</h3>
+                <p class="text-gray-600">
+                  The company was growing rapidly requiring accelerated launch of fulfillment buildings. Constant delays in identifying building type and location led to premium costs for real estate and construction, while engineering teams worked unrealistic hours due to compressed schedules.
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-2">Approach</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                  <li>Conducted Value Stream Mapping to determine end-to-end lead times</li>
+                  <li>Developed business case for establishing a Project Management Office (PMO)</li>
+                  <li>Implemented robust stage-gate process for visibility and control</li>
+                  <li>Performed detailed evaluation of process deliverable lead times</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-2">Results</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                  <li>Implemented centralized Salesforce data repository for fulfillment network</li>
+                  <li>Established transparent timelines and enhanced process visibility</li>
+                  <li>Achieved 20% cost avoidance through timely decisions</li>
+                  <li>Reduced risk of fulfillment center launch delays</li>
+                  <li>Optimized demand planning process with building type lead times</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Hybrid Agile/Waterfall Implementation - Manufacturing</h2>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Agile Transformation
+              </span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Product Development
+              </span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Process Improvement
+              </span>
+            </div>
+            <p class="text-gray-600 mb-6">
+              Accelerating product development by transitioning from Waterfall to Hybrid methodology.
+            </p>
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold mb-2">Business Challenge</h3>
+                <p class="text-gray-600">
+                  Recurring product release delays undermined customer commitments due to:<br>
+                  1. Shifting requirements from continuous customer feedback<br>
+                  2. Process rigidity in the linear development approach
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-2">Approach</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                  <li>Conducted comprehensive Agile methodology training</li>
+                  <li>Established short-cycle increment planning</li>
+                  <li>Incorporated product owner role alongside NPD project manager</li>
+                  <li>Enhanced cross-functional communication through Agile framework</li>
+                  <li>Focused on well-defined Minimum Viable Product (MVP)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-2">Results</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                  <li>Achieved 90% on-time delivery for product launches</li>
+                  <li>Reduced product development cycle time by 20%</li>
+                  <li>Established continuous customer feedback integration</li>
+                  <li>MVP releases addressed core needs and commanded premium pricing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/contact"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Discuss Your Project Challenges
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

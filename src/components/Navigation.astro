@@ -1,0 +1,158 @@
+---
+const navigation = [
+  {
+    title: 'Home',
+    path: '/',
+  },
+  {
+    title: 'About',
+    path: '/about',
+  },
+  {
+    title: 'Services',
+    path: '/services',
+    children: [
+      { title: 'Product Management', path: '/services/product-management' },
+      { title: 'Program Management', path: '/services/program-management' },
+      { title: 'Engineering Services', path: '/services/engineering' },
+    ],
+  },
+  {
+    title: 'Training',
+    path: '/training',
+    children: [
+      { title: 'Product Management', path: '/training/product-management' },
+      { title: 'Portfolio / Project Management', path: '/training/project-management' },
+      { title: 'Engineering', path: '/training/engineering' },
+    ],
+  },
+  {
+    title: 'Case Studies',
+    path: '/case-studies',
+    children: [
+      { title: 'Product Management', path: '/case-studies/product-management' },
+      { title: 'Project Management', path: '/case-studies/project-management' },
+    ],
+  },
+  {
+    title: 'Smart Label Development',
+    path: '/smart-label',
+  },
+  {
+    title: 'Contact',
+    path: '/contact',
+  },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-2xl font-semibold text-primary">SP Consulting</a>
+      
+      <ul class="hidden lg:flex items-center space-x-8">
+        {navigation.map((item) => (
+          <li class="relative group">
+            <a
+              href={item.path}
+              class={`text-gray-700 hover:text-primary transition-colors ${
+                currentPath === item.path ? 'text-primary font-medium' : ''
+              }`}
+            >
+              {item.title}
+            </a>
+            
+            {item.children && (
+              <ul class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-[200px]">
+                {item.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.path}
+                      class={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors ${
+                        currentPath === child.path ? 'text-primary font-medium' : ''
+                      }`}
+                    >
+                      {child.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden p-2 text-gray-600 hover:text-primary"
+        aria-label="Toggle menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden lg:hidden mt-4 border-t border-gray-200 pt-4"
+    >
+      <ul class="space-y-4">
+        {navigation.map((item) => (
+          <li>
+            <a
+              href={item.path}
+              class={`block text-gray-700 hover:text-primary transition-colors ${
+                currentPath === item.path ? 'text-primary font-medium' : ''
+              }`}
+            >
+              {item.title}
+            </a>
+            
+            {item.children && (
+              <ul class="ml-4 mt-2 space-y-2">
+                {item.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.path}
+                      class={`block text-sm text-gray-700 hover:text-primary transition-colors ${
+                        currentPath === child.path ? 'text-primary font-medium' : ''
+                      }`}
+                    >
+                      {child.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

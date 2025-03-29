@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+---
+
+<Layout title="Engineering Training - SP Consulting">
+  <Navigation />
+  
+  <main class="pt-20">
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Engineering Training</h1>
+        <p class="text-xl">Advanced technical training for engineering professionals.</p>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="space-y-16">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Training Programs</h2>
+            <div class="space-y-8">
+              <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">DFMEA (Design Failure Mode and Effects Analysis)</h3>
+                <p class="text-gray-600 mb-6">
+                  This module provides a comprehensive understanding of DFMEA, a proactive risk assessment technique used to identify potential design failures and their effects. Participants will learn to systematically analyze product designs, evaluate risks, and implement preventative measures to ensure product reliability and safety.
+                </p>
+                <p class="text-gray-600 mb-6">
+                Key learning points:
+                </p>
+                <ul class="space-y-3 text-gray-600 mb-6">
+                  <li>• Principles of failure mode identification</li>
+                  <li>• Risk assessment and prioritization (Severity, Occurrence, Detection)</li>
+                  <li>• Design mitigation strategies</li>
+                  <li>• Cross-functional team collaboration</li>
+                  <li>• Documentation and continuous improvement</li>
+                </ul>
+                <p class="text-sm text-gray-500">Duration: 4 days</p>
+              </div>
+
+              <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">PFMEA (Process Failure Mode and Effects Analysis)</h3>
+                <p class="text-gray-600 mb-6">
+                  This module focuses on PFMEA, a structured approach to identifying and mitigating potential process failures. Participants will learn to analyze manufacturing and assembly processes, evaluate risks associated with process variations, and implement control measures to improve process robustness and quality.
+                </p>
+                <p class="text-gray-600 mb-6">
+                Key learning points:
+                </p>
+                <ul class="space-y-3 text-gray-600 mb-6">
+                  <li>• Process flow diagram development</li>
+                  <li>• Failure mode identification for each process step</li>
+                  <li>• Risk prioritization using SOD (Severity, Occurrence, Detection) ratings</li>
+                  <li>• Process control planning and mistake-proofing</li>
+                  <li>• Implementation of corrective actions</li>
+                  <li>• PFMEA documentation and maintenance</li>
+                </ul>
+                <p class="text-sm text-gray-500">Duration: 3 days</p>
+              </div>
+
+              <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">DVP&R (Design Verification Plan and Report)</h3>
+                <p class="text-gray-600 mb-6">
+                  This module covers the development and execution of a robust DVP&R, a critical tool for validating product designs and ensuring performance requirements are met. Participants will learn to create comprehensive test plans, conduct verification testing, and document results to demonstrate product compliance and reliability.
+                </p>
+                <p class="text-gray-600 mb-6">
+                Key learning points:
+                </p>
+                <ul class="space-y-3 text-gray-600 mb-6">
+                  <li>• Requirements traceability and test coverage</li>
+                  <li>• Developing verification methods (analysis, inspection, demonstration, test)</li>
+                  <li>• Creating detailed test procedures and acceptance criteria</li>
+                  <li>• Managing test execution and data collection</li>
+                  <li>• Analyzing results and documenting findings</li>
+                  <li>• Handling non-conformances and design updates</li>
+                  <li>• Regulatory compliance documentation</li>
+                </ul>
+                <p class="text-sm text-gray-500">Duration: 3 days</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/contact"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Sign Up for Training
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

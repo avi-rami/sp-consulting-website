@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+---
+
+<Layout title="Product Management Training - SP Consulting">
+  <Navigation />
+  
+  <main class="pt-20">
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Product Management Training</h1>
+        <p class="text-xl">Comprehensive training programs to develop product management excellence.</p>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="space-y-16">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Training Programs</h2>
+            <div class="space-y-8">
+              <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Fundamentals of Product Management</h3>
+                <p class="text-gray-600 mb-6">
+                  A comprehensive introduction to product management principles and practices.
+                </p>
+                <ul class="space-y-3 text-gray-600 mb-6">
+                  <li>• Product lifecycle management</li>
+                  <li>• Market research and analysis</li>
+                  <li>• Product strategy development</li>
+                  <li>• Stakeholder management</li>
+                </ul>
+                <p class="text-sm text-gray-500">Duration: 3 days</p>
+              </div>
+
+              <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Advanced Product Management</h3>
+                <p class="text-gray-600 mb-6">
+                  Deep dive into advanced product management techniques and strategies.
+                </p>
+                <ul class="space-y-3 text-gray-600 mb-6">
+                  <li>• Product vision and roadmap</li>
+                  <li>• Pricing strategies</li>
+                  <li>• Product analytics</li>
+                  <li>• Go-to-market planning</li>
+                </ul>
+                <p class="text-sm text-gray-500">Duration: 4 days</p>
+              </div>
+
+              <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Product Leadership Workshop</h3>
+                <p class="text-gray-600 mb-6">
+                  Leadership skills for senior product managers and product leaders.
+                </p>
+                <ul class="space-y-3 text-gray-600 mb-6">
+                  <li>• Building and leading product teams</li>
+                  <li>• Product portfolio management</li>
+                  <li>• Strategic decision making</li>
+                  <li>• Innovation management</li>
+                </ul>
+                <p class="text-sm text-gray-500">Duration: 2 days</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/contact"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Enroll in Training
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

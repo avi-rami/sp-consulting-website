@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+---
+
+<Layout title="Program Management Services - SP Consulting">
+  <Navigation />
+  
+  <main class="pt-20">
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Program Management Services</h1>
+        <p class="text-xl">Expert program management for successful project delivery.</p>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="space-y-16">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Comprehensive Program Management</h2>
+            <p class="text-gray-600 mb-8">
+              Our program management services help organizations effectively manage complex initiatives, align projects with strategic objectives, and ensure successful delivery of business outcomes.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Strategic Planning</h3>
+                <ul class="space-y-3 text-gray-600">
+                  <li>• Program strategy development</li>
+                  <li>• Resource allocation and optimization</li>
+                  <li>• Risk management</li>
+                  <li>• Stakeholder management</li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Program Execution</h3>
+                <ul class="space-y-3 text-gray-600">
+                  <li>• Project portfolio management</li>
+                  <li>• Performance monitoring and reporting</li>
+                  <li>• Quality assurance</li>
+                  <li>• Change management</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Our Methodology</h2>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">1</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Assessment</h3>
+                  <p class="text-gray-600">Thorough analysis of program requirements, objectives, and constraints.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">2</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Planning</h3>
+                  <p class="text-gray-600">Detailed program planning, including resource allocation and risk management.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">3</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Execution</h3>
+                  <p class="text-gray-600">Coordinated implementation of program components and monitoring progress.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">4</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Optimization</h3>
+                  <p class="text-gray-600">Continuous improvement and adaptation based on performance metrics.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/contact"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Discuss Your Program Needs
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

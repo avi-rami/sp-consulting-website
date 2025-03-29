@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+---
+
+<Layout title="Training - SP Consulting">
+  <Navigation />
+  
+  <main class="pt-20">
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Training Programs</h1>
+        <p class="text-xl">Enhance your team's capabilities with our specialized training programs.</p>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Product Management Training</h2>
+            <p class="text-gray-600 mb-6">
+              Learn essential product management skills and methodologies.
+            </p>
+            <a href="/training/product-management" class="text-primary font-medium hover:underline">
+              Learn more →
+            </a>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Project Management Training</h2>
+            <p class="text-gray-600 mb-6">
+              Master project management principles and best practices.
+            </p>
+            <a href="/training/project-management" class="text-primary font-medium hover:underline">
+              Learn more →
+            </a>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Engineering Training</h2>
+            <p class="text-gray-600 mb-6">
+              Advanced engineering training for technical professionals.
+            </p>
+            <a href="/training/engineering" class="text-primary font-medium hover:underline">
+              Learn more →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

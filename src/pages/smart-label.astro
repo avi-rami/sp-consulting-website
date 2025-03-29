@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+---
+
+<Layout title="Smart Label Development - SP Consulting">
+  <Navigation />
+  
+  <main class="pt-20">
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Smart Label Development</h1>
+        <p class="text-xl">Innovative solutions for smart packaging and labeling.</p>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6">Transform Your Product Packaging</h2>
+          <p class="text-gray-600 mb-8">
+            Our smart label development services help businesses create innovative, interactive packaging solutions that enhance customer engagement and provide valuable data insights.
+          </p>
+          
+          <div class="bg-gray-50 p-8 rounded-lg mb-12">
+            <h3 class="text-2xl font-bold mb-4">Key Features</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>NFC and RFID Integration</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>QR Code Solutions</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Supply Chain Tracking</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Consumer Engagement Features</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/contact"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Contact Us to Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
