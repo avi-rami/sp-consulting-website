@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
-
 ---
 
 <Layout title="Engineering Training - SP Consulting">
@@ -22,8 +21,16 @@ import Footer from '../../components/Footer.astro';
           <div>
             <h2 class="text-3xl font-bold mb-6">Training Programs</h2>
             <div class="space-y-8">
+              <!-- DFMEA Module -->
               <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-4">DFMEA (Design Failure Mode and Effects Analysis)</h3>
+                <div class="flex items-start gap-6 mb-6">
+                  <div class="bg-primary/10 p-3 rounded-lg">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold">DFMEA (Design Failure Mode and Effects Analysis)</h3>
+                </div>
                 <p class="text-gray-600 mb-6">
                   This module provides a comprehensive understanding of DFMEA, a proactive risk assessment technique used to identify potential design failures and their effects. Participants will learn to systematically analyze product designs, evaluate risks, and implement preventative measures to ensure product reliability and safety.
                 </p>
@@ -40,8 +47,16 @@ import Footer from '../../components/Footer.astro';
                 <p class="text-sm text-gray-500">Duration: 4 days</p>
               </div>
 
+              <!-- PFMEA Module -->
               <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-4">PFMEA (Process Failure Mode and Effects Analysis)</h3>
+                <div class="flex items-start gap-6 mb-6">
+                  <div class="bg-primary/10 p-3 rounded-lg">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold">PFMEA (Process Failure Mode and Effects Analysis)</h3>
+                </div>
                 <p class="text-gray-600 mb-6">
                   This module focuses on PFMEA, a structured approach to identifying and mitigating potential process failures. Participants will learn to analyze manufacturing and assembly processes, evaluate risks associated with process variations, and implement control measures to improve process robustness and quality.
                 </p>
@@ -59,8 +74,16 @@ import Footer from '../../components/Footer.astro';
                 <p class="text-sm text-gray-500">Duration: 3 days</p>
               </div>
 
+              <!-- DVP&R Module -->
               <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-4">DVP&R (Design Verification Plan and Report)</h3>
+                <div class="flex items-start gap-6 mb-6">
+                  <div class="bg-primary/10 p-3 rounded-lg">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold">DVP&R (Design Verification Plan and Report)</h3>
+                </div>
                 <p class="text-gray-600 mb-6">
                   This module covers the development and execution of a robust DVP&R, a critical tool for validating product designs and ensuring performance requirements are met. Participants will learn to create comprehensive test plans, conduct verification testing, and document results to demonstrate product compliance and reliability.
                 </p>
@@ -86,7 +109,7 @@ import Footer from '../../components/Footer.astro';
               href="/contact"
               class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              Sign Up for Training
+              Sign Up for Training Today
             </a>
           </div>
         </div>

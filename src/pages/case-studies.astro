@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-
 ---
 
 <Layout title="Case Studies - SP Consulting">
@@ -19,23 +18,45 @@ import Footer from '../components/Footer.astro';
     <section class="py-20">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Product Management Success Stories</h2>
+          <!-- Product Management Case Studies -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="flex items-start gap-6 mb-6">
+              <div class="bg-primary/10 p-3 rounded-lg">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold">Product Management Success Stories</h2>
+            </div>
             <p class="text-gray-600 mb-6">
               Discover how we helped organizations transform their product development processes.
             </p>
-            <a href="/case-studies/product-management" class="text-primary font-medium hover:underline">
-              View Case Studies →
+            <a href="/case-studies/product-management" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
+              View Case Studies
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
             </a>
           </div>
 
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Project Management Excellence</h2>
+          <!-- Project Management Case Studies -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="flex items-start gap-6 mb-6">
+              <div class="bg-primary/10 p-3 rounded-lg">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold">Project Management Excellence</h2>
+            </div>
             <p class="text-gray-600 mb-6">
               Learn about successful project deliveries and transformations.
             </p>
-            <a href="/case-studies/project-management" class="text-primary font-medium hover:underline">
-              View Case Studies →
+            <a href="/case-studies/project-management" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
+              View Case Studies
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
             </a>
           </div>
         </div>

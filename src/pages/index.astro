@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 
 <Layout title="SP Consulting - Professional Consulting Services">
   <Navigation />
-  
+
   <main class="pt-20">
     <!-- Hero Section -->
     <section class="bg-primary text-white py-20">
@@ -23,25 +23,32 @@ import Footer from '../components/Footer.astro';
               href="/services"
               class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
             >
-              Our Services
+              Explore our Expertise
             </a>
             <a
               href="/contact"
               class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition-colors"
             >
-              Contact Us
+              Schedule a Free Consultation
             </a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Services Overview -->
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-lg">
+<!-- Services Overview -->
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Product Management Card -->
+      <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <div class="flex items-start gap-4">
+          <div class="bg-primary/10 p-3 rounded-lg">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+          </div>
+          <div>
             <h3 class="text-xl font-semibold mb-4">Product Management</h3>
             <p class="text-gray-600 mb-4">
               Strategic product development and lifecycle management to drive business growth.
@@ -50,7 +57,18 @@ import Footer from '../components/Footer.astro';
               Learn more →
             </a>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg">
+        </div>
+      </div>
+
+      <!-- Program Management Card -->
+      <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <div class="flex items-start gap-4">
+          <div class="bg-primary/10 p-3 rounded-lg">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
             <h3 class="text-xl font-semibold mb-4">Program Management</h3>
             <p class="text-gray-600 mb-4">
               Efficient program execution and delivery to achieve your business objectives.
@@ -59,7 +77,18 @@ import Footer from '../components/Footer.astro';
               Learn more →
             </a>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg">
+        </div>
+      </div>
+
+      <!-- Engineering Services Card -->
+      <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <div class="flex items-start gap-4">
+          <div class="bg-primary/10 p-3 rounded-lg">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+            </svg>
+          </div>
+          <div>
             <h3 class="text-xl font-semibold mb-4">Engineering Services</h3>
             <p class="text-gray-600 mb-4">
               Technical expertise and innovative solutions for complex engineering challenges.
@@ -70,7 +99,9 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- About Section -->
     <section class="bg-gray-50 py-20">
@@ -79,7 +110,7 @@ import Footer from '../components/Footer.astro';
           <h2 class="text-3xl font-bold mb-6">About SP Consulting</h2>
           <p class="text-gray-600 mb-8">
             SP Consulting is a leading professional services firm specializing in product management,
-            program management, and engineering services. With years of experience and a team of
+            program management, and engineering services. With 30+ years of Fortune 500 experience and a team of
             dedicated experts, we help organizations achieve their strategic goals and drive
             sustainable growth.
           </p>
