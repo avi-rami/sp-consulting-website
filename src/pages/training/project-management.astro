@@ -2,143 +2,259 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+// Define the data for the key pillars based on the new image
+const pillars = [
+  {
+    title: "PM Software Deployment & Training",
+    iconKey: "software", // Identifier for SVG mapping
+    points: [
+      "Business requirements definition",
+      "Software Selection, Total Cost, ROI Analysis",
+      "Detail design, configuration & deployment",
+      "Software training & adoption",
+      "Rollout and steady state support"
+    ]
+  },
+  {
+    title: "Project Delivery",
+    iconKey: "delivery", // Identifier for SVG mapping
+    points: [
+      "Project Planning – inception to launch",
+      "Portfolio Management",
+      "Project Management (resource, budget, timeline, risk mitigation)"
+    ]
+  },
+  {
+    title: "Methodology, Tools & Templates",
+    iconKey: "methodology", // Identifier for SVG mapping
+    points: [
+      "PMO Framework Definition (Agile, SAFe Agile, etc.)",
+      "Tools and templates development & deployment"
+    ]
+  },
+  {
+    title: "PMO Setup and Governance",
+    iconKey: "governance", // Identifier for SVG mapping
+    points: [
+      "Vision, purpose & scope definition",
+      "Organization setup with RACI",
+      "Operational budget & Success criteria development",
+      "Process and policies governance setup"
+    ]
+  },
+  {
+    title: "Business Readiness & Risk Management",
+    iconKey: "risk", // Identifier for SVG mapping
+    points: [
+      "Technology and Operational assessment",
+      "Benchmark Analysis",
+      "Risk assessment and mitigation plans",
+      "Risk monitoring and control"
+    ]
+  }
+];
+
+// Simple SVG map (Replace paths with your actual icon data - these are placeholders)
+const iconSvgs = {
+    software: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>`, // Placeholder: Monitor icon
+    delivery: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`, // Placeholder: Shield Check icon
+    methodology: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>`, // Placeholder: Archive Box icon
+    governance: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>`, // Placeholder: Globe Alt icon
+    risk: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>` // Placeholder: Exclamation Circle icon
+};
+
+
+// Define the Program Management challenges
+const challenges = [
+  "Final product requirements lags behind schedule.", // Note: This might be more Product than Project, consider refining if needed
+  "Frequent changes in product requirements and specification.", // Note: Also could be Product-related
+  "Product development process is complex, inconsistent, or absent.", // Note: Also could be Product-related
+  "Challenges in allocating and managing resources effectively.",
+  "Unclear delineation of roles and responsibilities in project execution.", // Adjusted phrasing
+  "Project execution framework lacks flexibility for diverse project types (NPD, Capital, Cost reduction, etc.).",
+  "Indecision regarding optimal project management methodology (Waterfall, Agile, Hybrid).",
+  "Chronic project timeline overruns.",
+  "Ineffective global cross-functional team structure.",
+  "Insufficient or non-existent project management training programs."
+];
 ---
 
-<Layout title="Project Management Training - SP Consulting">
+{/* Page Title */}
+<Layout title="Optimize Project Delivery & PMO Performance - SP Consulting">
   <Navigation />
-  
+
   <main class="pt-20">
+    {/* Hero Section */}
     <section class="bg-primary text-white py-20">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Portfolio & Project Management Training</h1>
-        <p class="text-xl">Master advanced project management methodologies and practices</p>
+         {/* Heading and Subtitle */}
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Optimize Project Delivery & PMO Performance</h1>
+        <p class="text-xl">Establish robust PMOs and execute projects efficiently for measurable results.</p>
       </div>
     </section>
 
-    <section class="py-20">
-      <div class="container mx-auto px-4 max-w-4xl">
+    {/* Main Content Section */}
+    <section class="py-20 bg-gray-50">
+       {/* Container width */}
+      <div class="container mx-auto px-4 max-w-6xl">
         <div class="space-y-16">
+
+          {/* Approach Section */}
           <div>
-            <h2 class="text-3xl font-bold mb-6">Training Modules</h2>
-            <div class="space-y-8">
-              <!-- Agile NPD Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-2xl font-bold">Agile NPD Training and Coaching</h3>
-                </div>
-                <p class="text-gray-600 mb-6">
-                  Hands-on training and coaching on applying Agile principles to New Product Development (NPD).
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Master rapid iteration techniques</li>
-                  <li>• Implement continuous feedback loops</li>
-                  <li>• Adapt to changing market demands</li>
-                  <li>• Foster innovation culture</li>
-                </ul>
-                <p class="text-sm text-gray-500">Duration: 3 days</p>
-              </div>
+             {/* Heading and Paragraph */}
+            <h2 class="text-3xl font-bold mb-6 text-center">Our Approach to Project & PMO Success</h2>
+            {/* POLISHED TEXT */}
+            <p class="text-gray-600 mb-12 max-w-[54rem] mx-auto">
+              Successful project execution and high-performing PMOs require a structured, holistic approach. We partner with you to implement best practices, establish clear governance, select optimal methodologies, and empower your teams to deliver strategic value, efficiently.
+            </p>
 
-              <!-- Increment Planning Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-2xl font-bold">Increment Planning</h3>
-                </div>
-                <p class="text-gray-600 mb-6">
-                  An immersive training experience focused on mastering the art of increment planning within Agile frameworks.
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Break down large projects effectively</li>
-                  <li>• Define clear increment objectives</li>
-                  <li>• Prioritize tasks strategically</li>
-                  <li>• Ensure consistent value delivery</li>
-                </ul>
-                <p class="text-sm text-gray-500">Duration: 2 days</p>
-              </div>
+            {/* Diagram */}
+            <div class="mb-12">
+              <img
+                src="/assets/project-management-diagram.png" {/* UPDATE path if different */}
+                alt="Project Management Service Areas Diagram"
+                class="w-full max-w-3xl mx-auto rounded-lg"
+                loading="lazy"
+              />
+              <p class="text-sm text-gray-500 mt-4 text-center">
+                Our comprehensive framework addresses all critical aspects of project management and PMO setup.
+              </p>
+            </div>
+          </div>
 
-              <!-- Execution Methodology Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                    </svg>
+          {/* Key Areas Section */}
+          <div class="mt-16">
+            <h2 class="text-3xl font-bold mb-10 text-center">Core Components of Our Project Management Services</h2>
+             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {pillars.map(pillar => (
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col">
+                  <div class="flex items-center mb-4">
+                    {/* Icon Container */}
+                    <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                       <Fragment set:html={iconSvgs[pillar.iconKey]} />
+                    </div>
+                    <h3 class="text-xl font-semibold">{pillar.title}</h3>
                   </div>
-                  <h3 class="text-2xl font-bold">Optimizing Execution Methodology</h3>
+                  <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                    {pillar.points.map(point => (
+                      <li>{point}</li>
+                    ))}
+                  </ul>
                 </div>
-                <p class="text-gray-600 mb-6">
-                  A comprehensive module designed to diagnose, redesign, and enhance organizational execution processes.
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Identify process bottlenecks</li>
-                  <li>• Streamline workflows</li>
-                  <li>• Implement best practices</li>
-                  <li>• Enhance cross-team efficiency</li>
-                </ul>
-                <p class="text-sm text-gray-500">Duration: 3 days</p>
-              </div>
+              ))}
+            </div>
+          </div>
 
-              <!-- Accelerating Development Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-2xl font-bold">Accelerating Product Development</h3>
+          {/* Methodology Section */}
+          <div class="mt-20">
+            <h2 class="text-3xl font-bold mb-10 text-center">Our Methodology</h2>
+            <div class="space-y-6 max-w-3xl mx-auto">
+              <div class="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">1</span>
                 </div>
-                <p class="text-gray-600 mb-6">
-                  An intensive training program that equips teams with proven methodologies to compress product development timelines without compromising quality.
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Leverage Agile practices effectively</li>
-                  <li>• Implement rapid prototyping</li>
-                  <li>• Optimize team collaboration</li>
-                  <li>• Accelerate market entry strategies</li>
-                </ul>
-                <p class="text-sm text-gray-500">Duration: 4 days</p>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Assessment</h3>
+                   {/* POLISHED TEXT */}
+                  <p class="text-gray-600">We perform a thorough analysis of your current PM practices, PMO maturity, objectives, and constraints to identify key opportunities and risks early.</p>
+                </div>
               </div>
-
-              <!-- PMO Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-2xl font-bold">Establishing High Impact PMO</h3>
+              <div class="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">2</span>
                 </div>
-                <p class="text-gray-600 mb-6">
-                  A transformative module that guides organizations in establishing or transforming a Project Management Office (PMO) into a strategic asset.
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Develop strategic alignment frameworks</li>
-                  <li>• Implement effective governance</li>
-                  <li>• Create performance metrics</li>
-                  <li>• Master organizational change management</li>
-                </ul>
-                <p class="text-sm text-gray-500">Duration: 5 days</p>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Planning & Design</h3>
+                   {/* POLISHED TEXT */}
+                  <p class="text-gray-600">Develop detailed, actionable plans for PMO setup or project execution, including tailored framework design, resource allocation, and proactive risk mitigation strategies.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">3</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Implementation & Execution</h3>
+                   {/* POLISHED TEXT */}
+                  <p class="text-gray-600">We coordinate the seamless implementation of PMO processes, tools, and training, or provide direct project execution leadership to ensure alignment and drive progress.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">4</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Monitoring & Optimization</h3>
+                   {/* POLISHED TEXT */}
+                  <p class="text-gray-600">Leverage continuous monitoring, control, and reporting with clear performance metrics to enable data-driven decisions and optimize project outcomes.</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="text-center">
+          {/* Common Challenges Section */}
+          <div class="mt-20">
+            <h2 class="text-3xl font-bold mb-6 text-center">Tackling Common Project Management Hurdles</h2>
+            <p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+             Ineffective project management can lead to delays, budget overruns, and missed objectives. Do any of these challenges hinder your organization's success?
+            </p>
+            <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg border border-gray-200 shadow-sm mb-8">
+              <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                {challenges.map(challenge => (
+                  <li>{challenge}</li>
+                ))}
+              </ul>
+            </div>
+             {/* POLISHED TEXT */}
+             <p class="text-gray-600 text-center max-w-3xl mx-auto">
+              Our services equip you with proven frameworks, tools, and training designed to enhance resource management, clarify roles, boost cross-functional collaboration, and keep projects firmly on track and within budget.
+            </p>
+          </div>
+
+           {/* Why Partner Section */}
+           <div class="mt-20">
+             <h2 class="text-3xl font-bold mb-10 text-center">Why Choose SP Consulting for Project Management?</h2>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    {/* Placeholder Icon */}
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">Proven Expertise</h3>
+                   {/* POLISHED TEXT */}
+                  <p class="text-gray-600">Benefit from our deep experience establishing effective PMOs and delivering complex projects with proven results across diverse industries.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                     {/* Placeholder Icon */}
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">Tailored Approach</h3>
+                   {/* POLISHED TEXT */}
+                  <p class="text-gray-600">Receive customized PMO frameworks and project execution strategies precisely designed to fit your unique organizational context and goals.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                     {/* Placeholder Icon */}
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">Results-Driven</h3>
+                   {/* POLISHED TEXT */}
+                  <p class="text-gray-600">We focus on delivering projects on time and within budget, ensuring alignment with strategic objectives for tangible business value.</p>
+               </div>
+             </div>
+           </div>
+
+          {/* Call to Action Section */}
+          <div class="text-center pt-12">
+             {/* POLISHED TEXT */}
+            <p class="text-lg text-gray-700 mb-6">Ready to strengthen your project delivery capabilities?</p>
             <a
               href="/contact"
-              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
             >
-              Register for Training Today
+              Discuss Your Project Management Needs
             </a>
           </div>
         </div>
