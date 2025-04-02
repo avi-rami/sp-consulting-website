@@ -6,7 +6,7 @@ import Footer from '../../components/Footer.astro';
 
 <Layout title="Engineering Training - SP Consulting">
   <Navigation />
-  
+
   <main class="pt-20">
     <section class="bg-primary text-white py-20">
       <div class="container mx-auto px-4">
@@ -15,99 +15,100 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-20 bg-gray-50"> {/* Added light background */}
       <div class="container mx-auto px-4 max-w-4xl">
         <div class="space-y-16">
           <div>
-            <h2 class="text-3xl font-bold mb-6">Training Programs</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Training Programs</h2> {/* Centered and added margin */}
             <div class="space-y-8">
-              <!-- DFMEA Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+              {/* DFMEA Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md"> {/* Reduced shadow */}
+                <div class="flex items-start gap-6 mb-4"> {/* Reduced margin */}
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0"> {/* Added flex-shrink */}
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">DFMEA (Design Failure Mode and Effects Analysis)</h3>
+                  <h3 class="text-2xl font-bold mt-1">DFMEA (Design Failure Mode and Effects Analysis)</h3> {/* Adjusted alignment */}
                 </div>
                 <p class="text-gray-600 mb-6">
                   This module provides a comprehensive understanding of DFMEA, a proactive risk assessment technique used to identify potential design failures and their effects. Participants will learn to systematically analyze product designs, evaluate risks, and implement preventative measures to ensure product reliability and safety.
                 </p>
-                <p class="text-gray-600 mb-6">
-                Key learning points:
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Principles of failure mode identification</li>
-                  <li>• Risk assessment and prioritization (Severity, Occurrence, Detection)</li>
-                  <li>• Design mitigation strategies</li>
-                  <li>• Cross-functional team collaboration</li>
-                  <li>• Documentation and continuous improvement</li>
+                {/* UPDATED: Changed p to h4 and applied styles */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key learning points:</h4>
+                {/* UPDATED: Removed mb-6 */}
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                  <li>Principles of failure mode identification</li>
+                  <li>Risk assessment and prioritization (Severity, Occurrence, Detection)</li>
+                  <li>Design mitigation strategies</li>
+                  <li>Cross-functional team collaboration</li>
+                  <li>Documentation and continuous improvement</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p> {/* Added margin-top */}
               </div>
 
-              <!-- PFMEA Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+              {/* PFMEA Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex items-start gap-6 mb-4">
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">PFMEA (Process Failure Mode and Effects Analysis)</h3>
+                  <h3 class="text-2xl font-bold mt-1">PFMEA (Process Failure Mode and Effects Analysis)</h3>
                 </div>
                 <p class="text-gray-600 mb-6">
                   This module focuses on PFMEA, a structured approach to identifying and mitigating potential process failures. Participants will learn to analyze manufacturing and assembly processes, evaluate risks associated with process variations, and implement control measures to improve process robustness and quality.
                 </p>
-                <p class="text-gray-600 mb-6">
-                Key learning points:
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Process flow diagram development</li>
-                  <li>• Failure mode identification for each process step</li>
-                  <li>• Risk prioritization using SOD (Severity, Occurrence, Detection) ratings</li>
-                  <li>• Process control planning and mistake-proofing</li>
-                  <li>• Implementation of corrective actions</li>
-                  <li>• PFMEA documentation and maintenance</li>
+                {/* UPDATED: Changed p to h4 and applied styles */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key learning points:</h4>
+                {/* UPDATED: Removed mb-6 */}
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                  <li>Process flow diagram development</li>
+                  <li>Failure mode identification for each process step</li>
+                  <li>Risk prioritization using SOD (Severity, Occurrence, Detection) ratings</li>
+                  <li>Process control planning and mistake-proofing</li>
+                  <li>Implementation of corrective actions</li>
+                  <li>PFMEA documentation and maintenance</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p>
               </div>
 
-              <!-- DVP&R Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+              {/* DVP&R Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex items-start gap-6 mb-4">
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">DVP&R (Design Verification Plan and Report)</h3>
+                  <h3 class="text-2xl font-bold mt-1">DVP&R (Design Verification Plan and Report)</h3>
                 </div>
                 <p class="text-gray-600 mb-6">
                   This module covers the development and execution of a robust DVP&R, a critical tool for validating product designs and ensuring performance requirements are met. Participants will learn to create comprehensive test plans, conduct verification testing, and document results to demonstrate product compliance and reliability.
                 </p>
-                <p class="text-gray-600 mb-6">
-                Key learning points:
-                </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Requirements traceability and test coverage</li>
-                  <li>• Developing verification methods (analysis, inspection, demonstration, test)</li>
-                  <li>• Creating detailed test procedures and acceptance criteria</li>
-                  <li>• Managing test execution and data collection</li>
-                  <li>• Analyzing results and documenting findings</li>
-                  <li>• Handling non-conformances and design updates</li>
-                  <li>• Regulatory compliance documentation</li>
+                {/* UPDATED: Changed p to h4 and applied styles */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key learning points:</h4>
+                {/* UPDATED: Removed mb-6 */}
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                  <li>Requirements traceability and test coverage</li>
+                  <li>Developing verification methods (analysis, inspection, demonstration, test)</li>
+                  <li>Creating detailed test procedures and acceptance criteria</li>
+                  <li>Managing test execution and data collection</li>
+                  <li>Analyzing results and documenting findings</li>
+                  <li>Handling non-conformances and design updates</li>
+                  <li>Regulatory compliance documentation</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p>
               </div>
             </div>
           </div>
 
-          <div class="text-center">
+          {/* CTA Section */}
+          <div class="text-center pt-8"> {/* Added padding top */}
             <a
               href="/contact"
-              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg" /* Made text larger */
             >
               Sign Up for Training Today
             </a>
