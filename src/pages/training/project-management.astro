@@ -6,8 +6,9 @@ import Footer from '../../components/Footer.astro';
 
 <Layout title="Project Management Training - SP Consulting">
   <Navigation />
-  
+
   <main class="pt-20">
+    {/* Hero Section */}
     <section class="bg-primary text-white py-20">
       <div class="container mx-auto px-4">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Portfolio & Project Management Training</h1>
@@ -15,128 +16,147 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-20">
+    {/* Main Content Section */}
+    <section class="py-20 bg-gray-50"> {/* Added light background */}
       <div class="container mx-auto px-4 max-w-4xl">
         <div class="space-y-16">
           <div>
-            <h2 class="text-3xl font-bold mb-6">Training Modules</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Training Modules</h2> {/* Added text-center, mb-10 */}
             <div class="space-y-8">
-              <!-- Agile NPD Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+
+              {/* Agile NPD Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md"> {/* Reduced shadow */}
+                <div class="flex items-start gap-6 mb-4"> {/* Reduced mb */}
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0"> {/* Added flex-shrink */}
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">Agile NPD Training and Coaching</h3>
+                  <h3 class="text-2xl font-bold mt-1">Agile NPD Training and Coaching</h3> {/* Adjusted alignment */}
                 </div>
+                {/* Full Description */}
                 <p class="text-gray-600 mb-6">
-                  Hands-on training and coaching on applying Agile principles to New Product Development (NPD).
+                  This module provides hands-on training and coaching on applying Agile principles to New Product Development (NPD). Participants will learn to iterate rapidly, gather continuous feedback, and adapt to changing market demands, fostering a culture of innovation and responsiveness.
                 </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Master rapid iteration techniques</li>
-                  <li>• Implement continuous feedback loops</li>
-                  <li>• Adapt to changing market demands</li>
-                  <li>• Foster innovation culture</li>
+                {/* Key Learning Points */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key Learning Points:</h4>
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                  <li>Apply Agile principles effectively within an NPD context.</li>
+                  <li>Master techniques for rapid iteration and continuous feedback loops.</li>
+                  <li>Develop strategies to adapt quickly to changing market requirements.</li>
+                  <li>Foster an organizational culture of innovation and agility.</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p> {/* Kept duration */}
               </div>
 
-              <!-- Increment Planning Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+              {/* Increment Planning Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex items-start gap-6 mb-4">
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">Increment Planning</h3>
+                  <h3 class="text-2xl font-bold mt-1">Increment Planning</h3>
                 </div>
+                 {/* Full Description */}
                 <p class="text-gray-600 mb-6">
-                  An immersive training experience focused on mastering the art of increment planning within Agile frameworks.
+                  An immersive training experience focused on mastering the art of increment planning within Agile frameworks. Participants will learn to break down large projects into manageable increments, define clear objectives, and effectively prioritize tasks, ensuring consistent progress and value delivery.
                 </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Break down large projects effectively</li>
-                  <li>• Define clear increment objectives</li>
-                  <li>• Prioritize tasks strategically</li>
-                  <li>• Ensure consistent value delivery</li>
+                 {/* Key Learning Points */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key Learning Points:</h4>
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                    <li>Master techniques for breaking down large projects into valuable increments.</li>
+                    <li>Define clear, achievable objectives for each planning increment.</li>
+                    <li>Apply effective methods for prioritizing tasks and features.</li>
+                    <li>Facilitate planning sessions that ensure team alignment and commitment.</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p>
               </div>
 
-              <!-- Execution Methodology Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+              {/* Execution Methodology Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex items-start gap-6 mb-4">
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">Optimizing Execution Methodology</h3>
+                  <h3 class="text-2xl font-bold mt-1">Optimizing Execution Methodology</h3>
                 </div>
+                 {/* Full Description */}
                 <p class="text-gray-600 mb-6">
-                  A comprehensive module designed to diagnose, redesign, and enhance organizational execution processes.
+                  A comprehensive module designed to diagnose, redesign, and enhance organizational execution processes. Participants will learn to identify bottlenecks, streamline processes, and implement best practices to enhance efficiency and productivity across projects.
                 </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Identify process bottlenecks</li>
-                  <li>• Streamline workflows</li>
-                  <li>• Implement best practices</li>
-                  <li>• Enhance cross-team efficiency</li>
+                 {/* Key Learning Points */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key Learning Points:</h4>
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                    <li>Diagnose inefficiencies and bottlenecks in current execution processes.</li>
+                    <li>Redesign workflows for improved speed and quality.</li>
+                    <li>Implement project management best practices tailored to your context.</li>
+                    <li>Measure and track improvements in execution efficiency.</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p>
               </div>
 
-              <!-- Accelerating Development Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+              {/* Accelerating Development Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex items-start gap-6 mb-4">
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">Accelerating Product Development</h3>
+                  <h3 class="text-2xl font-bold mt-1">Accelerating Product Development</h3>
                 </div>
+                 {/* Full Description */}
                 <p class="text-gray-600 mb-6">
-                  An intensive training program that equips teams with proven methodologies to compress product development timelines without compromising quality.
+                  An intensive training program that equips teams with proven methodologies to compress product development timelines without compromising quality. This module provides tools and techniques to significantly reduce product development cycles. Participants will learn to leverage Agile practices, implement rapid prototyping, and optimize collaboration to accelerated market entry strategies.
                 </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Leverage Agile practices effectively</li>
-                  <li>• Implement rapid prototyping</li>
-                  <li>• Optimize team collaboration</li>
-                  <li>• Accelerate market entry strategies</li>
+                 {/* Key Learning Points */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key Learning Points:</h4>
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                    <li>Identify opportunities to compress development timelines.</li>
+                    <li>Apply Agile and rapid prototyping techniques effectively.</li>
+                    <li>Optimize team collaboration and communication for speed.</li>
+                    <li>Develop and implement strategies for faster market entry.</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p>
               </div>
 
-              <!-- PMO Module -->
-              <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="flex items-start gap-6 mb-6">
-                  <div class="bg-primary/10 p-3 rounded-lg">
+              {/* PMO Module - UPDATED */}
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex items-start gap-6 mb-4">
+                  <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                     <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                     </svg>
                   </div>
-                  <h3 class="text-2xl font-bold">Establishing High Impact PMO</h3>
+                  <h3 class="text-2xl font-bold mt-1">Establishing High Impact PMO</h3>
                 </div>
+                 {/* Full Description */}
                 <p class="text-gray-600 mb-6">
-                  A transformative module that guides organizations in establishing or transforming a Project Management Office (PMO) into a strategic asset.
+                   A transformative module that guides organizations in establishing or transforming a Project Management Office (PMO) into a strategic asset. Participants will develop skills in strategic alignment, governance frameworks, performance metrics, organizational change management, and creating a value-driven PMO that drives strategic initiatives. They will also learn to align PMO functions with organizational goals, implement effective governance, and drive project success through standardized processes and best practices.
                 </p>
-                <ul class="space-y-3 text-gray-600 mb-6">
-                  <li>• Develop strategic alignment frameworks</li>
-                  <li>• Implement effective governance</li>
-                  <li>• Create performance metrics</li>
-                  <li>• Master organizational change management</li>
+                 {/* Key Learning Points */}
+                <h4 class="text-lg font-semibold mb-3 text-gray-800">Key Learning Points:</h4>
+                <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                    <li>Align PMO functions and initiatives with strategic business objectives.</li>
+                    <li>Design and implement effective PMO governance frameworks and processes.</li>
+                    <li>Define meaningful KPIs and performance metrics for project and portfolio success.</li>
+                    <li>Lead organizational change management for successful PMO adoption.</li>
+                    <li>Build a value-driven PMO recognized as a strategic partner.</li>
                 </ul>
-                <p class="text-sm text-gray-500">Duration: 4-8 hours</p>
+                <p class="text-sm text-gray-500 mt-4">Duration: 4-8 hours</p>
               </div>
             </div>
           </div>
 
-          <div class="text-center">
+          {/* CTA Section */}
+          <div class="text-center pt-8"> {/* Added padding top */}
             <a
               href="/contact"
-              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg" /* Made button text larger */
             >
               Register for Training Today
             </a>
