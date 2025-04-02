@@ -3,11 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 
-// Define the data for the key pillars based on the image
+// Data for key pillars (same as before)
 const pillars = [
   {
     title: "Customer Focus",
-    icon: "users", // Example icon name - replace with actual icon if available
+    icon: "users", // Example icon name - replace with actual icon component if available
     points: [
       "Customer personas development",
       "Customer segmentation research",
@@ -56,7 +56,7 @@ const pillars = [
   }
 ];
 
-// Define the challenges
+// Challenges data (same as before)
 const challenges = [
   "Final product requirements lag behind schedule.",
   "Frequent changes impact requirements and specifications.",
@@ -83,12 +83,12 @@ const challenges = [
     </section>
 
     <section class="py-20">
-      <div class="container mx-auto px-4 max-w-6xl"> {/* Increased max-width for better content fit */}
+      <div class="container mx-auto px-4 max-w-6xl">
         <div class="space-y-16">
 
           <div>
             <h2 class="text-3xl font-bold mb-6 text-center">Our Approach to Product Success</h2>
-            <p class="text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+            <p class="text-gray-600 mb-12 text-left max-w-3xl mx-auto"> {/* Added text-left class here */}
               Effective product management requires a holistic view. We help organizations navigate the complexities of product strategy, development, and market launch by focusing on key interconnected areas. Our experienced consultants work alongside your team to build robust processes, foster data-driven decisions, and accelerate your time-to-market.
             </p>
 
@@ -96,7 +96,7 @@ const challenges = [
               <img
                 src="/assets/product-management-diagram.png"
                 alt="Product Management Core Areas Diagram"
-                class="w-full max-w-2xl mx-auto rounded-lg" {/* Removed shadow-lg, centered image */}
+                class="w-full max-w-2xl mx-auto rounded-lg"
                 loading="lazy"
               />
               <p class="text-sm text-gray-500 mt-4 text-center">
@@ -107,7 +107,7 @@ const challenges = [
 
           <div>
             <h2 class="text-3xl font-bold mb-8 text-center">Key Pillars of Our Product Strategy Framework</h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Changed to md:grid-cols-2 */}
               {pillars.map(pillar => (
                 <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
                   {/* Optional: Add an icon here if you have an icon system */}
@@ -128,7 +128,7 @@ const challenges = [
             <p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
               Many organizations face significant challenges in bringing products to market efficiently and effectively. If the following issues sound familiar, our program management expertise can help streamline your processes and improve outcomes:
             </p>
-            <div class="max-w-2xl mx-auto bg-amber-50 p-6 rounded-lg border border-amber-200">
+            <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg border border-gray-200"> {/* Removed yellow bg and border, using white with gray border */}
               <ul class="space-y-3 text-gray-700 list-disc list-inside">
                 {challenges.map(challenge => (
                   <li>{challenge}</li>
@@ -143,14 +143,13 @@ const challenges = [
           <div>
             <h2 class="text-3xl font-bold mb-8 text-center">Why Partner with SP Consulting?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Kept the original "Why Choose Us" section structure */}
               <div class="text-center p-6 bg-white rounded-lg border border-gray-100">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Proven Expertise</h3>
+                <h3 class="text-xl font-semibold mb-2">Proven Product Expertise</h3> {/* More specific to product */}
                 <p class="text-gray-600">Years of experience driving product success across diverse industries.</p>
               </div>
               <div class="text-center p-6 bg-white rounded-lg border border-gray-100">
@@ -159,7 +158,7 @@ const challenges = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Tailored Approach</h3>
+                <h3 class="text-xl font-semibold mb-2">Tailored Product Strategies</h3>{/* More specific to product */}
                 <p class="text-gray-600">Customized strategies and solutions that fit your unique context and goals.</p>
               </div>
               <div class="text-center p-6 bg-white rounded-lg border border-gray-100">
@@ -168,16 +167,17 @@ const challenges = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Results-Driven</h3>
-                <p class="text-gray-600">Focused on delivering tangible improvements and measurable business value.</p>
+                <h3 class="text-xl font-semibold mb-2">Results-Driven Product Outcomes</h3>{/* More specific to product */}
+                <p class="text-gray-600">Focused on delivering tangible improvements and measurable business value for your products.</p> {/* Clarified for products */}
               </div>
             </div>
           </div>
 
-          <div class="text-center pt-8"> {/* Added padding top */}
+          <div class="text-center pt-8">
+            <p class="text-gray-600 mb-4">Ready to overcome product development hurdles and build winning strategies?</p> {/* Encouraging sentence above CTA */}
             <a
               href="/contact"
-              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg" /* Slightly larger button */
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
             >
               Discuss Your Product Challenges
             </a>
