@@ -6,21 +6,25 @@ import Footer from '../../components/Footer.astro';
 
 <Layout title="Product Management Case Studies - SP Consulting">
   <Navigation />
-  
+
   <main class="pt-20">
+    {/* Hero Section */}
     <section class="bg-primary text-white py-20">
       <div class="container mx-auto px-4">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Product Management Case Studies</h1>
-        <p class="text-xl">Real-world success stories in product management.</p>
+        <p class="text-xl">Real-world success stories in product management strategy and implementation.</p> {/* Refined subtitle */}
       </div>
     </section>
 
-    <section class="py-20">
-      <div class="container mx-auto px-4 max-w-4xl">
+    {/* Main Content Section */}
+    <section class="py-20 bg-gray-50"> {/* Added light background */}
+      <div class="container mx-auto px-4 max-w-5xl"> {/* Increased max-width */}
         <div class="space-y-12">
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Smart City Infrastructure Implementation</h2>
-            <div class="flex flex-wrap gap-2 mb-4">
+
+          {/* Case Study 1: Water Infrastructure */}
+          <div class="bg-white p-8 rounded-lg shadow-md"> {/* Reduced shadow */}
+            <h2 class="text-2xl font-bold mb-4">IoT Modernization for Water Infrastructure Firm</h2> {/* Updated Title */}
+            <div class="flex flex-wrap gap-2 mb-6"> {/* Added margin-bottom */}
               <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
                 IoT Technology
               </span>
@@ -28,53 +32,54 @@ import Footer from '../../components/Footer.astro';
                 Water Infrastructure
               </span>
               <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
-                Modernization
+                Product Strategy
+              </span>
+               <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Co-Development
               </span>
             </div>
             <div class="mb-6">
               <img
-                src="/assets/smart-city.png"
-                alt="Smart City Infrastructure Implementation"
-                class="w-full rounded-lg shadow-lg mb-4"
+                src="/assets/smart-city.png" {/* Placeholder - UPDATE PATH */}
+                alt="Water Infrastructure Modernization with IoT"
+                class="w-full rounded-lg shadow-md mb-4" {/* Reduced shadow */}
                 loading="lazy"
               />
             </div>
-            <p class="text-gray-600 mb-6">
-              Helping a century-old water infrastructure firm modernize by integrating IoT technology into its products.
-            </p>
-            <div class="space-y-4">
+            {/* Removed introductory P tag */}
+            <div class="space-y-6"> {/* Increased spacing */}
               <div>
-                <h3 class="font-semibold mb-2">Business Challenge</h3>
+                <h3 class="font-semibold text-lg mb-2 text-gray-800">Business Challenge</h3> {/* Styled heading */}
                 <p class="text-gray-600">
-                  The initiative encountered two major hurdles:<br>
-                  1. Industry inertia in the conservative water utility sector<br>
-                  2. Sales team's short-term focus prioritizing immediate deals over long-term growth
+                  A venerable water infrastructure firm, over a century old, aimed to modernize by integrating IoT technology into its products. This initiative encountered two major hurdles: <strong class="font-medium">Industry inertia</strong> (the conservative water utility sector struggled to adopt innovative technologies) and a <strong class="font-medium">Short-term sales focus</strong> (the company's sales team prioritized immediate deals over cultivating long-term growth opportunities).
                 </p>
               </div>
               <div>
-                <h3 class="font-semibold mb-2">Business Solution</h3>
-                <p class="text-gray-600">
-                  Developed and implemented Product Strategy that included:<br>
-                  - Collaborating with key customers to identify challenges<br>
-                  - Co-developing future solutions<br>
-                  - Fostering long-term strategic partnerships
-                </p>
+                <h3 class="font-semibold text-lg mb-2 text-gray-800">Business Solution</h3> {/* Styled heading */}
+                 {/* Using list for clarity */}
+                <ul class="list-disc list-inside text-gray-600 space-y-1 pl-2">
+                    <li>Developed and implemented a Product Strategy focused on collaboration.</li>
+                    <li>Worked closely with key customers to identify critical industry challenges.</li>
+                    <li>Co-developed future solutions tailored to address these specific challenges.</li>
+                    <li>Fostered long-term strategic partnerships to ensure sustained growth and adoption.</li>
+                </ul>
               </div>
               <div>
-                <h3 class="font-semibold mb-2">Results</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                  <li>Developed capacity to investigate customer challenges and devise solutions</li>
-                  <li>Improved client rapport through co-development initiatives</li>
-                  <li>40% increase in new technology uptake among customers</li>
-                  <li>25% sales growth from technology-enabled solutions in two years</li>
+                <h3 class="font-semibold text-lg mb-2 text-gray-800">Results</h3> {/* Styled heading */}
+                <ul class="list-disc list-inside text-gray-600 space-y-1 pl-2">
+                  <li>Developed internal capacity to thoroughly investigate customer challenges and collaboratively devise solutions.</li>
+                  <li>Achieved notable improvement in client rapport and trust through co-development initiatives.</li>
+                  <li>Realized a 40% increase in the uptake of new IoT technologies among customers.</li>
+                  <li>Attained 25% sales growth from technology-enabled solutions within a two-year period.</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Innovative Printed Battery Technology</h2>
-            <div class="flex flex-wrap gap-2 mb-4">
+          {/* Case Study 2: Smart Labels */}
+          <div class="bg-white p-8 rounded-lg shadow-md"> {/* Reduced shadow */}
+            <h2 class="text-2xl font-bold mb-4">Smart Label Manufacturing Scaling & Strategy</h2> {/* Updated Title */}
+            <div class="flex flex-wrap gap-2 mb-6"> {/* Added margin-bottom */}
               <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
                 Printed Batteries
               </span>
@@ -84,51 +89,54 @@ import Footer from '../../components/Footer.astro';
               <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
                 BLE Technology
               </span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                Market Strategy
+              </span>
             </div>
             <div class="mb-6">
               <img
-                src="/assets/printed-batteries.png"
-                alt="Printed Battery Technology"
-                class="w-full rounded-lg shadow-lg mb-4"
+                src="/assets/printed-batteries.png" {/* Placeholder - UPDATE PATH */}
+                alt="Smart Labels with Printed Battery Technology"
+                class="w-full rounded-lg shadow-md mb-4" {/* Reduced shadow */}
                 loading="lazy"
               />
             </div>
-            <p class="text-gray-600 mb-6">
-              Scaling manufacturing of printed battery-powered BLE smart labels.
-            </p>
-            <div class="space-y-4">
+             {/* Removed introductory P tag */}
+            <div class="space-y-6"> {/* Increased spacing */}
               <div>
-                <h3 class="font-semibold mb-2">Business Challenge</h3>
+                <h3 class="font-semibold text-lg mb-2 text-gray-800">Business Challenge</h3> {/* Styled heading */}
                 <p class="text-gray-600">
-                  1. Resistance to adopting printed battery technology vs familiar coin cell batteries<br>
-                  2. Market intelligence gap for strategic decision-making
+                  Scaling manufacturing of printed battery-powered BLE smart labels faced two key obstacles: <strong class="font-medium">Technology Adoption Resistance</strong> (Customers resisted moving from familiar coin cell batteries to unproven printed battery technology) and a significant <strong class="font-medium">Market Intelligence Gap</strong> (Limited data existed on manufacturers and use cases, hindering strategic decision-making and market positioning).
                 </p>
               </div>
               <div>
-                <h3 class="font-semibold mb-2">Business Solution</h3>
-                <p class="text-gray-600">
-                  - Cultivated relationships with major label manufacturers<br>
-                  - Executed real-world field trials with select customers<br>
-                  - Established strategic alliances to build sales pipeline<br>
-                  - Engaged manufacturers to understand adoption barriers
-                </p>
+                <h3 class="font-semibold text-lg mb-2 text-gray-800">Business Solution</h3> {/* Styled heading */}
+                {/* Using list for clarity */}
+                <ul class="list-disc list-inside text-gray-600 space-y-1 pl-2">
+                  <li>Developed and implemented a Product Strategy focused on market validation and partnership.</li>
+                  <li>Cultivated robust relationships with major label manufacturers to uncover viable use cases.</li>
+                  <li>Collaborated with select customers to execute real-world field trials, proving technology value.</li>
+                  <li>Established enduring strategic alliances to build and strengthen the sales pipeline.</li>
+                  <li>Engaged with diverse manufacturers to gain crucial insights into market adoption barriers.</li>
+                </ul>
               </div>
               <div>
-                <h3 class="font-semibold mb-2">Results</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                  <li>Architected market strategy propelling business from zero to $560M projected revenue by 2030</li>
-                  <li>Forged strategic partnerships to advance legislative frameworks</li>
-                  <li>Generated $25M in forecasted revenue over three years</li>
-                  <li>Cultivated executive relationships with industry leaders</li>
+                <h3 class="font-semibold text-lg mb-2 text-gray-800">Results</h3> {/* Styled heading */}
+                <ul class="list-disc list-inside text-gray-600 space-y-1 pl-2">
+                  <li>Architected a market strategy propelling the Zinc Mg battery business from zero to $560M projected revenue by 2030.</li>
+                  <li>Forged strategic partnerships with various bodies to advance supportive legislative frameworks.</li>
+                  <li>Managed the comprehensive sales cycle from prospecting to closing, generating $25M in forecasted revenue over three years.</li>
+                  <li>Cultivated executive-level relationships with key industry leaders (e.g., Avery Dennison, Zebra, Linxens, Brady).</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="text-center">
+          {/* CTA Section */}
+          <div class="text-center pt-8"> {/* Added padding-top */}
             <a
               href="/contact"
-              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg" /* Larger text */
             >
               Discuss Your Product Challenges
             </a>
