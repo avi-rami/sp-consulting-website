@@ -1,331 +1,190 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Navigation from '../../components/Navigation.astro';
-import Footer from '../../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
-// Data derived from the label features image
+// Features data structure
 const features = [
   {
-    title: "Thin, Flexible & Customizable",
-    description: "Ultra-thin profile (0.4mm - 1mm) allows integration into various form factors. Flexible design conforms to surfaces, and size/shape can be tailored.",
-    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v4m0 0h-4m4 0l-5-5"></path></svg>` // Placeholder icon: Arrows pointing out
+    title: "Thin & Flexible Design",
+    description: "Ultra-thin profile (0.4mm - 1mm) with flexible construction that adapts to various form factors and shapes.",
+    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v4m0 0h-4m4 0l-5-5"></path></svg>`
   },
   {
-    title: "Safe & Sustainable",
-    description: "Utilizes non-toxic, non-flammable, and non-explosive materials like Zinc Manganese, making it environmentally friendly and safe for diverse applications.",
-    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.01 Any Size, Any Shape", description: "Thickness from 0.4 mm to 1 mm, adaptable to various form factors.", icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v4m0 0h-4m4 0l-5-5"></path></svg>` },
-  { title: "Safe & Sustainable", description: "Utilizes non-toxic, non-flammable, and non-explosive materials like Zinc Manganese, making it environmentally friendly.", icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>` },
-  { title: "Cost Competitive & Abundant", description: "Leverages readily available Zinc Manganese materials and efficient manufacturing for economic viability.", icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg6z"></path></svg>` // Placeholder icon: Shield Check
+    title: "Environmentally Safe",
+    description: "Non-toxic, non-flammable, and non-explosive materials using Zinc Manganese technology for sustainable power solutions.",
+    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`
   },
-   {
-    title: "Cost Competitive & Abundant",
-    description: "Leverages readily available materials and efficient manufacturing processes, offering a cost-effective power solution compared to traditional alternatives.",
-    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>` // Placeholder icon: Dollar Circle
+  {
+    title: "Cost-Effective Solution",
+    description: "Competitive pricing through efficient manufacturing and readily available materials.",
+    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
   },
-   {
-    title: "Seamless Device Integration",
-    description: "Designed for direct integration onto substrates alongside other electronic components without requiring complex wiring, simplifying assembly.",
-    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>` // Placeholder icon: Puzzle Piece
+  {
+    title: "Seamless Integration",
+    description: "Direct integration onto substrates with other electronic components, eliminating complex wiring needs.",
+    icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>`
   }
 ];
 
-// Data for the BLE Label Specifications (kept for BLE section)
-const bleSpec = {
-  dimensions: "3” x 3”",
+// BLE Label Specifications
+const bleSpecs = {
+  dimensions: "3\" x 3\"",
   capacity: "15 mAh",
   peakCurrent: "300 µA",
   energy: "15 mWh @ 100 µA",
   internalResistance: "< 15 Ω (DC at 20mA)",
-  selfDischarge: "10% p.a."
-};
-
-const blePerf = {
+  selfDischarge: "10% p.a.",
   operatingVoltage: "1.5V - 3V",
   shelfLife: "10 – 12 months",
   operatingLife: "4 - 6 months",
   transmissionRate: "1x per 15 sec",
-  readRange: "25 – 30 feet" // Added units for clarity
+  readRange: "25 – 30 feet"
 };
-
-const bleInfo = {
-  customCapacity: "Higher battery capacities are available based on requirements.",
-  samples: "Off-the-shelf samples are available for evaluation.",
-  customCosts: "NRE (Non-Recurring Engineering) costs apply for custom battery and electronics development."
-};
-
-// REMOVED unused 'applications' array
 ---
 
 <Layout title="Smart Label Solutions - SP Consulting">
   <Navigation />
-
-  <main class="pt-20">
-    {/* Hero Section */}
-    <section class="bg-primary text-white py-20">
-      <div class="container mx-auto px-4">
-        <h1 class="text-4xl md:text-5>` },
-  { title: "Seamless Device Integration", description: "Designed for direct integration onto substrates without complex wiring, simplifying assembly.", icon: `<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>` }
-];
-
-
----
-
-<Layout title="Smart Label Solutions - SP Consulting">
-  <Navigation />
-
+  
   <main class="pt-20">
     {/* Hero Section */}
     <section class="bg-primary text-white py-20">
       <div class="container mx-auto px-4">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Smart Label Solutions</h1>
         <p class="text-xl md:text-2xl max-w-3xl">
-          Leveraging expertise in printed electronics and thin, flexible printed batteries to power an innovative and sustainable future for smart labels.
+          Pioneering the future of smart labels through innovative printed electronics and environmentally friendly power solutions.
         </p>
       </div>
     </section>
 
-    {/* Main Content Section */}
+    {/* Main Content */}
     <section class="py-20 bg-gray-50">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="space-y-20">
+          
+          {/* Introduction Section */}
+          <div class="text-center max-w-4xl mx-auto">
+            <p class="text-xl text-gray-700 leading-relaxed">
+              We specialize in developing and manufacturing advanced smart labels that combine printed electronics with thin, flexible printed batteries. Our innovative solutions power the future of tracking, monitoring, and smart packaging technologies while maintaining a commitment to environmental sustainability.
+            </p>
+            
+            {/* Decorative Battery Image */}
+            <div class="mt-8">
+              <img
+                src="/assets/green-battery.png"
+                alt="Eco-friendly battery technology"
+                class="h-24 mx-auto opacity-80"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
           {/* Features Section */}
-          <section>
-             <h2 class="text-3xl font-bold mb-12 text-center text-gray-xl font-bold mb-6">Smart Label Solutions</h1>
-        <p class="text-xl md:text-2xl max-w-3xl">
-          Leveraging expertise in printed electronics and thin, flexible printed batteries to power an innovative and sustainable future for smart labels.
-        </p>
-      </div>
-    </section>
-
-    {/* Main Content Section */}
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 max-w-6xl">
-        <div class="space-y-20">
-
-          {/* Features Section */}
-          <section>
-             <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Core Advantages of Printed Battery Technology</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Feature Diagram Image */}
-                <div class="order-1 md:order-2">
-                   <img
-                    src="/assets/label-features.png" {/* <<<--- UPDATE PATH */}
-                    alt="Diagram showing features: Thin, Flexible, Safe, Cost Competitive, Abundant Materials, Device Integration"
-                    class="w-full mx-auto rounded-lg shadow-md border border-gray-200"
-                    loading="lazy"
-                  />
-                </div>
-                 {/* Feature Points & Green Battery Image */}
-                <div class="space-y-8 order-2 md:order-1">
-                    {features.slice(0, 2).map(feature => ( // First two features
-                        <div class="flex items-start gap-4">
-                           <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0 mt-1">
-                                <Fragment set:html={feature.icon} />
-                           </div>
-                           <div>
-                               <h3 class="text-xl font-semibold mb-1 text-gray-800">{feature.title}</h3>
-                               <p class="text-gray-600">{feature.description}</p>
-                           </div>
-                       </div>
-                    ))}
-                     {/* Decorative Green Battery Image */}
-                     <div class="flex justify-center md:justify-start pl-4 pt-4">
-                         <img
-                            src="/assets/green-battery.png" {/* <<<--- UPDATE PATH */}
-                            alt="Illustration of a battery with green leaves"
-                            class="w-20 h-auto opacity-80"
-                            loading="lazy"
-                         />
-                     </div>
-                     {features.slice(2).map(feature => ( // Remaining features
-                        <div class="flex items-start gap-4">
-                           <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0 mt-1">
-                                <Fragment set:html={feature.icon} />
-                           </div>
-                           <div>
-                               <h3 class="text-xl font-semibold mb-1 text-gray-800">{feature.title}</h3>
-                               <p class="text-gray-600">{feature.description}</p>
-                           </div>
-                       </div>
-                    ))}
-                </div>
-             </div>
-          </section>
-
-          {/* Applications Section - CORRECTED */}
-          <section>
-             <h2 class="text-3xl font-bold mb-10 text-center text-gray-800">Diverse Applications</h2>
-             <p class="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-               Our thin, flexible power solutions enable smart label functionality across a wide range of industries and use cases.
-             </p>
-             {/* Display the single composite image */}
-              <div class="text-center">800">Core Advantages of Printed Battery Technology</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Feature Diagram Image */}
-                <div class="order-1 md:order-2">
-                   <img
-                    src="/assets/label-features.png" {/* <<<--- UPDATE PATH */}
-                    alt="Diagram showing features: Thin, Flexible, Safe, Cost Competitive, Abundant Materials, Device Integration"
-                    class="w-full mx-auto rounded-lg shadow-md border border-gray-200"
-                    loading="lazy"
-                  />
-                </div>
-                 {/* Feature Points & Green Battery Image */}
-                <div class="space-y-8 order-2 md:order-1">
-                    {/* Displaying first two features */}
-                    {features.slice(0, 2).map(feature => (
-                        <div class="flex items-start gap-4">
-                           <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0 mt-1">
-                                <Fragment set:html={feature.icon} />
-                           </div>
-                           <div>
-                               <h3 class="text-xl font-semibold mb-1 text-gray-800">{feature.title}</h3>
-                               <p class="text-gray-600">{feature.description}</p>
-                           </div>
-                       </div>
-                    ))}
-                     {/* Decorative Green Battery Image */}
-                     <div class="flex justify-center md:justify-start pl-4 pt-4">
-                         <img
-                            src="/assets/green-battery.png" {/* <<<--- UPDATE PATH */}
-                            alt="Illustration of a battery with green leaves"
-                            class="w-20 h-auto opacity-80"
-                            loading="lazy"
-                         />
-                     </div>
-                     {/* Displaying remaining features */}
-                     {features.slice(2).map(feature => (
-                        <div class="flex items-start gap-4">
-                           <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0 mt-1">
-                                <Fragment set:html={feature.icon} />
-                           </div>
-                           <div>
-                               <h3 class="text-xl font-semibold mb-1 text-gray-800">{feature.title}</h3>
-                               <p class="text-gray-600">{feature.description}</p>
-                           </div>
-                       </div>
-                    ))}
-                </div>
-             </div>
-          </section>
+          <div>
+            <h2 class="text-3xl font-bold mb-12 text-center">Core Technology Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div>
+                <img
+                  src="/assets/label-features.png"
+                  alt="Smart Label Features Diagram"
+                  class="w-full rounded-lg shadow-md"
+                  loading="lazy"
+                />
+              </div>
+              <div class="space-y-8">
+                {features.map(feature => (
+                  <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                      <Fragment set:html={feature.icon} />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+                      <p class="text-gray-600">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* Applications Section */}
-          <section>
-             <h2 class="text-3xl font-bold mb-10 text-center text-gray-800">Diverse Applications</h2>
-             <p class="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-               Our thin, flexible power solutions enable smart label functionality across a wide range of industries and use cases.
-             </p>
-             {/* Displaying the SINGLE composite application image */}
-              <div class="text-center">
-                  <img
-                    src="/assets/label-applications.png" {/* <<<--- UPDATE PATH */}
-                    alt="Applications: Cold Chain, Event Management, Hospital Management, Patient Monitoring, Warehouse Management"
-                    class="w-full max-w-4xl mx-auto rounded-lg shadow-md border border-gray-200"
-                    loading="lazy"
-                  />
-              </div>
-          </section>
+          <div>
+            <h2 class="text-3xl font-bold mb-12 text-center">Industry Applications</h2>
+            <div class="max-w-4xl mx-auto">
+              <img
+                src="/assets/label-applications.png"
+                alt="Smart Label Applications"
+                class="w-full rounded-lg shadow-md"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
-          {/* BLE Label Example Section */}
-          <section>
-             <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Featured Example: BLE Label with Printed Battery</h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 gap
+          {/* BLE Label Section */}
+          <div>
+            <h2 class="text-3xl font-bold mb-12 text-center">Featured Product: BLE Smart Label</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
                   <img
-                    src="/assets/label-applications.png" {/* <<<--- UPDATE PATH */}
-                    alt="Applications: Cold Chain, Event Management, Hospital Management, Patient Monitoring, Warehouse Management"
-                    class="w-full max-w-4xl mx-auto rounded-lg shadow-md border border-gray-200"
+                    src="/assets/ble-label-printed.png"
+                    alt="BLE Label with Printed Battery"
+                    class="w-full rounded-lg shadow-sm"
                     loading="lazy"
                   />
+                  <p class="text-sm text-center text-gray-500 mt-4">
+                    Off-the-shelf BLE label with integrated printed battery
+                  </p>
+                </div>
+                
+                <div class="space-y-8">
+                  <div>
+                    <h3 class="text-2xl font-semibold mb-4">Technical Specifications</h3>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                      {Object.entries(bleSpecs).map(([key, value]) => (
+                        <div>
+                          <dt class="font-medium text-gray-600">{key.replace(/([A-Z])/g, ' $1').trim()}:</dt>
+                          <dd class="text-gray-800">{value}</dd>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h3 class="text-2xl font-semibold mb-4">Customization Options</h3>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Higher battery capacities available based on requirements</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Off-the-shelf samples available for evaluation</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Custom development services with NRE costs for specialized requirements</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-          </section>
-
-          {/* BLE Label Example Section */}
-          <section>
-             <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Featured Example: BLE Label with Printed Battery</h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start bg-white p-8 rounded-lg shadow-md border border-gray-200">
-               {/* BLE Label Image */}
-               <div>
-                  <img
-                    src="/assets/ble-label-printed.png" {/* <<<--- UPDATE PATH */}
-                    alt="BLE Label powered by a printed battery"
-                    class="w-full rounded-lg shadow-sm border border-gray-200"
-                    loading="lazy"
-                  />
-                   <p class="text-sm text-center text-gray-500 mt-3">Off-the-shelf BLE label example.</p>
-               </div>
-               {/* Specifications & Performance */}
-               <div class="space-y-6">
-                  <div>
-                      <h3 class="text-xl font-semibold mb-3 border-b pb-2 text-gray-800">Specifications</h3>
-                      <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-                          <dt class="font-medium text-gray-600">Dimensions:</dt><dd class="text-gray-800">{bleSpec.dimensions}</dd>
-                          <dt class="font-medium text-gray-600">Capacity:</dt><dd class="text-gray-800">{bleSpec.capacity}</dd>
-                          <dt class="font-medium text-gray-600">Peak Current:</dt><dd class="text-gray-800">{bleSpec.peakCurrent}</dd>
-                          <dt class="font-medium text-gray-600">Energy:</dt><dd class="text-gray-800">{bleSpec.energy}</dd>
-                          <dt class="font-medium text-gray-600">Internal Resistance:</dt><dd class="text-gray-800">{bleSpec.internalResistance}</dd>
-                          <dt class="font-medium text-gray-600">Self-Discharge:</dt><dd class="text-gray-800">{bleSpec.selfDischarge}</dd>
-                      </dl>
-                  </div>
-                   <div>
-                      <h3 class="text-xl font-semibold mb-3 border-b pb-2 text-gray-800">Performance</h3>
-                      <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-                          <dt class="font-medium text-gray-600">Operating Voltage:</dt><dd class="text-gray-800">{blePerf.operatingVoltage}</dd>
-                          <dt class="font-medium text-gray-600">Shelf Life:</dt><dd class="text-gray-800">{blePerf.shelfLife}</dd>
-                          <dt class="-12 items-start bg-white p-8 rounded-lg shadow-md border border-gray-200">
-               {/* BLE Label Image */}
-               <div>
-                  <img
-                    src="/assets/ble-label-printed.png" {/* <<<--- UPDATE PATH */}
-                    alt="BLE Label powered by a printed battery"
-                    class="w-full rounded-lg shadow-sm border border-gray-200"
-                    loading="lazy"
-                  />
-                   <p class="text-sm text-center text-gray-500 mt-3">Off-the-shelf BLE label example.</p>
-               </div>
-               {/* Specifications & Performance */}
-               <div class="space-y-6">
-                  <div>
-                      <h3 class="text-xl font-semibold mb-3 border-b pb-2 text-gray-800">Specifications</h3>
-                      <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-                          <dt class="font-medium text-gray-600">Dimensions:</dt><dd class="text-gray-800">3” x 3”</dd>
-                          <dt class="font-medium text-gray-600">Capacity:</dt><dd class="text-gray-800">15 mAh</dd>
-                          <dt class="font-medium text-gray-600">Peak Current:</dt><dd class="text-gray-800">300 µA</dd>
-                          <dt class="font-medium text-gray-600">Energy:</dt><dd class="text-gray-800">15 mWh @ 100 µA</dd>
-                          <dt class="font-medium text-gray-600">Internal Resistance:</dt><dd class="text-gray-800">< 15 Ω (DC @ 20mA)</dd>
-                          <dt class="font-medium text-gray-600">Self-Discharge:</dt><dd class="text-gray-800">~10% p.a.</dd>
-                      </dl>
-                  </div>
-                   <div>
-                      <h3 class="text-xl font-semibold mb-3 border-b pb-2 text-gray-800">Performance</h3>
-                      <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-                          <dt class="font-medium text-gray-600">Operating Voltage:</dt><dd class="text-gray-800">1.5V - 3V</dd>
-                          <dt class="font-medium text-gray-600">Shelf Life:</dt><dd class="text-gray-800">10 – 12 months</dd>
-                          <dt class="font-medium text-gray-600">Operating Life:</dt><dd class="text-gray-800">4 - 6 months*</dd>
-                          <dt class="font-medium text-gray-600">Transmission Rate:</dt><dd class="text-gray-800">1x per 15 sec*</dd>
-                          <dt class="font-medium text-gray-600">Read Range:</dt><dd class="text-gray-800">25 – 30 ft*</dd>
-                      </dl>
-                      <p class="text-xs text-gray-500 mt-2">*Operating life, transmission rate, and read range depend on specific use case and environment.</p>
-                  </div>
-                   <div>
-                      <h3 class="text-xl font-semibold mb-3 border-b pb-2 text-gray-800">Availability & Customization</h3>
-                      <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm pl-2">
-                          <li>Off-the-shelf samples are available for evaluation.</li>
-                          <li>Higher battery capacities can be developed based on specific requirements.</li>
-                          <li>Custom development for unique battery and electronics needs involves NRE (Non-Recurring Engineering) costs.</li>
-                      </ul>
-                  </div>
-               </div>
-             </div>
-          </section>
+            </div>
+          </div>
 
           {/* CTA Section */}
-          <div class="text-center pt-8">
+          <div class="text-center">
             <a
               href="/contact"
               class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
             >
-              Explore Smart Label Solutions
+              Discuss Your Smart Label Needs
             </a>
           </div>
         </div>
