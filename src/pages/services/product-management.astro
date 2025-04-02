@@ -101,8 +101,8 @@ const challenges = [
           {/* Approach Section */}
           <div>
             <h2 class="text-3xl font-bold mb-6 text-center">Our Approach to Product Success</h2>
-            {/* Intro Paragraph: Width reduced */}
-            <p class="text-gray-600 mb-12 max-w-3xl mx-auto">
+            {/* Intro Paragraph: Width adjusted to intermediate value */}
+            <p class="text-gray-600 mb-12 max-w-[52rem] mx-auto"> {/* Changed max-w-3xl to max-w-[52rem] */}
               Effective product management requires a holistic view. We help organizations navigate the complexities of product strategy, development, and market launch by focusing on key interconnected areas. Our experienced consultants work alongside your team to build robust processes, foster data-driven decisions, and accelerate your time-to-market.
             </p>
 
@@ -111,7 +111,7 @@ const challenges = [
               <img
                 src="/assets/product-management-diagram.png"
                 alt="Product Management Core Areas Diagram"
-                class="w-full max-w-3xl mx-auto rounded-lg" {/* Increased max-w- from 2xl to 3xl */}
+                class="w-full max-w-3xl mx-auto rounded-lg"
                 loading="lazy"
               />
               <p class="text-sm text-gray-500 mt-4 text-center">
@@ -125,8 +125,8 @@ const challenges = [
             <h2 class="text-3xl font-bold mb-10 text-center">Key Pillars of Our Product Strategy Framework</h2>
              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {pillars.map(pillar => (
-                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col"> {/* Ensure flex column for content flow */}
-                  <div class="flex items-center mb-4"> {/* Flex container for icon + title */}
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col">
+                  <div class="flex items-center mb-4">
                     {/* Icon Container: Styled like example */}
                     <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                        <Fragment set:html={iconSvgs[pillar.iconKey]} /> {/* Render SVG */}
