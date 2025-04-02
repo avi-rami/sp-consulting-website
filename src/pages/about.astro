@@ -35,67 +35,69 @@ const logos = [
             </p>
           </div>
 
+          {/* ** Container for Shailesh Patel's profile info ** */}
           <div class="bg-white p-8 rounded-lg shadow-lg">
-            <div class="flex flex-col md:flex-row gap-8 items-start">
-              {/* ** CHANGE 1: Image moved before text div ** */}
-              <div class="md:w-1/3 flex-shrink-0">
-                <img
-                  src={profileImage}
-                  alt="Shailesh Patel"
-                  class="w-full rounded-lg shadow-lg"
-                  loading="lazy"
-                  width="400"
-                  height="400" {/* Optional: Add dimensions for better performance */}
-                />
-              </div>
-              <div class="md:w-2/3">
-                <h2 class="text-2xl font-bold mb-4">Mr. Shailesh Patel</h2>
-                {/* ** CHANGE 4: Title updated ** */}
-                <h3 class="text-xl text-primary mb-4">Managing Partner</h3>
-                <div class="space-y-4 text-gray-600">
-                  <p>
-                    Shailesh Patel is a globally experienced product and portfolio management executive with a reputation for delivering innovative products that solve customer problems. With three decades of experience in high level leadership positions in fortune 500 companies and startups, Shailesh brings expertise to establish and deliver scalable Product strategies and program execution to help clients accelerate market analysis and product development.
-                  </p>
-                  <p>
-                    He has worked for fortune 500 companies such as Amazon, Mueller Water Products, Newell Rubbermaid, Stryker Medical, and DaimlerChrysler in various engineering, product and program management roles. He has extensive engineering expertise in design, development and launch of electro-mechanical devices by managing global teams across the US, Europe, and Asia including being instrumental in ground-up development of 2 Asia (India and China) R&D centers with an ex-pat assignment.
-                  </p>
-                  <p>
-                    He combines his expertise in product and program management with a deep understanding of engineering and quality processes to guide cross-functional teams. This unique skill set enables him to focus on solving customer problems, foster creativity, develop innovative solutions, and accelerate product launches, significantly reducing time to market.
-                  </p>
 
-                  {/* ** CHANGE 2 & 3: Removed heading and implemented scrolling logo animation ** */}
-                  <div class="pt-8">
-                     {/* Heading removed */}
-                    <div
-                      class="logo-scroller relative w-full overflow-hidden py-4"
-                       role="group"
-                       aria-label="Companies previously worked with"
-                      style={{
-                        maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
-                      }}
-                    >
-                      <div class="logo-track flex w-max animate-scroll space-x-12 pr-12">
-                        {/* Render logos twice for seamless infinite scroll */}
-                        {[...logos, ...logos].map((logo, index) => (
-                          <div class="flex items-center justify-center flex-shrink-0" >
-                            <img
-                              src={logo.src}
-                              alt={logo.alt}
-                              class="h-8 max-w-[150px] object-contain"
-                              loading="lazy"
-                              aria-hidden={index >= logos.length ? "true" : undefined}
-                              height="32" {/* Height matches h-8 */}
-                            />
-                          </div>
-                        ))}
-                      </div>
+            {/* ** CHANGE 1: Image moved completely above text content ** */}
+            <div class="mb-8 max-w-xs mx-auto"> {/* Added max-width and mx-auto for centering */}
+              <img
+                src={profileImage}
+                alt="Shailesh Patel"
+                class="w-full rounded-lg shadow-lg"
+                loading="lazy"
+                width="320" {/* Adjusted width based on max-w-xs */}
+                height="320" {/* Keep aspect ratio square or adjust as needed */}
+              />
+            </div>
+
+            {/* Div containing all text content below the image */}
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Mr. Shailesh Patel</h2> {/* Optional: text-center */}
+              <h3 class="text-xl text-primary mb-4 text-center md:text-left">Managing Partner</h3> {/* Optional: text-center */}
+              <div class="space-y-4 text-gray-600">
+                <p>
+                  Shailesh Patel is a globally experienced product and portfolio management executive with a reputation for delivering innovative products that solve customer problems. With three decades of experience in high level leadership positions in fortune 500 companies and startups, Shailesh brings expertise to establish and deliver scalable Product strategies and program execution to help clients accelerate market analysis and product development.
+                </p>
+                <p>
+                  He has worked for fortune 500 companies such as Amazon, Mueller Water Products, Newell Rubbermaid, Stryker Medical, and DaimlerChrysler in various engineering, product and program management roles. He has extensive engineering expertise in design, development and launch of electro-mechanical devices by managing global teams across the US, Europe, and Asia including being instrumental in ground-up development of 2 Asia (India and China) R&D centers with an ex-pat assignment.
+                </p>
+                <p>
+                  He combines his expertise in product and program management with a deep understanding of engineering and quality processes to guide cross-functional teams. This unique skill set enables him to focus on solving customer problems, foster creativity, develop innovative solutions, and accelerate product launches, significantly reducing time to market.
+                </p>
+
+                {/* Logo Section */}
+                <div class="pt-8">
+                  {/* ** CHANGE 2: Logo scroller spans width of this container, mask adjusted ** */}
+                  <div
+                    class="logo-scroller relative w-full overflow-hidden py-4"
+                    role="group"
+                    aria-label="Companies previously worked with"
+                    style={{
+                      // Adjusted mask gradient for wider visible area
+                      maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)'
+                    }}
+                  >
+                    <div class="logo-track flex w-max animate-scroll space-x-12 pr-12">
+                      {/* Render logos twice for seamless infinite scroll */}
+                      {[...logos, ...logos].map((logo, index) => (
+                        <div class="flex items-center justify-center flex-shrink-0" >
+                          <img
+                            src={logo.src}
+                            alt={logo.alt}
+                            class="h-8 max-w-[150px] object-contain"
+                            loading="lazy"
+                            aria-hidden={index >= logos.length ? "true" : undefined}
+                            height="32" {/* Height matches h-8 */}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div> {/* End of profile info card */}
 
           <div class="text-center">
             <a
@@ -113,7 +115,7 @@ const logos = [
   <Footer />
 </Layout>
 
-{/* ** CSS for the scrolling animation ** */}
+{/* CSS for the scrolling animation (Unchanged from previous correct version) */}
 <style>
   @keyframes scroll {
     from {
