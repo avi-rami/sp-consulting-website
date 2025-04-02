@@ -3,106 +3,189 @@ import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 
+// Define the data for the key pillars based on the image
+const pillars = [
+  {
+    title: "Customer Focus",
+    icon: "users", // Example icon name - replace with actual icon if available
+    points: [
+      "Customer personas development",
+      "Customer segmentation research",
+      "Target Customer definition",
+      "User Stories development"
+    ]
+  },
+  {
+    title: "Business Goals Alignment",
+    icon: "target", // Example icon name
+    points: [
+      "Business goals & growth strategy definition",
+      "Objectives & growth drivers definition",
+      "SMART goals & KPI definition"
+    ]
+  },
+  {
+    title: "Competitive Landscape",
+    icon: "search", // Example icon name
+    points: [
+      "Competitive landscape analysis",
+      "Market share goals development",
+      "Key metric comparison analysis",
+      "Product differentiation characteristics definition"
+    ]
+  },
+    {
+    title: "Product Vision & Strategy",
+    icon: "rocket", // Example icon name
+    points: [
+      "Product business case & value proposition development",
+      "MVP formulation",
+      "High-level Market requirements",
+      "Launch roadmap development"
+    ]
+  },
+  {
+    title: "Market Understanding",
+    icon: "store", // Example icon name
+    points: [
+      "Market definition & analysis",
+      "Market Sizing and Opportunity (TAM, SAM and SOM)",
+      "Target Market recommendation",
+      "Positioning strategy"
+    ]
+  }
+];
+
+// Define the challenges
+const challenges = [
+  "Final product requirements lag behind schedule.",
+  "Frequent changes impact requirements and specifications.",
+  "Product development processes are complex, inconsistent, or absent.",
+  "Difficulties arise in allocating and managing resources effectively.",
+  "Roles and responsibilities in product development are unclear.",
+  "Project execution frameworks lack flexibility for diverse project types (NPD, Capital, Cost reduction, etc.).",
+  "Indecision persists regarding optimal project management methodologies (Waterfall, Agile, Hybrid).",
+  "Projects consistently overrun timelines.",
+  "Global cross-functional team structures are ineffective.",
+  "Project management training programs are insufficient or non-existent."
+];
 ---
 
-<Layout title="Product Management Services - SP Consulting">
+<Layout title="Build Winning Product Strategies & Bring Them to Market - SP Consulting">
   <Navigation />
-  
+
   <main class="pt-20">
     <section class="bg-primary text-white py-20">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Product Management Services</h1>
-        <p class="text-xl">Strategic product development and lifecycle management solutions.</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Build Winning Product Strategies & Bring Them to Market</h1>
+        <p class="text-xl">We partner with you to define, develop, and launch successful products.</p>
       </div>
     </section>
 
     <section class="py-20">
-      <div class="container mx-auto px-4 max-w-4xl">
+      <div class="container mx-auto px-4 max-w-6xl"> {/* Increased max-width for better content fit */}
         <div class="space-y-16">
+
           <div>
-            <h2 class="text-3xl font-bold mb-6">Our Product Management Expertise</h2>
-            <p class="text-gray-600 mb-8">
-              We help organizations build and optimize their product management processes, from strategy to execution. Our experienced consultants work with you to develop effective product strategies, improve decision-making, and accelerate time-to-market.
+            <h2 class="text-3xl font-bold mb-6 text-center">Our Approach to Product Success</h2>
+            <p class="text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+              Effective product management requires a holistic view. We help organizations navigate the complexities of product strategy, development, and market launch by focusing on key interconnected areas. Our experienced consultants work alongside your team to build robust processes, foster data-driven decisions, and accelerate your time-to-market.
             </p>
-            
+
             <div class="mb-12">
               <img
                 src="/assets/product-management-diagram.png"
-                alt="Product Management Process Diagram"
-                class="w-full rounded-lg shadow-lg"
+                alt="Product Management Core Areas Diagram"
+                class="w-full max-w-2xl mx-auto rounded-lg" {/* Removed shadow-lg, centered image */}
                 loading="lazy"
               />
-              <p class="text-sm text-gray-500 mt-3 text-center">
-                Our comprehensive product management approach
+              <p class="text-sm text-gray-500 mt-4 text-center">
+                Our comprehensive framework considers all critical factors for product success.
               </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-4">Product Strategy</h3>
-                <ul class="space-y-3 text-gray-600">
-                  <li>• Market analysis and positioning</li>
-                  <li>• Product vision and roadmap development</li>
-                  <li>• Competitive analysis</li>
-                  <li>• Go-to-market strategy</li>
-                </ul>
-              </div>
-              <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-4">Product Development</h3>
-                <ul class="space-y-3 text-gray-600">
-                  <li>• Requirements gathering and prioritization</li>
-                  <li>• Agile product development</li>
-                  <li>• User research and testing</li>
-                  <li>• Product analytics and metrics</li>
-                </ul>
-              </div>
             </div>
           </div>
 
           <div>
-            <h2 class="text-3xl font-bold mb-6">Why Choose Us?</h2>
+            <h2 class="text-3xl font-bold mb-8 text-center">Key Pillars of Our Product Strategy Framework</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {pillars.map(pillar => (
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                  {/* Optional: Add an icon here if you have an icon system */}
+                  {/* <div class="text-primary mb-3"> <Icon name={pillar.icon} class="w-8 h-8" /> </div> */}
+                  <h3 class="text-xl font-semibold mb-4">{pillar.title}</h3>
+                  <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                    {pillar.points.map(point => (
+                      <li>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-3xl font-bold mb-6 text-center">Overcoming Common Product Development Hurdles</h2>
+            <p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+              Many organizations face significant challenges in bringing products to market efficiently and effectively. If the following issues sound familiar, our program management expertise can help streamline your processes and improve outcomes:
+            </p>
+            <div class="max-w-2xl mx-auto bg-amber-50 p-6 rounded-lg border border-amber-200">
+              <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                {challenges.map(challenge => (
+                  <li>{challenge}</li>
+                ))}
+              </ul>
+            </div>
+             <p class="text-gray-600 mt-8 text-center max-w-3xl mx-auto">
+              We provide structured approaches, clear methodologies (Agile, Waterfall, Hybrid), resource management strategies, and effective team collaboration frameworks to address these and other program management obstacles.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-3xl font-bold mb-8 text-center">Why Partner with SP Consulting?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="text-center">
+              {/* Kept the original "Why Choose Us" section structure */}
+              <div class="text-center p-6 bg-white rounded-lg border border-gray-100">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Proven Expertise</h3>
-                <p class="text-gray-600">Years of experience in product management across various industries.</p>
+                <p class="text-gray-600">Years of experience driving product success across diverse industries.</p>
               </div>
-              <div class="text-center">
+              <div class="text-center p-6 bg-white rounded-lg border border-gray-100">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Tailored Approach</h3>
-                <p class="text-gray-600">Customized solutions that match your specific needs and goals.</p>
+                <p class="text-gray-600">Customized strategies and solutions that fit your unique context and goals.</p>
               </div>
-              <div class="text-center">
+              <div class="text-center p-6 bg-white rounded-lg border border-gray-100">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Results-Driven</h3>
-                <p class="text-gray-600">Focus on delivering measurable outcomes and ROI.</p>
+                <p class="text-gray-600">Focused on delivering tangible improvements and measurable business value.</p>
               </div>
             </div>
           </div>
 
-          <div class="text-center">
+          <div class="text-center pt-8"> {/* Added padding top */}
             <a
               href="/contact"
-              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg" /* Slightly larger button */
             >
-              Discuss Your Product Needs
+              Discuss Your Product Challenges
             </a>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <Footer />
