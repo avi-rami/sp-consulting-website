@@ -60,18 +60,17 @@ const testimonials = [
     </section>
 
     {/* Services Overview (Background: White) */}
-    <section class="py-20 bg-white"> {/* Explicitly set bg-white */}
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
-        {/* CHANGE: Added intro sentence */}
-        <p class="text-lg text-center text-gray-600 mb-4 max-w-3xl mx-auto">
+        {/* CHANGE: Adjusted intro sentence styling & margin */}
+        <p class="text-lg text-center text-gray-500 mb-8 max-w-3xl mx-auto"> {/* Increased bottom margin, changed text color */}
             We empower your success through targeted expertise in the following areas:
         </p>
-        {/* CHANGE: Increased bottom margin for heading */}
         <h2 class="text-3xl font-bold text-center mb-16">Our Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Service Cards remain the same structure... */}
+           {/* Service Cards remain the same structure... */}
           {/* Product Management Card */}
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100"> {/* Added subtle border */}
+          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
             <div class="flex items-start gap-4">
               <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
@@ -127,10 +126,8 @@ const testimonials = [
     </section>
 
     {/* Trusted By / Client Logos Section (Background: Gray-50) */}
-    {/* CHANGE: Added background bg-gray-50 */}
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            {/* CHANGE: Increased bottom margin */}
             <h2 class="text-2xl font-bold text-center text-gray-700 mb-12">Trusted By Industry Leaders</h2>
              <div
                 class="logo-scroller relative w-full overflow-hidden py-4"
@@ -153,13 +150,11 @@ const testimonials = [
     </section>
 
     {/* About Section (Background: White) */}
-    {/* CHANGE: Changed background to bg-white */}
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
-          {/* CHANGE: Increased bottom margin */}
           <h2 class="text-3xl font-bold mb-10">About SP Consulting</h2>
-          <p class="text-lg text-gray-600 mb-10 leading-relaxed"> {/* Added leading-relaxed */}
+          <p class="text-lg text-gray-600 mb-10 leading-relaxed">
              SP Consulting delivers competitive advantage through expert product management, program management, engineering services, and smart label solutions. We help you launch groundbreaking products, manage complex portfolios, and execute strategic programs with unparalleled efficiency. With <strong class="text-primary font-semibold">30+ years of Fortune 500 experience</strong>, our dedicated experts transform ideas into market-defining realities, enabling organizations to achieve strategic goals and drive sustainable growth.
           </p>
           <a href="/our-leadership" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
@@ -170,16 +165,13 @@ const testimonials = [
     </section>
 
     {/* Testimonials Section (Background: Gray-100) */}
-    {/* CHANGE: Changed background to bg-gray-100 for emphasis */}
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-             {/* CHANGE: Increased bottom margin */}
             <h2 class="text-3xl font-bold text-center mb-16">What Our Clients Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {testimonials.map((testimonial) => (
-                    /* CHANGE: Testimonial card background now white for contrast */
                     <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                        <blockquote class="text-lg text-gray-700 italic border-l-4 border-primary pl-4 mb-6"> {/* Increased margin bottom */}
+                        <blockquote class="text-lg text-gray-700 italic border-l-4 border-primary pl-4 mb-6">
                             "{testimonial.quote}"
                         </blockquote>
                         <p class="text-right text-gray-600 font-medium">
@@ -191,19 +183,21 @@ const testimonials = [
         </div>
     </section>
 
-    {/* Call to Action (Background: Primary) */}
-    <section class="py-20 bg-primary"> {/* Explicitly set bg-primary */}
-      <div class="container mx-auto px-4">
-        <div class="text-white p-8 text-center"> {/* Removed inner rounded-lg and padding from here */}
-          <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-          <p class="text-xl mb-8 max-w-2xl mx-auto"> {/* Added max-width */}
-            Contact us today to discuss how we can help you achieve your goals.
-          </p>
-          <a href="/contact" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-            Get Started
-          </a>
+    {/* Call to Action */}
+    {/* CHANGE: Reverted structure to contain the blue box */}
+    <section class="py-20 bg-white"> {/* Section background matches the one above Testimonials */}
+        <div class="container mx-auto px-4">
+            {/* This inner div now holds the blue background and content */}
+            <div class="bg-primary rounded-lg text-white p-12 text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">
+                    Contact us today to discuss how we can help you achieve your goals.
+                </p>
+                <a href="/contact" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                    Get Started
+                </a>
+            </div>
         </div>
-      </div>
     </section>
   </main>
 
