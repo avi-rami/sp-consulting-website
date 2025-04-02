@@ -3,11 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 
-// Define the data for the key pillars based on the image
+// Define the data for the key pillars - Icons removed here, will be added in the loop
 const pillars = [
   {
     title: "Customer Focus",
-    icon: "👥", // Placeholder Icon - Replace with your icon component/SVG
+    iconKey: "users", // Identifier for SVG mapping
     points: [
       "Customer personas development",
       "Customer segmentation research",
@@ -17,7 +17,7 @@ const pillars = [
   },
   {
     title: "Business Goals Alignment",
-    icon: "🎯", // Placeholder Icon - Replace with your icon component/SVG
+    iconKey: "target", // Identifier for SVG mapping
     points: [
       "Business goals & growth strategy definition",
       "Objectives & growth drivers definition",
@@ -26,7 +26,7 @@ const pillars = [
   },
     {
     title: "Competitive Landscape",
-    icon: "🔍", // Placeholder Icon - Replace with your icon component/SVG
+    iconKey: "search", // Identifier for SVG mapping
     points: [
       "Competitive landscape analysis",
       "Market share goals development",
@@ -36,7 +36,7 @@ const pillars = [
   },
   {
     title: "Product Vision & Strategy",
-    icon: "🚀", // Placeholder Icon - Replace with your icon component/SVG
+    iconKey: "rocket", // Identifier for SVG mapping
     points: [
       "Product business case & value proposition development",
       "MVP formulation",
@@ -46,7 +46,7 @@ const pillars = [
   },
   {
     title: "Market Understanding",
-    icon: "🏪", // Placeholder Icon - Replace with your icon component/SVG
+    iconKey: "store", // Identifier for SVG mapping
     points: [
       "Market definition & analysis",
       "Market Sizing and Opportunity (TAM, SAM and SOM)",
@@ -55,6 +55,16 @@ const pillars = [
     ]
   }
 ];
+
+// Simple SVG map (Replace paths with your actual icon data)
+const iconSvgs = {
+    users: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>`,
+    target: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>`,
+    search: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>`,
+    rocket: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`, // Using lightning as placeholder for rocket
+    store: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>` // Using bag as placeholder for store
+};
+
 
 // Define the challenges
 const challenges = [
@@ -84,24 +94,24 @@ const challenges = [
     </section>
 
     {/* Main Content Section */}
-    <section class="py-20 bg-gray-50"> {/* Added a light background for contrast */}
+    <section class="py-20 bg-gray-50">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="space-y-16">
 
           {/* Approach Section */}
           <div>
             <h2 class="text-3xl font-bold mb-6 text-center">Our Approach to Product Success</h2>
-            {/* Left-aligned paragraph */}
-            <p class="text-gray-600 mb-12 max-w-4xl mx-auto">
+            {/* Intro Paragraph: Width reduced */}
+            <p class="text-gray-600 mb-12 max-w-3xl mx-auto">
               Effective product management requires a holistic view. We help organizations navigate the complexities of product strategy, development, and market launch by focusing on key interconnected areas. Our experienced consultants work alongside your team to build robust processes, foster data-driven decisions, and accelerate your time-to-market.
             </p>
 
-            {/* Diagram */}
+            {/* Diagram: Size Increased */}
             <div class="mb-12">
               <img
                 src="/assets/product-management-diagram.png"
                 alt="Product Management Core Areas Diagram"
-                class="w-full max-w-2xl mx-auto rounded-lg"
+                class="w-full max-w-3xl mx-auto rounded-lg" {/* Increased max-w- from 2xl to 3xl */}
                 loading="lazy"
               />
               <p class="text-sm text-gray-500 mt-4 text-center">
@@ -111,17 +121,19 @@ const challenges = [
           </div>
 
           {/* Key Pillars Section */}
-          <div class="mt-16"> {/* Adjusted top margin */}
+          <div class="mt-16">
             <h2 class="text-3xl font-bold mb-10 text-center">Key Pillars of Our Product Strategy Framework</h2>
-             {/* Using lg:grid-cols-3. Alternative: md:grid-cols-2 avoids empty slot but creates 3/2 layout */}
              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {pillars.map(pillar => (
-                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm"> {/* Use white bg on gray main bg */}
-                  <h3 class="text-xl font-semibold mb-4">
-                    <span class="mr-2">{pillar.icon}</span> {/* Placeholder Icon */}
-                    {pillar.title}
-                  </h3>
-                  <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2"> {/* Added slight padding */}
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col"> {/* Ensure flex column for content flow */}
+                  <div class="flex items-center mb-4"> {/* Flex container for icon + title */}
+                    {/* Icon Container: Styled like example */}
+                    <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                       <Fragment set:html={iconSvgs[pillar.iconKey]} /> {/* Render SVG */}
+                    </div>
+                    <h3 class="text-xl font-semibold">{pillar.title}</h3>
+                  </div>
+                  <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
                     {pillar.points.map(point => (
                       <li>{point}</li>
                     ))}
@@ -132,12 +144,11 @@ const challenges = [
           </div>
 
           {/* Common Hurdles Section */}
-          <div class="mt-20"> {/* Increased top margin for better separation */}
+          <div class="mt-20">
             <h2 class="text-3xl font-bold mb-6 text-center">Overcoming Common Product Development Hurdles</h2>
             <p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
               Many organizations face significant challenges in bringing products to market efficiently. If these issues sound familiar, our program management expertise can help streamline your processes:
             </p>
-            {/* Restyled challenges list container */}
             <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg border border-gray-200 shadow-sm mb-8">
               <ul class="space-y-3 text-gray-700 list-disc list-inside">
                 {challenges.map(challenge => (
@@ -151,12 +162,12 @@ const challenges = [
           </div>
 
           {/* Why Partner Section */}
-          <div class="mt-20"> {/* Increased top margin */}
+          <div class="mt-20">
             <h2 class="text-3xl font-bold mb-10 text-center">Why Partner with SP Consulting?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+              {/* Re-using the structure with placeholder SVGs - ensure these match your style */}
+               <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                   {/* Replace with actual SVG icon */}
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                  </div>
                  <h3 class="text-xl font-semibold mb-2">Proven Expertise</h3>
@@ -164,7 +175,6 @@ const challenges = [
                </div>
                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                   {/* Replace with actual SVG icon */}
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>
                  </div>
                  <h3 class="text-xl font-semibold mb-2">Tailored Approach</h3>
@@ -172,7 +182,6 @@ const challenges = [
                </div>
                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                   {/* Replace with actual SVG icon */}
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                  </div>
                  <h3 class="text-xl font-semibold mb-2">Results-Driven</h3>
@@ -182,8 +191,8 @@ const challenges = [
           </div>
 
           {/* Call to Action Section */}
-          <div class="text-center pt-12"> {/* Added padding top */}
-            <p class="text-lg text-gray-700 mb-6">Ready to elevate your product strategy and execution?</p> {/* Added intro sentence */}
+          <div class="text-center pt-12">
+            <p class="text-lg text-gray-700 mb-6">Ready to elevate your product strategy and execution?</p>
             <a
               href="/contact"
               class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
