@@ -4,6 +4,162 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 const profileImage = "/assets/shailesh-patel.jpg";
+
+const logos = [
+  { src: "/assets/Amazon.svg", alt: "Amazon" },
+  { src: "/assets/Mueller Water Products.svg", alt: "Mueller Water Products" },
+  { src: "/assets/Newell Brands.svg", alt: "Newell Brands" },
+  { src: "/assets/Stryker Corporation.svg", alt: "Stryker Medical" },
+  { src: "/assets/daimler-chrysler.svg", alt: "DaimlerChrysler" },
+  { src: "/assets/createmelogo.svg", alt: "CreateMe" }
+];
+---
+
+<Layout title="About Us - SP Consulting">
+  <Navigation />
+
+  <main class="pt-20">
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
+        <p class="text-xl">Fueling innovation, driving market leadership.</p>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="space-y-16">
+          <div>
+            <p class="text-lg text-gray-600 mb-8">
+              We specialize in product, portfolio, and program management that delivers competitive advantage. We help you launch groundbreaking products, manage complex portfolios, and execute strategic programs with unparalleled efficiency. Transform your ideas into market-defining realities.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              {/* ** CHANGE 1: Image moved before text div ** */}
+              <div class="md:w-1/3 flex-shrink-0">
+                <img
+                  src={profileImage}
+                  alt="Shailesh Patel"
+                  class="w-full rounded-lg shadow-lg"
+                  loading="lazy"
+                  width="400"
+                  height="400" {/* Optional: Add dimensions for better performance */}
+                />
+              </div>
+              <div class="md:w-2/3">
+                <h2 class="text-2xl font-bold mb-4">Mr. Shailesh Patel</h2>
+                {/* ** CHANGE 4: Title updated ** */}
+                <h3 class="text-xl text-primary mb-4">Managing Partner</h3>
+                <div class="space-y-4 text-gray-600">
+                  <p>
+                    Shailesh Patel is a globally experienced product and portfolio management executive with a reputation for delivering innovative products that solve customer problems. With three decades of experience in high level leadership positions in fortune 500 companies and startups, Shailesh brings expertise to establish and deliver scalable Product strategies and program execution to help clients accelerate market analysis and product development.
+                  </p>
+                  <p>
+                    He has worked for fortune 500 companies such as Amazon, Mueller Water Products, Newell Rubbermaid, Stryker Medical, and DaimlerChrysler in various engineering, product and program management roles. He has extensive engineering expertise in design, development and launch of electro-mechanical devices by managing global teams across the US, Europe, and Asia including being instrumental in ground-up development of 2 Asia (India and China) R&D centers with an ex-pat assignment.
+                  </p>
+                  <p>
+                    He combines his expertise in product and program management with a deep understanding of engineering and quality processes to guide cross-functional teams. This unique skill set enables him to focus on solving customer problems, foster creativity, develop innovative solutions, and accelerate product launches, significantly reducing time to market.
+                  </p>
+
+                  {/* ** CHANGE 2 & 3: Removed heading and implemented scrolling logo animation ** */}
+                  <div class="pt-8">
+                     {/* Heading removed */}
+                    <div
+                      class="logo-scroller relative w-full overflow-hidden py-4"
+                       role="group"
+                       aria-label="Companies previously worked with"
+                      style={{
+                        maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
+                      }}
+                    >
+                      <div class="logo-track flex w-max animate-scroll space-x-12 pr-12">
+                        {/* Render logos twice for seamless infinite scroll */}
+                        {[...logos, ...logos].map((logo, index) => (
+                          <div class="flex items-center justify-center flex-shrink-0" >
+                            <img
+                              src={logo.src}
+                              alt={logo.alt}
+                              class="h-8 max-w-[150px] object-contain"
+                              loading="lazy"
+                              aria-hidden={index >= logos.length ? "true" : undefined}
+                              height="32" {/* Height matches h-8 */}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/contact"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+{/* ** CSS for the scrolling animation ** */}
+<style>
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* Translate leftwards by the width of one full set of logos + gaps */
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    /* Adjust duration (e.g., 40s) for scroll speed */
+    animation: scroll 40s linear infinite;
+  }
+
+  /* Optional: Pause animation on hover */
+  .logo-scroller:hover .animate-scroll {
+    animation-play-state: paused;
+  }
+
+  /* Optional: Media query for reduced motion */
+   @media (prefers-reduced-motion: reduce) {
+     .animate-scroll {
+       animation: none;
+     }
+     .logo-track {
+         /* Optional: If animation is disabled, maybe make it scrollable? */
+         /* overflow-x: auto; */
+         /* justify-content: center; */ /* Or center items if not scrolling */
+     }
+     .logo-scroller {
+         /* Remove mask if not animating? Or keep it? Preference. */
+         /* mask-image: none;
+         -webkit-mask-image: none; */
+     }
+   }
+
+</style>
+<!-- 
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const profileImage = "/assets/shailesh-patel.jpg";
 ---
 
 <Layout title="About Us - SP Consulting">
@@ -50,7 +206,7 @@ const profileImage = "/assets/shailesh-patel.jpg";
                     He combines his expertise in product and program management with a deep understanding of engineering and quality processes to guide cross-functional teams. This unique skill set enables him to focus on solving customer problems, foster creativity, develop innovative solutions, and accelerate product launches, significantly reducing time to market.
                   </p>
 
-                  <!-- Company Logos Section -->
+                 
                   <div class="pt-8">
                     <h4 class="text-lg font-semibold mb-6 text-gray-800">Trusted By Industry Leaders</h4>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -94,3 +250,4 @@ const profileImage = "/assets/shailesh-patel.jpg";
 
   <Footer />
 </Layout>
+-->
