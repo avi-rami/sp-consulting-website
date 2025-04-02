@@ -66,18 +66,15 @@ const iconSvgs = {
 };
 
 
-// Define the challenges
+// *** UPDATED: Define the Product Strategy & Management challenges ***
 const challenges = [
-  "Final product requirements lag behind schedule.",
-  "Frequent changes impact requirements and specifications.",
-  "Product development processes are complex, inconsistent, or absent.",
-  "Difficulties arise in allocating and managing resources effectively.",
-  "Roles and responsibilities in product development are unclear.",
-  "Project execution frameworks lack flexibility for diverse project types (NPD, Capital, Cost reduction, etc.).",
-  "Indecision persists regarding optimal project management methodologies (Waterfall, Agile, Hybrid).",
-  "Projects consistently overrun timelines.",
-  "Global cross-functional team structures are ineffective.",
-  "Project management training programs are insufficient or non-existent."
+  "Unclear product development strategy and future product plans.",
+  "Challenges in establishing and defining the target market for products.",
+  "Inadequate business case due diligence.",
+  "Customer pain points not adequately identified or understood.",
+  "Minimum Viable Product (MVP) requirements are ambiguous and poorly communicated.",
+  "Disconnect between Product Management and Engineering regarding project objectives and implementation.",
+  "Uncertainty in determining optimal pricing structure, leading to challenges in setting appropriate price points and undermining revenue generation and market standing."
 ];
 ---
 
@@ -101,12 +98,11 @@ const challenges = [
           {/* Approach Section */}
           <div>
             <h2 class="text-3xl font-bold mb-6 text-center">Our Approach to Product Success</h2>
-            {/* Intro Paragraph: Width adjusted to intermediate value */}
-            <p class="text-gray-600 mb-12 max-w-[52rem] mx-auto"> {/* Changed max-w-3xl to max-w-[52rem] */}
+            <p class="text-gray-600 mb-12 max-w-[54rem] mx-auto">
               Effective product management requires a holistic view. We help organizations navigate the complexities of product strategy, development, and market launch by focusing on key interconnected areas. Our experienced consultants work alongside your team to build robust processes, foster data-driven decisions, and accelerate your time-to-market.
             </p>
 
-            {/* Diagram: Size Increased */}
+            {/* Diagram */}
             <div class="mb-12">
               <img
                 src="/assets/product-management-diagram.png"
@@ -127,9 +123,9 @@ const challenges = [
               {pillars.map(pillar => (
                 <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col">
                   <div class="flex items-center mb-4">
-                    {/* Icon Container: Styled like example */}
+                    {/* Icon Container */}
                     <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                       <Fragment set:html={iconSvgs[pillar.iconKey]} /> {/* Render SVG */}
+                       <Fragment set:html={iconSvgs[pillar.iconKey]} />
                     </div>
                     <h3 class="text-xl font-semibold">{pillar.title}</h3>
                   </div>
@@ -143,21 +139,25 @@ const challenges = [
             </div>
           </div>
 
-          {/* Common Hurdles Section */}
+          {/* *** UPDATED: Common Challenges Section *** */}
           <div class="mt-20">
-            <h2 class="text-3xl font-bold mb-6 text-center">Overcoming Common Product Development Hurdles</h2>
+             {/* *** UPDATED: Heading *** */}
+            <h2 class="text-3xl font-bold mb-6 text-center">Addressing Key Product Strategy & Management Challenges</h2>
+             {/* *** UPDATED: Intro paragraph *** */}
             <p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
-              Many organizations face significant challenges in bringing products to market efficiently. If these issues sound familiar, our program management expertise can help streamline your processes:
+              Developing a winning product strategy often involves overcoming significant hurdles. Does your organization struggle with any of the following?
             </p>
             <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg border border-gray-200 shadow-sm mb-8">
+              {/* *** List now uses the NEW challenges array *** */}
               <ul class="space-y-3 text-gray-700 list-disc list-inside">
                 {challenges.map(challenge => (
                   <li>{challenge}</li>
                 ))}
               </ul>
             </div>
+             {/* *** UPDATED: Outro paragraph *** */}
              <p class="text-gray-600 text-center max-w-3xl mx-auto">
-              We provide structured approaches, clear methodologies (Agile, Waterfall, Hybrid), resource management strategies, and effective team collaboration frameworks to address these program management obstacles.
+              Our product management services provide clarity and structure, helping you define clear strategies, understand customer needs, build strong business cases, and ensure alignment across your teams.
             </p>
           </div>
 
@@ -165,7 +165,6 @@ const challenges = [
           <div class="mt-20">
             <h2 class="text-3xl font-bold mb-10 text-center">Why Partner with SP Consulting?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Re-using the structure with placeholder SVGs - ensure these match your style */}
                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
