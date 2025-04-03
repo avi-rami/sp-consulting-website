@@ -134,7 +134,11 @@ const challenges = [
                     <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                        <Fragment set:html={iconSvgs[pillar.iconKey]} />
                     </div>
-                    <h3 class="text-xl font-semibold">{pillar.title}</h3>
+                    <h3 class="text-xl font-semibold" style={`color: ${pillar.title === "PM Software Deployment & Training" ? "#213b5c" : 
+                      pillar.title === "Project Delivery" ? "#6da46c" : 
+                      pillar.title === "Methodology, Tools & Templates" ? "#f16b55" : 
+                      pillar.title === "PMO Setup and Governance" ? "#41c6e1" : 
+                      pillar.title === "Business Readiness & Risk Management" ? "#faac2c" : "inherit"}`}>{pillar.title}</h3>
                   </div>
                   <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
                     {pillar.points.map(point => (
