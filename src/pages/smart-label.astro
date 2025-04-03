@@ -29,17 +29,17 @@ const features = [
 
 // BLE Label Specifications
 const bleSpecs = {
-  dimensions: "3\" x 3\"",
-  capacity: "15 mAh",
-  peakCurrent: "300 µA",
-  energy: "15 mWh @ 100 µA",
-  internalResistance: "< 15 Ω (DC at 20mA)",
-  selfDischarge: "10% p.a.",
-  operatingVoltage: "1.5V - 3V",
-  shelfLife: "10 – 12 months",
-  operatingLife: "4 - 6 months",
-  transmissionRate: "1x per 15 sec",
-  readRange: "25 – 30 feet"
+  "Dimensions": "3\" x 3\"",
+  "Capacity": "15 mAh",
+  "Peak Current": "300 µA",
+  "Energy": "15 mWh @ 100 µA",
+  "Internal Resistance": "< 15 Ω (DC at 20mA)",
+  "Self Discharge": "10% p.a.",
+  "Operating Voltage": "1.5V - 3V",
+  "Shelf Life": "10 – 12 months",
+  "Operating Life": "4 - 6 months",
+  "Transmission Rate": "1x per 15 sec",
+  "Read Range": "25 – 30 feet"
 };
 ---
 
@@ -63,17 +63,15 @@ const bleSpecs = {
         <div class="space-y-20">
           
           {/* Introduction Section */}
-          <div class="text-center max-w-4xl mx-auto">
-            <p class="text-xl text-gray-700 leading-relaxed">
-              We specialize in developing and manufacturing advanced smart labels that combine printed electronics with thin, flexible printed batteries. Our innovative solutions power the future of tracking, monitoring, and smart packaging technologies while maintaining a commitment to environmental sustainability.
-            </p>
-            
-            {/* Decorative Battery Image */}
-            <div class="mt-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-8">
+              <p class="text-xl text-gray-700 leading-relaxed flex-1">
+                We specialize in developing and manufacturing advanced smart labels that combine printed electronics with thin, flexible printed batteries. Our innovative solutions power the future of tracking, monitoring, and smart packaging technologies while maintaining a commitment to environmental sustainability.
+              </p>
               <img
                 src="/assets/green-battery.png"
                 alt="Eco-friendly battery technology"
-                class="h-24 mx-auto opacity-80"
+                class="h-24 opacity-80 flex-shrink-0"
                 loading="lazy"
               />
             </div>
@@ -143,7 +141,7 @@ const bleSpecs = {
                     <div class="grid grid-cols-2 gap-4 text-sm">
                       {Object.entries(bleSpecs).map(([key, value]) => (
                         <div>
-                          <dt class="font-medium text-gray-600">{key.replace(/([A-Z])/g, ' $1').trim()}:</dt>
+                          <dt class="font-medium text-gray-600">{key}:</dt>
                           <dd class="text-gray-800">{value}</dd>
                         </div>
                       ))}
