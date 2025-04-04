@@ -62,129 +62,159 @@ const bleSpecs = {
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="space-y-20">
           
-          {/* Featured Product Section - Now first and without white background */}
+          {/* Applications Section */}
           <div>
-            <h2 class="text-3xl font-bold mb-12 text-center">Featured Product: BLE Smart Label</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <img
-                  src="/assets/ble-label-printed.png"
-                  alt="BLE Label with Printed Battery"
-                  class="w-full rounded-lg"
-                  loading="lazy"
-                />
-                <p class="text-sm text-center text-gray-500 mt-4">
-                  Off-the-shelf BLE label with integrated printed battery
-                </p>
+            <h2 class="text-3xl font-bold mb-12 text-center">Industry Applications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              <div class="text-center">
+                <div class="aspect-video rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="/assets/event-management.png"
+                    alt="Event Management Applications"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <p class="text-sm font-medium text-gray-700">Event Management</p>
               </div>
-              
-              <div class="space-y-8">
-                <div>
-                  <h3 class="text-2xl font-semibold mb-4">Technical Specifications</h3>
-                  <div class="grid grid-cols-2 gap-4 text-sm">
-                    {Object.entries(bleSpecs).map(([key, value]) => (
-                      <div>
-                        <dt class="font-medium text-gray-600">{key}:</dt>
-                        <dd class="text-gray-800">{value}</dd>
-                      </div>
-                    ))}
-                  </div>
+              <div class="text-center">
+                <div class="aspect-video rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="/assets/cold-chain.png"
+                    alt="Supply and Cold Chain Applications"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                
-                <div>
-                  <h3 class="text-2xl font-semibold mb-4">Customization Options</h3>
-                  <ul class="space-y-2 text-gray-600">
-                    <li class="flex items-start gap-2">
-                      <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span>Higher battery capacities available based on requirements</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span>Off-the-shelf samples available for evaluation</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span>Custom development services with NRE costs for specialized requirements</span>
-                    </li>
-                  </ul>
+                <p class="text-sm font-medium text-gray-700">Supply / Cold Chain</p>
+              </div>
+              <div class="text-center">
+                <div class="aspect-video rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="/assets/hospital-management.png"
+                    alt="Hospital Management Applications"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
+                <p class="text-sm font-medium text-gray-700">Hospital Management</p>
+              </div>
+              <div class="text-center">
+                <div class="aspect-video rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="/assets/wearable-biosensor.png"
+                    alt="Wearable Biosensors Applications"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <p class="text-sm font-medium text-gray-700">Wearable Biosensors and Management</p>
               </div>
             </div>
           </div>
 
-          {/* Features Section */}
+          {/* Features Section - Revised Layout */}
           <div>
             <h2 class="text-3xl font-bold mb-12 text-center">Core Technology Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Left Features */}
+              <div class="space-y-8">
+                {features.slice(0, 2).map(feature => (
+                  <div class="bg-white/50 p-6 rounded-lg">
+                    <div class="flex items-start gap-4 mb-3">
+                      <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <Fragment set:html={feature.icon} />
+                      </div>
+                      <h3 class="text-xl font-semibold">{feature.title}</h3>
+                    </div>
+                    <p class="text-gray-600 ml-[3.75rem]">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Center Image */}
+              <div class="flex items-center justify-center">
                 <img
                   src="/assets/label-features.png"
                   alt="Smart Label Features Diagram"
-                  class="w-full rounded-lg"
+                  class="w-full max-w-md rounded-lg"
                   loading="lazy"
                 />
               </div>
+
+              {/* Right Features */}
               <div class="space-y-8">
-                {features.map(feature => (
-                  <div class="flex items-start gap-4">
-                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                      <Fragment set:html={feature.icon} />
+                {features.slice(2, 4).map(feature => (
+                  <div class="bg-white/50 p-6 rounded-lg">
+                    <div class="flex items-start gap-4 mb-3">
+                      <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <Fragment set:html={feature.icon} />
+                      </div>
+                      <h3 class="text-xl font-semibold">{feature.title}</h3>
                     </div>
-                    <div>
-                      <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
-                      <p class="text-gray-600">{feature.description}</p>
-                    </div>
+                    <p class="text-gray-600 ml-[3.75rem]">{feature.description}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Applications Section */}
+          {/* Featured Product Section - Enhanced */}
           <div>
-            <h2 class="text-3xl font-bold mb-12 text-center">Industry Applications</h2>
-            <div class="grid grid-cols-4 gap-8">
-              <div class="text-center">
-                <img
-                  src="/assets/event-management.png"
-                  alt="Event Management Applications"
-                  class="w-full rounded-lg mb-3 aspect-square object-cover"
-                  loading="lazy"
-                />
-                <p class="text-sm font-medium text-gray-700">Event Management</p>
-              </div>
-              <div class="text-center">
-                <img
-                  src="/assets/cold-chain.png"
-                  alt="Supply and Cold Chain Applications"
-                  class="w-full rounded-lg mb-3 aspect-square object-cover"
-                  loading="lazy"
-                />
-                <p class="text-sm font-medium text-gray-700">Supply / Cold Chain</p>
-              </div>
-              <div class="text-center">
-                <img
-                  src="/assets/hospital-management.png"
-                  alt="Hospital Management Applications"
-                  class="w-full rounded-lg mb-3 aspect-square object-cover"
-                  loading="lazy"
-                />
-                <p class="text-sm font-medium text-gray-700">Hospital Management</p>
-              </div>
-              <div class="text-center">
-                <img
-                  src="/assets/wearable-biosensor.png"
-                  alt="Wearable Biosensors Applications"
-                  class="w-full rounded-lg mb-3 aspect-square object-cover"
-                  loading="lazy"
-                />
-                <p class="text-sm font-medium text-gray-700">Wearable Biosensors and Management</p>
+            <h2 class="text-3xl font-bold mb-12 text-center">Featured Product: BLE Smart Label</h2>
+            <div class="bg-white/40 backdrop-blur-sm rounded-2xl p-8 max-w-6xl mx-auto">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                  <div class="bg-white rounded-lg p-4 shadow-sm">
+                    <img
+                      src="/assets/ble-label-printed.png"
+                      alt="BLE Label with Printed Battery"
+                      class="w-full rounded-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p class="text-sm text-center text-gray-500 mt-4">
+                    Off-the-shelf BLE label with integrated printed battery
+                  </p>
+                </div>
+                
+                <div class="space-y-8">
+                  <div class="bg-white/80 rounded-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4">Technical Specifications</h3>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                      {Object.entries(bleSpecs).map(([key, value]) => (
+                        <div>
+                          <dt class="font-medium text-gray-600">{key}:</dt>
+                          <dd class="text-gray-800">{value}</dd>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white/80 rounded-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4">Customization Options</h3>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Higher battery capacities available based on requirements</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Off-the-shelf samples available for evaluation</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Custom development services with NRE costs for specialized requirements</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
