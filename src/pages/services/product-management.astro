@@ -156,28 +156,28 @@ const challenges = [
             {/* *** UPDATED: Heading *** */}
             <h2 class="text-3xl font-bold mb-8 text-center">Addressing Key Product Strategy & Management Challenges</h2>
             {/* *** UPDATED: Intro paragraph *** */}
-            <p class="text-lg text-gray-600 mb-8 max-w-3xl">
-              Developing a winning product strategy often involves overcoming significant hurdles. Does your organization struggle with any of the following?
-            </p>
-            <div class="max-w-4xl mx-auto px-8">
-              {/* *** List now uses the NEW challenges array *** */}
-              <ul class="space-y-5 text-gray-700 list-none">
-                {challenges.map(challenge => (
-                  <li class="flex items-start group">
-                    <div class="flex-shrink-0 w-6 h-6 mt-1">
-                      <svg class="w-5 h-5 text-primary/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                      </svg>
-                    </div>
-                    <div class="ml-4">
-                      <p class="text-base leading-relaxed">{challenge}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div class="mt-12 max-w-3xl">
-              <p class="text-lg text-gray-600 leading-relaxed">
+            <div class="max-w-4xl mx-auto">
+              <p class="text-lg text-gray-600 mb-8">
+                Developing a winning product strategy often involves overcoming significant hurdles. Does your organization struggle with any of the following?
+              </p>
+              <div class="pl-4">
+                {/* *** List now uses the NEW challenges array *** */}
+                <ul class="space-y-5 text-gray-700 list-none">
+                  {challenges.map(challenge => (
+                    <li class="flex items-start group">
+                      <div class="flex-shrink-0 w-6 h-6 mt-1">
+                        <svg class="w-5 h-5 text-primary/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </div>
+                      <div class="ml-4">
+                        <p class="text-base leading-relaxed">{challenge}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p class="text-lg text-gray-600 leading-relaxed mt-12">
                 Our product management services provide clarity and structure, helping you define clear strategies, understand customer needs, build strong business cases, and ensure alignment across your teams.
               </p>
             </div>
