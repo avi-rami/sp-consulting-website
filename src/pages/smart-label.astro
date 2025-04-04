@@ -62,18 +62,59 @@ const bleSpecs = {
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="space-y-20">
           
-          {/* Introduction Section */}
-          <div class="max-w-4xl mx-auto">
-            <div class="flex items-center gap-8">
-              <p class="text-xl text-gray-700 leading-relaxed flex-1">
-                We specialize in developing and manufacturing advanced smart labels that combine printed electronics with thin, flexible printed batteries. Our innovative solutions power the future of tracking, monitoring, and smart packaging technologies while maintaining a commitment to environmental sustainability.
-              </p>
-              <img
-                src="/assets/green-battery.png"
-                alt="Eco-friendly battery technology"
-                class="h-24 opacity-80 flex-shrink-0"
-                loading="lazy"
-              />
+          {/* Featured Product Section - Now first and without white background */}
+          <div>
+            <h2 class="text-3xl font-bold mb-12 text-center">Featured Product: BLE Smart Label</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <img
+                  src="/assets/ble-label-printed.png"
+                  alt="BLE Label with Printed Battery"
+                  class="w-full rounded-lg"
+                  loading="lazy"
+                />
+                <p class="text-sm text-center text-gray-500 mt-4">
+                  Off-the-shelf BLE label with integrated printed battery
+                </p>
+              </div>
+              
+              <div class="space-y-8">
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4">Technical Specifications</h3>
+                  <div class="grid grid-cols-2 gap-4 text-sm">
+                    {Object.entries(bleSpecs).map(([key, value]) => (
+                      <div>
+                        <dt class="font-medium text-gray-600">{key}:</dt>
+                        <dd class="text-gray-800">{value}</dd>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4">Customization Options</h3>
+                  <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Higher battery capacities available based on requirements</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Off-the-shelf samples available for evaluation</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Custom development services with NRE costs for specialized requirements</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -85,7 +126,7 @@ const bleSpecs = {
                 <img
                   src="/assets/label-features.png"
                   alt="Smart Label Features Diagram"
-                  class="w-full rounded-lg shadow-md"
+                  class="w-full rounded-lg"
                   loading="lazy"
                 />
               </div>
@@ -112,67 +153,9 @@ const bleSpecs = {
               <img
                 src="/assets/label-applications.png"
                 alt="Smart Label Applications"
-                class="w-full rounded-lg shadow-md"
+                class="w-full rounded-lg"
                 loading="lazy"
               />
-            </div>
-          </div>
-
-          {/* BLE Label Section */}
-          <div>
-            <h2 class="text-3xl font-bold mb-12 text-center">Featured Product: BLE Smart Label</h2>
-            <div class="bg-white p-8 rounded-lg shadow-md">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                  <img
-                    src="/assets/ble-label-printed.png"
-                    alt="BLE Label with Printed Battery"
-                    class="w-full rounded-lg shadow-sm"
-                    loading="lazy"
-                  />
-                  <p class="text-sm text-center text-gray-500 mt-4">
-                    Off-the-shelf BLE label with integrated printed battery
-                  </p>
-                </div>
-                
-                <div class="space-y-8">
-                  <div>
-                    <h3 class="text-2xl font-semibold mb-4">Technical Specifications</h3>
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                      {Object.entries(bleSpecs).map(([key, value]) => (
-                        <div>
-                          <dt class="font-medium text-gray-600">{key}:</dt>
-                          <dd class="text-gray-800">{value}</dd>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h3 class="text-2xl font-semibold mb-4">Customization Options</h3>
-                    <ul class="space-y-2 text-gray-600">
-                      <li class="flex items-start gap-2">
-                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <span>Higher battery capacities available based on requirements</span>
-                      </li>
-                      <li class="flex items-start gap-2">
-                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <span>Off-the-shelf samples available for evaluation</span>
-                      </li>
-                      <li class="flex items-start gap-2">
-                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <span>Custom development services with NRE costs for specialized requirements</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
