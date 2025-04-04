@@ -2,6 +2,50 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+// Define the data for the key services
+const services = [
+  {
+    title: "PCB Design, Development and Manufacturing",
+    iconKey: "pcb", // Identifier for SVG mapping
+    color: "#254670",
+    points: [
+      "Full PCB Lifecycle: From design to validation.",
+      "Advanced Layout: Using modern design and simulation tools.",
+      "Reliable Manufacturing: Partnering with industry leaders.",
+      "Custom Solutions: Tailored to your needs."
+    ]
+  },
+  {
+    title: "Firmware Development",
+    iconKey: "firmware", // Identifier for SVG mapping
+    color: "#faaa1e",
+    points: [
+      "Custom Embedded Software: Tailored to specific hardware.",
+      "Optimized Performance: Maximizing hardware capabilities.",
+      "System Reliability: Ensuring robust and stable operation.",
+      "Complex Functionality: Delivering seamless operation in intricate systems."
+    ]
+  },
+  {
+    title: "Prototype Builds",
+    iconKey: "prototype", // Identifier for SVG mapping
+    color: "#6ea56d",
+    points: [
+      "Fast Prototyping: Quick conversion of designs to prototypes.",
+      "Advanced Fabrication: Using modern technologies.",
+      "Technical Validation: For rapid iteration.",
+      "Accelerated Development: Shortening the path to production."
+    ]
+  }
+];
+
+// Simple SVG map for icons
+const iconSvgs = {
+    pcb: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>`,
+    firmware: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
+    prototype: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`
+};
 ---
 
 <Layout title="Engineering Services - SP Consulting">
@@ -18,86 +62,59 @@ import Footer from '../../components/Footer.astro';
 
     {/* Main Content Section */}
     <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 max-w-4xl">
+      <div class="container mx-auto px-4 max-w-6xl">
         <div class="space-y-16">
 
           {/* Introductory Section */}
           <div>
             <h2 class="text-3xl font-bold mb-6 text-center">Our Engineering Expertise</h2>
-            {/* UPDATED: Removed text-center, mx-auto. Added max-w-[54rem] */}
-            <p class="text-gray-600 mb-12 max-w-[54rem]">
+            <p class="text-gray-600 mb-12 max-w-[54rem] mx-auto">
               We combine technical excellence with innovative thinking to deliver cutting-edge engineering solutions that drive business success. Our comprehensive services span across multiple domains, ensuring your technical challenges are met with expertise and precision.
             </p>
 
-            {/* ADDED: Diagram Image */}
-            <div class="mb-16">
+            {/* Diagram Image */}
+            <div class="mb-12">
               <img
-                src="/assets/engineering-diagram.png" {/* USE YOUR ACTUAL IMAGE PATH */}
+                src="/assets/engineering-diagram.png"
                 alt="Engineering Service Areas: PCB Design, Firmware Development, Prototype Builds"
                 class="w-full max-w-3xl mx-auto rounded-lg"
                 loading="lazy"
               />
+              <p class="text-sm text-gray-500 mt-4 text-center">
+                Our comprehensive engineering services address all critical aspects of product development.
+              </p>
             </div>
           </div>
 
-          {/* Original Card Structure */}
-          <div class="space-y-12">
-            <div class="bg-white p-8 rounded-lg shadow-md">
-              <div class="flex items-start gap-4">
-                <div class="bg-primary/10 p-4 rounded-lg flex-shrink-0">
-                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                  </svg>
+          {/* Services Section */}
+          <div class="mt-16">
+            <h2 class="text-3xl font-bold mb-10 text-center">Core Engineering Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map(service => (
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col">
+                  <div class="flex items-center mb-4">
+                    {/* Icon Container */}
+                    <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                       <Fragment set:html={iconSvgs[service.iconKey]} />
+                    </div>
+                    <h3 class="text-xl font-semibold" style={`color: ${service.color}`}>{service.title}</h3>
+                  </div>
+                  <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                    {service.points.map(point => (
+                      <li>{point}</li>
+                    ))}
+                  </ul>
                 </div>
-                <div class="flex-1">
-                  <h3 class="text-2xl font-bold mb-4">PCB Design, Development, and Manufacturing Services</h3>
-                  <p class="text-gray-600">
-                    Our end-to-end PCB services transform your electronic concepts into robust, high-performance circuit designs. We deliver complete PCB lifecycle support, from initial schematic capture and advanced layout design to precision manufacturing and quality validation. Our team leverages cutting-edge design tools, advanced simulation techniques, and industry-leading manufacturing partnerships to create reliable, efficient, and innovative printed circuit board solutions tailored to your specific technical requirements.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-md">
-              <div class="flex items-start gap-4">
-                <div class="bg-primary/10 p-4 rounded-lg flex-shrink-0">
-                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <h3 class="text-2xl font-bold mb-4">Prototype Build Services</h3>
-                  <p class="text-gray-600">
-                    We specialize in transforming theoretical designs into functional prototypes with unprecedented speed and precision. Our prototype build services bridge the gap between conceptualization and production, utilizing state-of-the-art fabrication technologies, advanced rapid prototyping techniques, and meticulous engineering expertise. We provide comprehensive prototype development that enables quick iteration, technical validation, and accelerated product development cycles.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-md">
-              <div class="flex items-start gap-4">
-                <div class="bg-primary/10 p-4 rounded-lg flex-shrink-0">
-                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <h3 class="text-2xl font-bold mb-4">Firmware Development Services</h3>
-                  <p class="text-gray-600">
-                    Our firmware development services deliver sophisticated, optimized embedded software solutions that form the critical intelligence of electronic systems. We craft custom firmware that maximizes hardware performance, ensures system reliability, and provides seamless functionality across complex electronic architectures. Our team combines deep technical expertise with innovative programming approaches to develop firmware that meets the most demanding technical specifications and user experience requirements.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* ADDED: Why Choose Us Section */}
+          {/* Why Choose Us Section */}
           <div class="mt-20">
             <h2 class="text-3xl font-bold mb-10 text-center">Why Partner with SP Consulting for Engineering?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                   {/* Placeholder Icon */}
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M6.343 18.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                  </div>
                  <h3 class="text-xl font-semibold mb-2">Technical Expertise</h3>
@@ -105,7 +122,6 @@ import Footer from '../../components/Footer.astro';
                </div>
                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    {/* Placeholder Icon */}
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
                  </div>
                  <h3 class="text-xl font-semibold mb-2">Quality & Reliability</h3>
@@ -113,12 +129,18 @@ import Footer from '../../components/Footer.astro';
                </div>
                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    {/* Placeholder Icon */}
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                  </div>
                  <h3 class="text-xl font-semibold mb-2">Accelerated Development</h3>
                  <p class="text-gray-600">Streamlined processes and rapid prototyping capabilities to shorten your time-to-market.</p>
-              </div>
+               </div>
+               <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                 </div>
+                 <h3 class="text-xl font-semibold mb-2">Cost-Effective Solutions</h3>
+                 <p class="text-gray-600">Minimal organizational overhead with access to our network of cost-effective partners for design and development.</p>
+               </div>
             </div>
           </div>
 
