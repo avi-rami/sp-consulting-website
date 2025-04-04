@@ -91,7 +91,7 @@ const iconSvgs = {
             <h2 class="text-3xl font-bold mb-10 text-center">Core Engineering Services</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map(service => (
-                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col">
+                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col" style={`background-color: ${service.color}10`}>
                   <div class="flex items-center mb-4">
                     {/* Icon Container */}
                     <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">

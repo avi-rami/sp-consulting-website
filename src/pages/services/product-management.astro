@@ -121,13 +121,19 @@ const challenges = [
             <h2 class="text-3xl font-bold mb-10 text-center">Key Pillars of Our Product Strategy Framework</h2>
              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {pillars.map(pillar => (
-                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col">
+                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col" style={`background-color: ${
+                  pillar.title === "Customer Focus" ? "#c53f2a10" : 
+                  pillar.title === "Business Goals Alignment" ? "#42638910" : 
+                  pillar.title === "Competitive Landscape" ? "#b2892710" : 
+                  pillar.title === "Product Vision & Strategy" ? "#cb781a10" : 
+                  pillar.title === "Market Understanding" ? "#4cc3eb10" : "white"}`}>
                   <div class="flex items-center mb-4">
                     {/* Icon Container */}
                     <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                        <Fragment set:html={iconSvgs[pillar.iconKey]} />
                     </div>
-                    <h3 class="text-xl font-semibold" style={`color: ${pillar.title === "Customer Focus" ? "#c53f2a" : 
+                    <h3 class="text-xl font-semibold" style={`color: ${
+                      pillar.title === "Customer Focus" ? "#c53f2a" : 
                       pillar.title === "Business Goals Alignment" ? "#426389" : 
                       pillar.title === "Competitive Landscape" ? "#b28927" : 
                       pillar.title === "Product Vision & Strategy" ? "#cb781a" : 
