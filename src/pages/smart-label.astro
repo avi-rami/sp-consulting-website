@@ -123,24 +123,24 @@ const bleSpecs = {
           {/* Features Section - Revised Layout */}
           <div>
             <h2 class="text-3xl font-bold mb-12 text-center">Core Technology Features</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[90rem] mx-auto">
               {/* Left Features */}
               <div class="space-y-8">
                 {features.slice(0, 2).map(feature => (
                   <div class="bg-white/50 p-6 rounded-lg">
-                    <div class="flex items-start gap-4 mb-3">
+                    <div class="flex items-start gap-4 mb-4">
                       <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                         <Fragment set:html={feature.icon} />
                       </div>
                       <h3 class="text-xl font-semibold">{feature.title}</h3>
                     </div>
-                    <p class="text-gray-600 ml-[3.75rem]">{feature.description}</p>
+                    <p class="text-gray-600">{feature.description}</p>
                   </div>
                 ))}
               </div>
               
               {/* Center Image */}
-              <div class="flex items-center justify-center px-4">
+              <div class="flex items-center justify-center col-span-1 px-8">
                 <img
                   src="/assets/label-features.png"
                   alt="Smart Label Features Diagram"
@@ -153,13 +153,13 @@ const bleSpecs = {
               <div class="space-y-8">
                 {features.slice(2, 4).map(feature => (
                   <div class="bg-white/50 p-6 rounded-lg">
-                    <div class="flex items-start gap-4 mb-3">
+                    <div class="flex items-start gap-4 mb-4">
                       <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                         <Fragment set:html={feature.icon} />
                       </div>
                       <h3 class="text-xl font-semibold">{feature.title}</h3>
                     </div>
-                    <p class="text-gray-600 ml-[3.75rem]">{feature.description}</p>
+                    <p class="text-gray-600">{feature.description}</p>
                   </div>
                 ))}
               </div>
