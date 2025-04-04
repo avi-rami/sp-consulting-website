@@ -131,11 +131,20 @@ const testimonials = [
                 role="group"
                 aria-label="Companies previously worked with or clients"
                 style={{
-                maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
+                    maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
                 }}
              >
-                <div class="logo-track flex w-max animate-scroll space-x-20 pr-20">
+                <div 
+                    class="logo-track flex w-max animate-scroll space-x-20 pr-20" 
+                    style={{ 
+                        willChange: 'transform',
+                        backfaceVisibility: 'hidden',
+                        WebkitBackfaceVisibility: 'hidden',
+                        transform: 'translate3d(0, 0, 0)',
+                        WebkitTransform: 'translate3d(0, 0, 0)'
+                    }}
+                >
                 {[...logos, ...logos].map((logo, index) => (
                     <div class="flex items-center justify-center flex-shrink-0 w-[200px] h-20" >
                       <img 
