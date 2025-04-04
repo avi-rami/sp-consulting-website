@@ -154,35 +154,33 @@ const challenges = [
           {/* *** UPDATED: Common Challenges Section *** */}
           <div class="mt-20">
             {/* *** UPDATED: Heading *** */}
-            <h2 class="text-3xl font-bold mb-6 text-center">Addressing Key Product Strategy & Management Challenges</h2>
+            <h2 class="text-3xl font-bold mb-8 text-center">Addressing Key Product Strategy & Management Challenges</h2>
             {/* *** UPDATED: Intro paragraph *** */}
-            <p class="text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+            <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
               Developing a winning product strategy often involves overcoming significant hurdles. Does your organization struggle with any of the following?
             </p>
             <div class="max-w-4xl mx-auto px-4">
               {/* *** List now uses the NEW challenges array *** */}
-              <ul class="space-y-6 text-gray-700 list-none">
+              <ul class="space-y-5 text-gray-700 list-none">
                 {challenges.map(challenge => (
-                  <li class="flex items-start">
-                    <div class="flex-shrink-0 w-6 h-6 mt-1">
-                      <svg class="w-6 h-6 text-primary/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-6 h-6 mt-1.5">
+                      <svg class="w-5 h-5 text-primary/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                       </svg>
                     </div>
                     <div class="ml-4">
-                      <p class="text-lg leading-relaxed">{challenge}</p>
+                      <p class="text-lg font-normal leading-relaxed">{challenge}</p>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
-            {/* *** UPDATED: Outro paragraph with enhanced styling *** */}
+            {/* *** UPDATED: Outro paragraph with simplified styling *** */}
             <div class="mt-16 max-w-3xl mx-auto px-4">
-              <div class="border-l-4 border-primary/20 pl-6 py-2">
-                <p class="text-gray-600 text-lg leading-relaxed">
-                  Our product management services provide clarity and structure, helping you define clear strategies, understand customer needs, build strong business cases, and ensure alignment across your teams.
-                </p>
-              </div>
+              <p class="text-xl text-gray-600 text-center leading-relaxed">
+                Our product management services provide clarity and structure, helping you define clear strategies, understand customer needs, build strong business cases, and ensure alignment across your teams.
+              </p>
             </div>
           </div>
 
