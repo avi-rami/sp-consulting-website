@@ -137,8 +137,14 @@ const testimonials = [
              >
                 <div class="logo-track flex w-max animate-scroll space-x-20 pr-20">
                 {[...logos, ...logos].map((logo, index) => (
-                    <div class="flex items-center justify-center flex-shrink-0" >
-                      <img src={logo.src} alt={logo.alt} class="h-14 max-w-[200px] object-contain" loading="lazy" aria-hidden={index >= logos.length ? "true" : undefined} height="56"/>
+                    <div class="flex items-center justify-center flex-shrink-0 w-[200px] h-20" >
+                      <img 
+                        src={logo.src} 
+                        alt={logo.alt} 
+                        class="w-full h-full object-contain" 
+                        loading="lazy" 
+                        aria-hidden={index >= logos.length ? "true" : undefined}
+                      />
                     </div>
                 ))}
                 </div>
