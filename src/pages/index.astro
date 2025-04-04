@@ -5,11 +5,14 @@ import Footer from '../components/Footer.astro';
 
 // Logos for the scroller
 const logos = [
+  { src: "/assets/avery-dennison-seeklogo.svg", alt: "Avery Dennison" },
+  { src: "/assets/brady-logo.png", alt: "Brady" },
   { src: "/assets/carefusion-seeklogo.png", alt: "CareFusion" },
   { src: "/assets/eSAT-logo.svg", alt: "eSAT" },
   { src: "/assets/house-of-design-logo.svg", alt: "House of Design" },
   { src: "/assets/linxens-logo.svg", alt: "Linxens" },
-  { src: "/assets/Unique-Micro-Design-logo.svg", alt: "Unique Micro Design" }
+  { src: "/assets/Unique-Micro-Design-logo.svg", alt: "Unique Micro Design" },
+  { src: "/assets/zebra-technologies-logo.svg", alt: "Zebra Technologies" }
 ];
 
 // Placeholder Testimonials
@@ -124,7 +127,7 @@ const testimonials = [
         <div class="container mx-auto px-4">
             <h2 class="text-2xl font-bold text-center text-gray-700 mb-12">Trusted By Industry Partners</h2>
              <div
-                class="logo-scroller relative w-full overflow-hidden py-4"
+                class="logo-scroller relative w-full overflow-hidden py-8"
                 role="group"
                 aria-label="Companies previously worked with or clients"
                 style={{
@@ -132,10 +135,10 @@ const testimonials = [
                 WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
                 }}
              >
-                <div class="logo-track flex w-max animate-scroll space-x-16 pr-16">
+                <div class="logo-track flex w-max animate-scroll space-x-20 pr-20">
                 {[...logos, ...logos].map((logo, index) => (
                     <div class="flex items-center justify-center flex-shrink-0" >
-                      <img src={logo.src} alt={logo.alt} class="h-10 max-w-[160px] object-contain" loading="lazy" aria-hidden={index >= logos.length ? "true" : undefined} height="40"/>
+                      <img src={logo.src} alt={logo.alt} class="h-14 max-w-[200px] object-contain" loading="lazy" aria-hidden={index >= logos.length ? "true" : undefined} height="56"/>
                     </div>
                 ))}
                 </div>
