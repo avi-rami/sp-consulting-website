@@ -123,7 +123,7 @@ const bleSpecs = {
           {/* Features Section - Revised Layout */}
           <div>
             <h2 class="text-3xl font-bold mb-12 text-center">Core Technology Features</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[90rem] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr,1fr] gap-4 max-w-[120rem] mx-auto">
               {/* Left Features */}
               <div class="space-y-8">
                 {features.slice(0, 2).map(feature => (
@@ -140,11 +140,11 @@ const bleSpecs = {
               </div>
               
               {/* Center Image */}
-              <div class="flex items-center justify-center col-span-1 px-8">
+              <div class="flex items-center justify-center px-4">
                 <img
                   src="/assets/label-features.png"
                   alt="Smart Label Features Diagram"
-                  class="w-full rounded-lg"
+                  class="w-full h-auto max-h-[600px] object-contain rounded-lg"
                   loading="lazy"
                 />
               </div>
