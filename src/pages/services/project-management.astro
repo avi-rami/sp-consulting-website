@@ -146,9 +146,11 @@ const challenges = [
                       pillar.title === "PMO Setup and Governance" ? "#41c6e1" : 
                       pillar.title === "Business Readiness & Risk Management" ? "#faac2c" : "inherit"}`}>{pillar.title}</h3>
                   </div>
-                  <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4">
                     {pillar.points.map(point => (
-                      <li>{point}</li>
+                      <li class="pl-1.5">
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -210,9 +212,11 @@ const challenges = [
              Ineffective project management can lead to delays, budget overruns, and missed objectives. Do any of these challenges hinder your organization's success?
             </p>
             <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg border border-gray-200 shadow-sm mb-8">
-              <ul class="space-y-3 text-gray-700 list-disc list-inside">
+              <ul class="space-y-3 text-gray-700 list-disc ml-4">
                 {challenges.map(challenge => (
-                  <li>{challenge}</li>
+                  <li class="pl-1.5">
+                    <span>{challenge}</span>
+                  </li>
                 ))}
               </ul>
             </div>

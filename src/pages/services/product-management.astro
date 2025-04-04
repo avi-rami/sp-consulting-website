@@ -139,9 +139,11 @@ const challenges = [
                       pillar.title === "Product Vision & Strategy" ? "#cb781a" : 
                       pillar.title === "Market Understanding" ? "#4cc3eb" : "inherit"}`}>{pillar.title}</h3>
                   </div>
-                  <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4">
                     {pillar.points.map(point => (
-                      <li>{point}</li>
+                      <li class="pl-1.5">
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -159,9 +161,11 @@ const challenges = [
             </p>
             <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg border border-gray-200 shadow-sm mb-8">
               {/* *** List now uses the NEW challenges array *** */}
-              <ul class="space-y-3 text-gray-700 list-disc list-inside">
+              <ul class="space-y-3 text-gray-700 list-disc ml-4">
                 {challenges.map(challenge => (
-                  <li>{challenge}</li>
+                  <li class="pl-1.5">
+                    <span>{challenge}</span>
+                  </li>
                 ))}
               </ul>
             </div>

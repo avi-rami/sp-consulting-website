@@ -99,9 +99,11 @@ const iconSvgs = {
                     </div>
                     <h3 class="text-xl font-semibold" style={`color: ${service.color}`}>{service.title}</h3>
                   </div>
-                  <ul class="space-y-2 text-gray-600 list-disc list-inside pl-2">
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4">
                     {service.points.map(point => (
-                      <li>{point}</li>
+                      <li class="pl-1.5">
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
