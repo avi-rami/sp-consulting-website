@@ -16,19 +16,14 @@ const logos = [
 // Placeholder Testimonials
 const testimonials = [
     {
-        quote: "Working with SP Consulting fundamentally shifted our product strategy, leading to a 25% increase in market share within a year. Their insights are invaluable.",
-        name: "Jane Doe",
-        title: "VP of Product, Tech Innovators Inc."
-    },
-    {
         quote: "Shailesh's project management expertise brought much-needed clarity and efficiency to our complex development cycle, significantly reducing our time-to-market.",
-        name: "John Smith",
-        title: "Director of Engineering, Global Solutions Ltd."
+        name: "Ron Kyslinger",
+        title: "Board of Directors, House of Design"
     },
      {
         quote: "The strategic guidance provided was instrumental in navigating a challenging market pivot. We achieved our key objectives faster than anticipated.",
-        name: "Alex Johnson",
-        title: "CEO, Startup Ventures Co."
+        name: "George Linscott",
+        title: "CEO Printed Energy"
     }
 ]
 ---
@@ -71,54 +66,54 @@ const testimonials = [
            {/* Service Cards remain the same structure... */}
           {/* Product Management Card */}
           <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
-            <div class="flex items-start gap-4">
-              <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                 <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+            <div class="flex flex-col">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Product Management</h3>
               </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Product Management</h3>
-                <p class="text-gray-600 mb-4">Drive growth with strategic product and lifecycle management.</p>
-                <a href="/services/product-management" class="text-primary font-medium hover:underline">Learn more →</a>
-              </div>
+              <p class="text-gray-600 mb-4">Drive growth with strategic product and lifecycle management.</p>
+              <a href="/services/product-management" class="text-primary font-medium hover:underline">Learn more →</a>
             </div>
           </div>
           {/* Program Management Card */}
            <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
-            <div class="flex items-start gap-4">
-              <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <div class="flex flex-col">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Project Management</h3>
               </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Project Management</h3>
-                <p class="text-gray-600 mb-4">Achieve objectives faster with efficient project execution and delivery.</p>
-                <a href="/services/project-management" class="text-primary font-medium hover:underline">Learn more →</a>
-              </div>
+              <p class="text-gray-600 mb-4">Achieve objectives faster with efficient project execution and delivery.</p>
+              <a href="/services/project-management" class="text-primary font-medium hover:underline">Learn more →</a>
             </div>
           </div>
           {/* Engineering Services Card */}
           <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
-            <div class="flex items-start gap-4">
-              <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            <div class="flex flex-col">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Engineering Services</h3>
               </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Engineering Services</h3>
-                <p class="text-gray-600 mb-4">Technical expertise and innovative solutions for complex engineering challenges.</p>
-                <a href="/services/engineering" class="text-primary font-medium hover:underline">Learn more →</a>
-              </div>
+              <p class="text-gray-600 mb-4">Technical expertise and innovative solutions for complex engineering challenges.</p>
+              <a href="/services/engineering" class="text-primary font-medium hover:underline">Learn more →</a>
             </div>
           </div>
           {/* Smart Label Solutions Card */}
           <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
-            <div class="flex items-start gap-4">
-              <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2h2z"></path></svg>
+            <div class="flex flex-col">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2h2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Smart Label Solutions</h3>
               </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Smart Label Solutions</h3>
-                <p class="text-gray-600 mb-4">Innovative smart label development integrating technology for enhanced results.</p>
-                <a href="/smart-label" class="text-primary font-medium hover:underline">Learn more →</a>
-              </div>
+              <p class="text-gray-600 mb-4">Innovative smart label development integrating technology for enhanced results.</p>
+              <a href="/smart-label" class="text-primary font-medium hover:underline">Learn more →</a>
             </div>
           </div>
         </div>
@@ -168,7 +163,7 @@ const testimonials = [
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-16">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {testimonials.map((testimonial) => (
                     <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                         <blockquote class="text-lg text-gray-700 italic border-l-4 border-primary pl-4 mb-6">
