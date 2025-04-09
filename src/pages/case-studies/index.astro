@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Case Studies - SP Consulting">
+    <Navigation />
+    
+    <main class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+            <h1 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                Case Studies
+            </h1>
+            <p class="text-base text-gray-700 md:text-lg">
+                Explore our successful projects and see how we've helped businesses achieve their goals through innovative solutions.
+            </p>
+        </div>
+        
+        <div class="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
+            <!-- Smart Label Case Study -->
+            <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
+                <a href="/case-studies/smart-label" aria-label="Smart Label Development Case Study">
+                    <img src="/images/smart-label-hero.jpg" class="object-cover w-full h-64" alt="Smart Label Development" />
+                </a>
+                <div class="p-5 border border-t-0">
+                    <p class="mb-3 text-xs font-semibold tracking-wide uppercase">
+                        <span class="text-blue-600">IoT & Hardware</span>
+                        <span class="text-gray-600">— 2024</span>
+                    </p>
+                    <a href="/case-studies/smart-label" aria-label="Smart Label Development Case Study" class="inline-block mb-3 text-2xl font-bold leading-7 text-black transition-colors duration-200 hover:text-blue-600">
+                        Smart Label Development
+                    </a>
+                    <p class="mb-2 text-gray-700">
+                        Development of a BLE-enabled smart label solution with custom PCB design and Android application integration.
+                    </p>
+                    <a href="/case-studies/smart-label" aria-label="Read more" class="inline-flex items-center font-semibold transition-colors duration-200 text-blue-600 hover:text-blue-800">
+                        Read more
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Management Case Study -->
+            <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
+                <a href="/case-studies/project-management" aria-label="Project Management Case Study">
+                    <img src="/images/project-management-hero.jpg" class="object-cover w-full h-64" alt="Project Management" />
+                </a>
+                <div class="p-5 border border-t-0">
+                    <p class="mb-3 text-xs font-semibold tracking-wide uppercase">
+                        <span class="text-blue-600">Project Management</span>
+                        <span class="text-gray-600">— 2024</span>
+                    </p>
+                    <a href="/case-studies/project-management" aria-label="Project Management Case Study" class="inline-block mb-3 text-2xl font-bold leading-7 text-black transition-colors duration-200 hover:text-blue-600">
+                        Enterprise Project Management
+                    </a>
+                    <p class="mb-2 text-gray-700">
+                        Successfully managed and delivered a complex enterprise-wide digital transformation project.
+                    </p>
+                    <a href="/case-studies/project-management" aria-label="Read more" class="inline-flex items-center font-semibold transition-colors duration-200 text-blue-600 hover:text-blue-800">
+                        Read more
+                    </a>
+                </div>
+            </div>
+
+            <!-- Engineering Case Study -->
+            <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
+                <a href="/case-studies/engineering" aria-label="Engineering Case Study">
+                    <img src="/images/engineering-hero.jpg" class="object-cover w-full h-64" alt="Engineering Solutions" />
+                </a>
+                <div class="p-5 border border-t-0">
+                    <p class="mb-3 text-xs font-semibold tracking-wide uppercase">
+                        <span class="text-blue-600">Engineering</span>
+                        <span class="text-gray-600">— 2024</span>
+                    </p>
+                    <a href="/case-studies/engineering" aria-label="Engineering Case Study" class="inline-block mb-3 text-2xl font-bold leading-7 text-black transition-colors duration-200 hover:text-blue-600">
+                        Custom Engineering Solutions
+                    </a>
+                    <p class="mb-2 text-gray-700">
+                        Developed innovative engineering solutions for manufacturing process optimization.
+                    </p>
+                    <a href="/case-studies/engineering" aria-label="Read more" class="inline-flex items-center font-semibold transition-colors duration-200 text-blue-600 hover:text-blue-800">
+                        Read more
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .hover\:text-blue-800:hover {
+        color: #1e40af;
+    }
+</style> 
