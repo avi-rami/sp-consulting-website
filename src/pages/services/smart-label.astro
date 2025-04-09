@@ -1,0 +1,193 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+// Define the key service areas
+const services = [
+  {
+    title: "Revolutionary Smart Label Technology",
+    iconKey: "tech",
+    color: "#254670",
+    points: [
+      "End-to-end development and manufacturing expertise",
+      "Integration of advanced Printed Electronics",
+      "Sustainable, ultra-thin, flexible Printed Batteries",
+      "Intelligent label solutions for enhanced product interaction"
+    ]
+  },
+  {
+    title: "Accelerated Go-to-Market Ecosystem",
+    iconKey: "ecosystem",
+    color: "#faaa1e",
+    points: [
+      "Strategic partnerships with PCB manufacturers",
+      "Expert firmware development collaboration",
+      "Printed battery innovation network",
+      "Rapid MVP development and validation"
+    ]
+  },
+  {
+    title: "Universal Connectivity Expertise",
+    iconKey: "connectivity",
+    color: "#6ea56d",
+    points: [
+      "Comprehensive protocol support (UHF, HF, BLE)",
+      "Advanced wireless solutions (LoRa, LTE)",
+      "Application-specific connectivity optimization",
+      "Seamless integration capabilities"
+    ]
+  },
+  {
+    title: "Tailored Form Factors",
+    iconKey: "design",
+    color: "#c53f2a",
+    points: [
+      "Custom form factor design services",
+      "Flexible size and shape options",
+      "Multiple integration formats",
+      "Adaptable for various applications"
+    ]
+  },
+  {
+    title: "Flexible Delivery Options",
+    iconKey: "delivery",
+    color: "#41c6e1",
+    points: [
+      "Individual unit production",
+      "Roll-to-roll (R2R) manufacturing",
+      "Scalable production capabilities",
+      "Mass-market deployment support"
+    ]
+  }
+];
+
+// SVG icons for the service areas
+const iconSvgs = {
+    tech: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>`,
+    ecosystem: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+    connectivity: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>`,
+    design: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2h2z" /></svg>`,
+    delivery: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>`
+};
+---
+
+<Layout title="Smart Label Solutions - SP Consulting">
+  <Navigation />
+
+  <main class="pt-20">
+    {/* Hero Section */}
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Transform Product Intelligence with Smart Labels</h1>
+        <p class="text-xl">Pioneering next-generation smart label solutions through innovative consulting and development expertise.</p>
+      </div>
+    </section>
+
+    {/* Main Content Section */}
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="space-y-16">
+
+          {/* Approach Section */}
+          <div>
+            <h2 class="text-3xl font-bold mb-6 text-center">Our Smart Label Expertise</h2>
+            <p class="text-gray-600 mb-12 max-w-[54rem] mx-auto">
+              We help organizations navigate the complexities of smart label development and implementation, combining cutting-edge technology with practical business solutions. Our comprehensive approach ensures successful integration of intelligent label solutions that drive value and innovation.
+            </p>
+
+            {/* Diagram */}
+            <div class="mb-12">
+              <img
+                src="/assets/smart-label-diagram.png"
+                alt="Smart Label Solutions Framework"
+                class="w-full max-w-3xl mx-auto rounded-lg"
+                loading="lazy"
+              />
+              <p class="text-sm text-gray-500 mt-4 text-center">
+                Our holistic framework addresses all aspects of smart label development and implementation.
+              </p>
+            </div>
+          </div>
+
+          {/* Services Section */}
+          <div class="mt-16">
+            <h2 class="text-3xl font-bold mb-10 text-center">Core Smart Label Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map(service => (
+                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col" style={`background-color: ${service.color}10`}>
+                  <div class="flex items-center mb-4">
+                    <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                       <Fragment set:html={iconSvgs[service.iconKey]} />
+                    </div>
+                    <h3 class="text-xl font-semibold" style={`color: ${service.color}`}>{service.title}</h3>
+                  </div>
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4">
+                    {service.points.map(point => (
+                      <li class="pl-1.5">
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Why Choose Us Section */}
+          <div class="mt-20">
+            <h2 class="text-3xl font-bold mb-10 text-center">Why Partner with SP Consulting for Smart Labels?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Industry Expertise</h3>
+                <p class="text-gray-600">Deep understanding of smart label technologies and applications across diverse industries.</p>
+              </div>
+              <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">End-to-End Support</h3>
+                <p class="text-gray-600">Comprehensive guidance from concept development through to mass production and deployment.</p>
+              </div>
+              <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Innovation Focus</h3>
+                <p class="text-gray-600">Cutting-edge solutions leveraging the latest advancements in printed electronics and battery technology.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action Section */}
+          <div class="text-center pt-12">
+            <p class="text-lg text-gray-700 mb-6">Ready to explore smart label solutions for your business?</p>
+            <a
+              href="/contact"
+              class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
+            >
+              Discuss Your Smart Label Needs
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+{/* Comment out the original content for future reference */}
+{/* 
+Original Smart Label Solutions content has been preserved in the codebase.
+The previous product-focused content can be found in the original smart-label.astro file.
+*/} 
