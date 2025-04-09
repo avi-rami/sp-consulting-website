@@ -104,9 +104,6 @@ const iconSvgs = {
                 class="w-full max-w-3xl mx-auto rounded-lg"
                 loading="lazy"
               />
-              <p class="text-sm text-gray-500 mt-4 text-center">
-                Our holistic framework addresses all aspects of smart label development and implementation.
-              </p>
             </div>
           </div>
 
@@ -115,12 +112,12 @@ const iconSvgs = {
             <h2 class="text-3xl font-bold mb-10 text-center">Accelerated Development Services</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map(service => (
-                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col" style={`background-color: ${service.color}10`}>
+                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col bg-[#f0f4f8]">
                   <div class="flex items-center mb-4">
                     <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                        <Fragment set:html={iconSvgs[service.iconKey]} />
                     </div>
-                    <h3 class="text-xl font-semibold" style={`color: ${service.color}`}>{service.title}</h3>
+                    <h3 class="text-xl font-semibold text-[#254670]">{service.title}</h3>
                   </div>
                   <ul class="space-y-2 text-gray-600 list-disc ml-4">
                     {service.points.map(point => (
@@ -138,31 +135,31 @@ const iconSvgs = {
           <div class="mt-20">
             <h2 class="text-3xl font-bold mb-10 text-center">Why Choose SP Consulting for Rapid Development?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+              <div class="text-center p-6 bg-[#f0f4f8] rounded-lg border border-gray-200 shadow-sm">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Fast Time-to-Market</h3>
+                <h3 class="text-xl font-semibold mb-2 text-[#254670]">Fast Time-to-Market</h3>
                 <p class="text-gray-600">Accelerated development cycles with proven methodologies for rapid prototyping and validation.</p>
               </div>
-              <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+              <div class="text-center p-6 bg-[#f0f4f8] rounded-lg border border-gray-200 shadow-sm">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Market-Focused Development</h3>
+                <h3 class="text-xl font-semibold mb-2 text-[#254670]">Market-Focused Development</h3>
                 <p class="text-gray-600">Development strategy aligned with market needs and validation requirements.</p>
               </div>
-              <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+              <div class="text-center p-6 bg-[#f0f4f8] rounded-lg border border-gray-200 shadow-sm">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Proven Technology Stack</h3>
+                <h3 class="text-xl font-semibold mb-2 text-[#254670]">Proven Technology Stack</h3>
                 <p class="text-gray-600">Access to established components and frameworks to accelerate development and reduce risk.</p>
               </div>
             </div>
