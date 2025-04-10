@@ -22,10 +22,15 @@ const testimonials = [
         name: "Ron Kyslinger",
         title: "Board of Directors, House of Design"
     },
-     {
+    {
         quote: "The strategic guidance provided was instrumental in navigating a challenging market pivot. We achieved our key objectives faster than anticipated.",
         name: "George Linscott",
         title: "CEO Printed Energy"
+    },
+    {
+        quote: "Thanks to Shailesh's expert product and program management, technical skills and his clear communication, we saw a marked improvement in project efficiency and customer engagement. He brought much-needed structure and alignment to our processes.",
+        name: "Rick Somerton",
+        title: "CEO eSAT Global"
     }
 ]
 ---
@@ -179,7 +184,7 @@ const testimonials = [
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-16">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {testimonials.map((testimonial) => (
                     <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                         <blockquote class="text-lg text-gray-700 italic border-l-4 border-primary pl-4 mb-6">
