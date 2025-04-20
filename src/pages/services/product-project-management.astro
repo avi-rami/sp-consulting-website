@@ -1,12 +1,230 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+// Product Management Pillars
+const productPillars = [
+  {
+    title: "Customer Focus",
+    iconKey: "users",
+    points: [
+      "Customer personas development",
+      "Customer segmentation research",
+      "Target Customer definition",
+      "User Stories development"
+    ]
+  },
+  {
+    title: "Business Goals Alignment",
+    iconKey: "target",
+    points: [
+      "Business goals & growth strategy definition",
+      "Objectives & growth drivers definition",
+      "SMART goals & KPI definition"
+    ]
+  },
+  {
+    title: "Competitive Landscape",
+    iconKey: "search",
+    points: [
+      "Competitive landscape analysis",
+      "Market share goals development",
+      "Key metric comparison analysis",
+      "Product differentiation characteristics definition"
+    ]
+  },
+  {
+    title: "Product Vision & Strategy",
+    iconKey: "rocket",
+    points: [
+      "Product business case & value proposition development",
+      "MVP formulation",
+      "High-level Market requirements",
+      "Launch roadmap development"
+    ]
+  },
+  {
+    title: "Market Understanding",
+    iconKey: "store",
+    points: [
+      "Market definition & analysis",
+      "Market Sizing and Opportunity (TAM, SAM and SOM)",
+      "Target Market recommendation",
+      "Positioning strategy"
+    ]
+  }
+];
+
+// Project Management Pillars
+const projectPillars = [
+  {
+    title: "PM Software Deployment & Training",
+    iconKey: "software",
+    points: [
+      "Business requirements definition",
+      "Software Selection, Total Cost, ROI Analysis",
+      "Detail design, configuration & deployment",
+      "Software training & adoption",
+      "Rollout and steady state support"
+    ]
+  },
+  {
+    title: "Project Delivery",
+    iconKey: "delivery",
+    points: [
+      "Project Planning – inception to launch",
+      "Portfolio Management",
+      "Project Management (resource, budget, timeline, risk mitigation)"
+    ]
+  },
+  {
+    title: "Methodology, Tools & Templates",
+    iconKey: "methodology",
+    points: [
+      "PMO Framework Definition (Agile, SAFe Agile, etc.)",
+      "Tools and templates development & deployment"
+    ]
+  },
+  {
+    title: "PMO Setup and Governance",
+    iconKey: "governance",
+    points: [
+      "Vision, purpose & scope definition",
+      "Organization setup with RACI",
+      "Operational budget & Success criteria development",
+      "Process and policies governance setup"
+    ]
+  },
+  {
+    title: "Business Readiness & Risk Management",
+    iconKey: "risk",
+    points: [
+      "Technology and Operational assessment",
+      "Benchmark Analysis",
+      "Risk assessment and mitigation plans",
+      "Risk monitoring and control"
+    ]
+  }
+];
+
+// SVG icons map
+const iconSvgs = {
+    users: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>`,
+    target: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>`,
+    search: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>`,
+    rocket: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`,
+    store: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>`,
+    software: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>`,
+    delivery: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`,
+    methodology: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>`,
+    governance: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>`,
+    risk: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
+};
 ---
 
-<Layout title="Product and Project Management Services | Strategic Pathways">
-  <main class="container mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-primary mb-8">Product and Project Management Services</h1>
-    <div class="prose max-w-none">
-      <!-- Content will go here -->
-    </div>
+<Layout title="Product & Project Management Services | Strategic Pathways">
+  <Navigation />
+
+  <main class="pt-20 bg-gray-50">
+    {/* Hero Section */}
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Product & Project Management Services</h1>
+        <p class="text-xl">Comprehensive solutions for product strategy and project execution excellence</p>
+      </div>
+    </section>
+
+    {/* Introduction Section */}
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-lg text-gray-600 leading-relaxed">
+            We offer integrated product and project management services that bridge the gap between strategy and execution. Our comprehensive approach combines product innovation with efficient delivery mechanisms, ensuring your initiatives not only meet market needs but are executed with precision and excellence. From product conceptualization to market launch, and from project initiation to successful delivery, we provide the expertise needed to drive sustainable growth and operational excellence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+          {/* Product Management Column */}
+          <div>
+            <div class="text-center mb-10">
+              <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-bold mb-2">Product Management</h2>
+              <p class="text-gray-600">Strategic product development and market success</p>
+            </div>
+            <div class="space-y-4">
+              {productPillars.map(pillar => (
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                  <div class="flex items-start gap-4 mb-3">
+                    <div class="bg-primary/5 p-2.5 rounded-lg flex-shrink-0">
+                      <Fragment set:html={iconSvgs[pillar.iconKey]} />
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">{pillar.title}</h3>
+                  </div>
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4 pl-2">
+                    {pillar.points.map(point => (
+                      <li class="text-sm">{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Project Management Column */}
+          <div>
+            <div class="text-center mb-10">
+              <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-bold mb-2">Project Management</h2>
+              <p class="text-gray-600">Efficient execution and delivery excellence</p>
+            </div>
+            <div class="space-y-4">
+              {projectPillars.map(pillar => (
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                  <div class="flex items-start gap-4 mb-3">
+                    <div class="bg-primary/5 p-2.5 rounded-lg flex-shrink-0">
+                      <Fragment set:html={iconSvgs[pillar.iconKey]} />
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">{pillar.title}</h3>
+                  </div>
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4 pl-2">
+                    {pillar.points.map(point => (
+                      <li class="text-sm">{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Call to Action Section */}
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-lg text-gray-700 mb-6">Ready to elevate your product strategy and project execution?</p>
+          <a
+            href="/contact"
+            class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
+          >
+            Discuss Your Needs
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <Footer />
 </Layout> 
