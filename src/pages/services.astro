@@ -17,8 +17,8 @@ import Footer from '../components/Footer.astro';
 
     <section class="py-20">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <!-- Product Management Card -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Product & Project Management Card -->
           <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
             <div class="flex items-start gap-6 mb-6">
               <div class="bg-primary/10 p-3 rounded-lg">
@@ -26,54 +26,12 @@ import Footer from '../components/Footer.astro';
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold">Product Management</h2>
+              <h2 class="text-2xl font-bold">Product & Project Management</h2>
             </div>
             <p class="text-gray-600 mb-6">
-              Strategic product development and lifecycle management to drive business growth.
+              Comprehensive strategy and execution for product lifecycle and project delivery, ensuring market success and efficient implementation.
             </p>
-            <a href="/services/product-management" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
-              Learn more
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-
-          <!-- Project Management Card -->
-          <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            <div class="flex items-start gap-6 mb-6">
-              <div class="bg-primary/10 p-3 rounded-lg">
-                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                </svg>
-              </div>
-              <h2 class="text-2xl font-bold">Project Management</h2>
-            </div>
-            <p class="text-gray-600 mb-6">
-              Efficient project execution and delivery to achieve your business objectives.
-            </p>
-            <a href="/services/project-management" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
-              Learn more
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-
-          <!-- Smart Label Solutions Card -->
-          <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            <div class="flex items-start gap-6 mb-6">
-              <div class="bg-primary/10 p-3 rounded-lg">
-                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2h2z"/>
-                </svg>
-              </div>
-              <h2 class="text-2xl font-bold">Smart Label Solutions</h2>
-            </div>
-            <p class="text-gray-600 mb-6">
-              Innovative smart label development and consulting for next-generation product connectivity.
-            </p>
-            <a href="/services/smart-label" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
+            <a href="/services/product-project-management" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
               Learn more
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -95,6 +53,27 @@ import Footer from '../components/Footer.astro';
               Technical expertise and innovative solutions for complex engineering challenges.
             </p>
             <a href="/services/engineering" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Custom Development Card -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="flex items-start gap-6 mb-6">
+              <div class="bg-primary/10 p-3 rounded-lg">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2h2z"/>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold">Custom Development</h2>
+            </div>
+            <p class="text-gray-600 mb-6">
+              Expertise in development of new technologies such as smart labels and innovative solutions.
+            </p>
+            <a href="/services/smart-label" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
               Learn more
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
