@@ -35,7 +35,7 @@ const testimonials = [
 ]
 ---
 
-<Layout title="SP Consulting - Expert Product & Program Consulting">
+<Layout title="Home | Strategic Pathways">
   <Navigation />
 
   <main class="pt-20">
@@ -47,7 +47,7 @@ const testimonials = [
             Accelerate Product Innovation & Market Leadership
           </h1>
           <p class="text-xl mb-8">
-            Expert consulting in product management, project management, and engineering services.
+            Expert consulting in product & project management, engineering, and custom development
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="/services" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
@@ -61,54 +61,48 @@ const testimonials = [
       </div>
     </section>
 
+    {/* About Section (Background: Gray-50) */}
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-10">About Strategic Pathways</h2>
+          <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+             Strategic Pathways delivers competitive advantage through expert product management, project management, and engineering services. We help you launch groundbreaking products, manage complex portfolios, and execute strategic projects with unparalleled efficiency. With <strong class="text-primary font-semibold">30+ years of Fortune 500 experience</strong>, our dedicated experts transform ideas into market-defining realities, enabling organizations to achieve strategic goals and drive sustainable growth.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="/our-leadership" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+              Meet Our Leadership
+            </a>
+            <a href="/why-us" class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors">
+              Why Choose Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {/* Services Overview (Background: White) */}
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-16">Our Services</h2>
-        {/* CHANGE: Adjusted intro sentence styling & margin */}
-        <p class="text-lg text-center text-gray-500 mb-8 max-w-3xl mx-auto"> {/* Increased bottom margin, changed text color */}
+        <p class="text-lg text-center text-gray-500 mb-8 max-w-3xl mx-auto">
           We empower your success through targeted expertise in the following areas:
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Product Management Card */}
+          {/* Product & Project Management Card */}
           <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
             <div class="flex flex-col">
               <div class="flex items-start gap-4 mb-4">
                 <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
                 </div>
-                <h3 class="text-xl font-semibold">Product Management</h3>
+                <h3 class="text-xl font-semibold">Product & Project Management</h3>
               </div>
-              <p class="text-gray-600 mb-4">Drive growth with strategic product and lifecycle management.</p>
-              <a href="/services/product-management" class="text-primary font-medium hover:underline">Learn more →</a>
+              <p class="text-gray-600 mb-4">Comprehensive strategy and execution for product lifecycle and project delivery, ensuring market success and efficient implementation.</p>
+              <a href="/services/product-project-management" class="text-primary font-medium hover:underline">Learn more →</a>
             </div>
           </div>
-          {/* Project Management Card */}
-           <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
-            <div class="flex flex-col">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                </div>
-                <h3 class="text-xl font-semibold">Project Management</h3>
-              </div>
-              <p class="text-gray-600 mb-4">Achieve objectives faster with efficient project execution and delivery.</p>
-              <a href="/services/project-management" class="text-primary font-medium hover:underline">Learn more →</a>
-            </div>
-          </div>
-          {/* Smart Label Development Card */}
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
-            <div class="flex flex-col">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2h2z"></path></svg>
-                </div>
-                <h3 class="text-xl font-semibold">Smart Label Development</h3>
-              </div>
-              <p class="text-gray-600 mb-4">Accelerate development of smart labels for market validation and rapid deployment.</p>
-              <a href="/services/smart-label" class="text-primary font-medium hover:underline">Learn more →</a>
-            </div>
-          </div>
+
           {/* Engineering Services Card */}
           <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
             <div class="flex flex-col">
@@ -120,6 +114,34 @@ const testimonials = [
               </div>
               <p class="text-gray-600 mb-4">Technical expertise and innovative solutions for complex engineering challenges.</p>
               <a href="/services/engineering" class="text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+
+          {/* Custom Development Card */}
+          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
+            <div class="flex flex-col">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2h2z"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Custom Development</h3>
+              </div>
+              <p class="text-gray-600 mb-4">Expertise in development of new technologies such as smart labels and innovative solutions.</p>
+              <a href="/services/smart-label" class="text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+          </div>
+
+          {/* Training Card */}
+          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 border border-gray-100">
+            <div class="flex flex-col">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Training Programs</h3>
+              </div>
+              <p class="text-gray-600 mb-4">Coaching and training teams to achieve objectives faster with efficient product and project management.</p>
+              <a href="/training" class="text-primary font-medium hover:underline">Learn more →</a>
             </div>
           </div>
         </div>
@@ -165,21 +187,6 @@ const testimonials = [
         </div>
     </section>
 
-    {/* About Section (Background: White) */}
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-10">About SP Consulting</h2>
-          <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-             SP Consulting delivers competitive advantage through expert product management, project management, and engineering services. We help you launch groundbreaking products, manage complex portfolios, and execute strategic projects with unparalleled efficiency. With <strong class="text-primary font-semibold">30+ years of Fortune 500 experience</strong>, our dedicated experts transform ideas into market-defining realities, enabling organizations to achieve strategic goals and drive sustainable growth.
-          </p>
-          <a href="/our-leadership" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
-            Meet Our Leadership
-          </a>
-        </div>
-      </div>
-    </section>
-
     {/* Testimonials Section (Background: Gray-100) */}
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
@@ -200,10 +207,8 @@ const testimonials = [
     </section>
 
     {/* Call to Action */}
-    {/* CHANGE: Reverted structure to contain the blue box */}
-    <section class="py-20 bg-white"> {/* Section background matches the one above Testimonials */}
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            {/* This inner div now holds the blue background and content */}
             <div class="bg-primary rounded-lg text-white p-12 text-center">
                 <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
                 <p class="text-xl mb-8 max-w-2xl mx-auto">
@@ -220,7 +225,7 @@ const testimonials = [
   <Footer />
 </Layout>
 
-{/* Logo scroll animation CSS (Unchanged) */}
+{/* Logo scroll animation CSS */}
 <style is:global>
   @keyframes scroll {
     from { transform: translateX(0); }

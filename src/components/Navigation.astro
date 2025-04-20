@@ -9,12 +9,17 @@ const navigation = [
     path: '/our-leadership',
   },
   {
+    title: 'Why Us',
+    path: '/why-us',
+  },
+  {
     title: 'Services',
     path: '/services',
     children: [
+      { title: 'Product and Project Management Services', path: '/services/product-project-management' },
       { title: 'Product Management', path: '/services/product-management' },
       { title: 'Project Management', path: '/services/project-management' },
-      { title: 'Smart Label Development', path: '/services/smart-label' },
+      { title: 'Custom Development', path: '/services/smart-label' },
       { title: 'Engineering Services', path: '/services/engineering' },
     ],
   },
@@ -64,7 +69,7 @@ const currentPath = Astro.url.pathname;
             class="w-9 h-9 object-contain rounded-lg"
           />
         </div>
-        <span class="text-2xl font-semibold text-primary">SP Consulting</span>
+        <span class="text-2xl font-semibold text-primary">Strategic Pathways</span>
       </a>
       
       <ul class="hidden lg:flex items-center space-x-8">

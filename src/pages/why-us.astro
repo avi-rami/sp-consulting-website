@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+// Define the key benefits
+const keyBenefits = [
+  {
+    title: "Pragmatic Integrated Product & Project Management Mastery",
+    description: "Combines deep product management expertise (strategy, roadmap, market analysis) with robust project management skills (PMO development, Agile, process optimization) for holistic solutions.",
+    icon: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>`
+  },
+  {
+    title: "Strategic Transformation",
+    description: "Drives organizational change by implementing product-led models and streamlining processes, leading to increased efficiency and profitability.",
+    icon: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`
+  },
+  {
+    title: "Proven PMO Leadership",
+    description: "Excels at building and governing PMOs from the ground up, ensuring effective portfolio management and project delivery.",
+    icon: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>`
+  },
+  {
+    title: "Global Experience",
+    description: "Successfully leads global teams, establishes international R&D centers, and navigates complex cross-border projects.",
+    icon: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
+  },
+  {
+    title: "Proven Results",
+    description: "Track record of reducing development time and cost without sacrificing quality.",
+    icon: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
+  },
+  {
+    title: "Diverse Industry Expertise",
+    description: "Delivers impactful results across automotive, medical, consumer goods, e-commerce, water infrastructure, and apparel sectors.",
+    icon: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`
+  },
+  {
+    title: "Engineering Foundation",
+    description: "Possesses a strong engineering background, providing a deep understanding of product development and technology with expertise of electro-mechanical products.",
+    icon: `<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`
+  }
+];
+
+// Define potential outcomes
+const outcomes = [
+  "Accelerate product development and launch cycles",
+  "Optimize project execution and delivery",
+  "Drive innovation and market leadership",
+  "Articulate Minimum Viable Product (MVP)",
+  "Improve operational efficiency and reduce waste",
+  "Achieve significant revenue growth and profitability"
+];
+---
+
+<Layout title="Why Us | Strategic Pathways">
+  <Navigation />
+
+  <main class="pt-20">
+    {/* Hero Section */}
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Elevate Your Product & Project Outcomes
+          </h1>
+          <p class="text-xl mb-4">
+            Drive Innovation, Optimize Execution, Achieve Transformative Growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Introduction Section */}
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-xl text-gray-600 leading-relaxed">
+            Delivering comprehensive product and project management consulting, empowering
+            organizations across diverse industries to achieve exceptional results. With a strong track record
+            of building and optimizing PMOs, developing winning product strategies, and leading complex
+            global projects, we bring a unique blend of strategic vision and hands-on execution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Key Benefits Section */}
+    <section class="pb-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose Strategic Pathways?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {keyBenefits.map(benefit => (
+            <div class="flex gap-4 p-6 bg-gray-50 rounded-lg">
+              <div class="bg-white p-3 rounded-lg h-fit shadow-sm">
+                <Fragment set:html={benefit.icon} />
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-primary">{benefit.title}</h3>
+                <p class="text-gray-600 text-lg">{benefit.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Outcomes Section */}
+    <section class="pb-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-primary/5 rounded-2xl p-12 border border-primary/10">
+            <h2 class="text-3xl font-bold text-center mb-4">Unlock Your Potential for Success</h2>
+            <p class="text-xl text-center text-primary mb-8">Partner with Strategic Pathways to:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-12">
+              {outcomes.map(outcome => (
+                <div class="flex items-start gap-3">
+                  <div class="text-primary mt-1.5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p class="text-gray-700 text-lg">{outcome}</p>
+                </div>
+              ))}
+            </div>
+            <p class="text-xl text-gray-600 mb-8 text-center">
+              Let's collaborate to transform your challenges into opportunities and drive sustainable success.
+            </p>
+            <div class="text-center">
+              <a
+                href="/contact"
+                class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
+              >
+                Start Your Transformation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout> 
