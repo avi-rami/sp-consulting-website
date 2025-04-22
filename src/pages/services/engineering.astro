@@ -63,31 +63,17 @@ const iconSvgs = {
     {/* Main Content Section */}
     <section class="py-12 bg-gray-50">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="space-y-16">
-
+        <div class="space-y-12">
           {/* Introductory Section */}
           <div>
-            <h2 class="text-3xl font-bold mb-6 text-center">Our Engineering Expertise</h2>
-            <p class="text-gray-600 mb-12 max-w-[54rem] mx-auto">
+            {/* <h2 class="text-3xl font-bold mb-6 text-center">Our Engineering Expertise</h2> */}
+            <p class="text-lg text-gray-600 leading-relaxed mb-12 max-w-4xl mx-auto text-center">
               We combine technical excellence with innovative thinking to deliver cutting-edge engineering solutions that drive business success. Our comprehensive services span across multiple domains, ensuring your technical challenges are met with expertise and precision.
             </p>
-
-            {/* Diagram Image */}
-            <div class="mb-12">
-              <img
-                src="/assets/engineering-diagram.png"
-                alt="Engineering Service Areas: PCB Design, Firmware Development, Prototype Builds"
-                class="w-full max-w-3xl mx-auto rounded-lg"
-                loading="lazy"
-              />
-              <p class="text-sm text-gray-500 mt-4 text-center">
-                Our comprehensive engineering services address all critical aspects of product development.
-              </p>
-            </div>
           </div>
 
           {/* Services Section */}
-          <div class="mt-16">
+          <div>
             <h2 class="text-3xl font-bold mb-10 text-center">Core Engineering Services</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map(service => (
@@ -112,8 +98,8 @@ const iconSvgs = {
           </div>
 
           {/* Why Choose Us Section */}
-          <div class="mt-20">
-            <h2 class="text-3xl font-bold mb-10 text-center">Why Partner with SP Consulting for Engineering?</h2>
+          <div class="mt-16">
+            <h2 class="text-3xl font-bold mb-10 text-center">Why Partner with Strategic Pathways for Engineering?</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -147,7 +133,7 @@ const iconSvgs = {
           </div>
 
           {/* Call to Action Section */}
-          <div class="text-center pt-12">
+          <div class="text-center mt-12">
             <p class="text-lg text-gray-700 mb-6">Ready to tackle your next engineering challenge?</p>
             <a
               href="/contact"
@@ -156,7 +142,6 @@ const iconSvgs = {
               Discuss Your Engineering Needs
             </a>
           </div>
-
         </div>
       </div>
     </section>

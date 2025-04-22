@@ -3,8 +3,18 @@ import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 
-// Product Management Pillars
+// Product Management Pillars - Reordered
 const productPillars = [
+  {
+    title: "Product Vision & Strategy",
+    iconKey: "rocket",
+    points: [
+      "Product business case & value proposition development",
+      "MVP formulation",
+      "High-level Market requirements",
+      "Launch roadmap development"
+    ]
+  },
   {
     title: "Customer Focus",
     iconKey: "users",
@@ -25,26 +35,6 @@ const productPillars = [
     ]
   },
   {
-    title: "Competitive Landscape",
-    iconKey: "search",
-    points: [
-      "Competitive landscape analysis",
-      "Market share goals development",
-      "Key metric comparison analysis",
-      "Product differentiation characteristics definition"
-    ]
-  },
-  {
-    title: "Product Vision & Strategy",
-    iconKey: "rocket",
-    points: [
-      "Product business case & value proposition development",
-      "MVP formulation",
-      "High-level Market requirements",
-      "Launch roadmap development"
-    ]
-  },
-  {
     title: "Market Understanding",
     iconKey: "store",
     points: [
@@ -53,20 +43,38 @@ const productPillars = [
       "Target Market recommendation",
       "Positioning strategy"
     ]
+  },
+  {
+    title: "Competitive Landscape",
+    iconKey: "search",
+    points: [
+      "Competitive landscape analysis",
+      "Market share goals development",
+      "Key metric comparison analysis",
+      "Product differentiation characteristics definition"
+    ]
   }
 ];
 
-// Project Management Pillars
+// Project Management Pillars - Reordered
 const projectPillars = [
   {
-    title: "PM Software Deployment & Training",
-    iconKey: "software",
+    title: "PMO Setup and Governance",
+    iconKey: "governance",
     points: [
-      "Business requirements definition",
-      "Software Selection, Total Cost, ROI Analysis",
-      "Detail design, configuration & deployment",
-      "Software training & adoption",
-      "Rollout and steady state support"
+      "Vision, purpose & scope definition",
+      "Organization setup with RACI",
+      "Operational budget & Success criteria development",
+      "Process and policies governance setup"
+    ]
+  },
+  {
+    title: "Methodology, Tools & Templates",
+    iconKey: "methodology",
+    points: [
+      "PMO Framework Definition (Agile, SAFe Agile, etc.)",
+      "Tools and templates development & deployment",
+      " "
     ]
   },
   {
@@ -79,24 +87,6 @@ const projectPillars = [
     ]
   },
   {
-    title: "Methodology, Tools & Templates",
-    iconKey: "methodology",
-    points: [
-      "PMO Framework Definition (Agile, SAFe Agile, etc.)",
-      "Tools and templates development & deployment"
-    ]
-  },
-  {
-    title: "PMO Setup and Governance",
-    iconKey: "governance",
-    points: [
-      "Vision, purpose & scope definition",
-      "Organization setup with RACI",
-      "Operational budget & Success criteria development",
-      "Process and policies governance setup"
-    ]
-  },
-  {
     title: "Business Readiness & Risk Management",
     iconKey: "risk",
     points: [
@@ -104,6 +94,17 @@ const projectPillars = [
       "Benchmark Analysis",
       "Risk assessment and mitigation plans",
       "Risk monitoring and control"
+    ]
+  },
+  {
+    title: "PM Software Deployment & Training",
+    iconKey: "software",
+    points: [
+      "Business requirements definition",
+      "Software Selection, Total Cost, ROI Analysis",
+      "Detail design, configuration & deployment",
+      "Software training & adoption",
+      "Rollout and steady state support"
     ]
   }
 ];
@@ -160,16 +161,28 @@ const iconSvgs = {
             </div>
             <div class="space-y-4">
               {productPillars.map(pillar => (
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col" style={`background-color: ${
+                  pillar.title === "Product Vision & Strategy" ? "#cb781a10" :
+                  pillar.title === "Customer Focus" ? "#c53f2a10" :
+                  pillar.title === "Business Goals Alignment" ? "#42638910" :
+                  pillar.title === "Market Understanding" ? "#4cc3eb10" :
+                  pillar.title === "Competitive Landscape" ? "#b2892710" : "white"}`}>
                   <div class="flex items-start gap-4 mb-3">
                     <div class="bg-primary/5 p-2.5 rounded-lg flex-shrink-0">
                       <Fragment set:html={iconSvgs[pillar.iconKey]} />
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900">{pillar.title}</h3>
+                    <h3 class="text-xl font-semibold" style={`color: ${
+                      pillar.title === "Product Vision & Strategy" ? "#cb781a" :
+                      pillar.title === "Customer Focus" ? "#c53f2a" :
+                      pillar.title === "Business Goals Alignment" ? "#426389" :
+                      pillar.title === "Market Understanding" ? "#4cc3eb" :
+                      pillar.title === "Competitive Landscape" ? "#b28927" : "inherit"}`}>{pillar.title}</h3>
                   </div>
-                  <ul class="space-y-2 text-gray-600 list-disc ml-4 pl-2">
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4 pl-2 text-base">
                     {pillar.points.map(point => (
-                      <li class="text-sm">{point}</li>
+                      <li class={point.trim() === "" ? "list-none h-6" : ""}>
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -190,16 +203,28 @@ const iconSvgs = {
             </div>
             <div class="space-y-4">
               {projectPillars.map(pillar => (
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col" style={`background-color: ${
+                  pillar.title === "PMO Setup and Governance" ? "#41c6e110" :
+                  pillar.title === "Methodology, Tools & Templates" ? "#f16b5510" :
+                  pillar.title === "Project Delivery" ? "#6da46c10" :
+                  pillar.title === "Business Readiness & Risk Management" ? "#faac2c10" :
+                  pillar.title === "PM Software Deployment & Training" ? "#213b5c10" : "white"}`}>
                   <div class="flex items-start gap-4 mb-3">
                     <div class="bg-primary/5 p-2.5 rounded-lg flex-shrink-0">
                       <Fragment set:html={iconSvgs[pillar.iconKey]} />
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900">{pillar.title}</h3>
+                    <h3 class="text-xl font-semibold" style={`color: ${
+                      pillar.title === "PMO Setup and Governance" ? "#41c6e1" :
+                      pillar.title === "Methodology, Tools & Templates" ? "#f16b55" :
+                      pillar.title === "Project Delivery" ? "#6da46c" :
+                      pillar.title === "Business Readiness & Risk Management" ? "#faac2c" :
+                      pillar.title === "PM Software Deployment & Training" ? "#213b5c" : "inherit"}`}>{pillar.title}</h3>
                   </div>
-                  <ul class="space-y-2 text-gray-600 list-disc ml-4 pl-2">
+                  <ul class="space-y-2 text-gray-600 list-disc ml-4 pl-2 text-base">
                     {pillar.points.map(point => (
-                      <li class="text-sm">{point}</li>
+                      <li class={point.trim() === "" ? "list-none h-6" : ""}>
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -211,7 +236,7 @@ const iconSvgs = {
     </section>
 
     {/* Call to Action Section */}
-    <section class="py-20">
+    <section class="py-12">
       <div class="container mx-auto px-4">
         <div class="text-center">
           <p class="text-lg text-gray-700 mb-6">Ready to elevate your product strategy and project execution?</p>

@@ -79,45 +79,44 @@ const iconSvgs = {
     {/* Hero Section */}
     <section class="bg-primary text-white py-16">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Accelerate Smart Label Development</h1>
-        <p class="text-xl">Fast-track your smart label solutions from concept to market validation with our rapid development expertise.</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Accelerate Custom Development</h1>
+        <p class="text-xl">Fast-track your solutions from concept to market validation with our rapid development expertise.</p>
       </div>
     </section>
 
     {/* Main Content Section */}
     <section class="py-12 bg-gray-50">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="space-y-16">
+        <div class="space-y-12">
 
           {/* Approach Section */}
           <div>
-            <h2 class="text-3xl font-bold mb-6 text-center">Rapid Development Approach</h2>
-            <p class="text-gray-600 mb-12 max-w-[54rem] mx-auto">
-              We accelerate your path to market by combining agile development practices with our extensive smart label expertise. Our approach focuses on quick iterations, rapid prototyping, and efficient validation to help you achieve market-ready solutions faster.
+            <p class="text-lg text-gray-600 leading-relaxed mb-12 max-w-4xl mx-auto text-center">
+              We accelerate your path to market by combining agile development practices with our custom expertise such as smart labels. Our approach focuses on quick iterations, rapid prototyping, and efficient validation to help you achieve market-ready solutions faster.
             </p>
-
-            {/* Diagram */}
-            <div class="mb-12">
-              <img
-                src="/assets/smart-label-diagram.png"
-                alt="Smart Label Solutions Framework"
-                class="w-full max-w-3xl mx-auto rounded-lg"
-                loading="lazy"
-              />
-            </div>
           </div>
 
           {/* Services Section */}
-          <div class="mt-16">
+          <div>
             <h2 class="text-3xl font-bold mb-10 text-center">Accelerated Development Services</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map(service => (
-                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col bg-[#f0f4f8]">
+                <div class="p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col" style={`background-color: ${
+                  service.title === "Revolutionary Smart Label Technology" ? "#42638910" :
+                  service.title === "Accelerated Go-to-Market Ecosystem" ? "#cb781a10" :
+                  service.title === "Universal Connectivity Expertise" ? "#4cc3eb10" :
+                  service.title === "Tailored Form Factors" ? "#c53f2a10" :
+                  service.title === "Flexible Delivery Options" ? "#b2892710" : "white"}`}>
                   <div class="flex items-center mb-4">
                     <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                        <Fragment set:html={iconSvgs[service.iconKey]} />
                     </div>
-                    <h3 class="text-xl font-semibold text-[#254670]">{service.title}</h3>
+                    <h3 class="text-xl font-semibold" style={`color: ${
+                      service.title === "Revolutionary Smart Label Technology" ? "#426389" :
+                      service.title === "Accelerated Go-to-Market Ecosystem" ? "#cb781a" :
+                      service.title === "Universal Connectivity Expertise" ? "#4cc3eb" :
+                      service.title === "Tailored Form Factors" ? "#c53f2a" :
+                      service.title === "Flexible Delivery Options" ? "#b28927" : "inherit"}`}>{service.title}</h3>
                   </div>
                   <ul class="space-y-2 text-gray-600 list-disc ml-4">
                     {service.points.map(point => (
@@ -132,8 +131,8 @@ const iconSvgs = {
           </div>
 
           {/* Why Choose Us Section */}
-          <div class="mt-20">
-            <h2 class="text-3xl font-bold mb-10 text-center">Why Choose SP Consulting for Rapid Development?</h2>
+          <div class="mt-16">
+            <h2 class="text-3xl font-bold mb-10 text-center">Why Partner with Strategic Pathways for Rapid Development?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div class="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                 <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -166,8 +165,8 @@ const iconSvgs = {
           </div>
 
           {/* Call to Action Section */}
-          <div class="text-center pt-12">
-            <p class="text-lg text-gray-700 mb-6">Ready to accelerate your smart label development?</p>
+          <div class="text-center">
+            <p class="text-lg text-gray-700 mb-6">Ready to accelerate your development?</p>
             <a
               href="/contact"
               class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
