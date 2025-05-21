@@ -1,4 +1,41 @@
-# Astro Starter Kit: Basics
+# Strategic Pathways Consulting Website
+
+A modern, responsive website built with Astro and Tailwind CSS for Strategic Pathways Consulting.
+
+## 🚀 Features
+
+- Modern, responsive design
+- Built with Astro for optimal performance
+- Styled with Tailwind CSS
+- SEO optimized
+- Fast loading times
+
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build)
+- [Tailwind CSS](https://tailwindcss.com)
+- TypeScript
+- Node.js
+
+## 🏗️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📝 License
+
+All rights reserved © Strategic Pathways Consulting
 
 ```sh
 npm create astro@latest -- --template basics
