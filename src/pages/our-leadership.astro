@@ -15,7 +15,7 @@ const logos = [
   { src: "/assets/createmelogo.svg", alt: "CreateMe" }
 ];
 
-const georgeImage = "/assets/LinkedIn Profile.jpg";
+// const georgeImage = "/assets/LinkedIn Profile.jpg";
 ---
 
 {/* Title remains broad for potential future expansion */}
@@ -98,11 +98,9 @@ const georgeImage = "/assets/LinkedIn Profile.jpg";
                           <img
                             src={logo.src}
                             alt={logo.alt}
-                            /* CONFIRMED: Logo size uses h-12 */
                             class="h-12 max-w-[150px] object-contain"
                             loading="lazy"
                             aria-hidden={index >= logos.length ? "true" : undefined}
-                            /* CONFIRMED: Height attribute matches h-12 */
                             height="48"
                           />
                         </div>
@@ -114,49 +112,51 @@ const georgeImage = "/assets/LinkedIn Profile.jpg";
             </div>
           </div> {/* End of profile info card */}
 
-          {/* Container for George Linscott's profile info */}
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <div class="mb-8 max-w-md mx-auto">
-              <img
-                src={georgeImage}
-                alt="George Linscott"
-                class="w-full rounded-lg shadow-lg"
-                loading="lazy"
-                width="448"
-                height="448"
-              />
-            </div>
-            <div>
-              <h2 class="text-2xl font-bold mb-4 text-left">Mr. George Linscott</h2>
-              <h3 class="text-xl text-primary mb-4 text-left">Managing Partner</h3>
-              <div class="space-y-4 text-gray-600">
-                <p class="leading-relaxed">
-                  George’s guiding philosophy is that leadership is about creating a vastly better future for the organization, its team members, and its customers. It’s about one’s desire and ability to build a high-performance team focused on existing and emerging market opportunities that deliver strong economic outcomes.
-                </p>
-                <p class="leading-relaxed">
-                  His professional journey to date includes building and growing companies from startups to acquisitions. Along the way he has been “hands on” as required in all aspects of business, from raising funds and forming partnerships to developing products and leading teams. George’s grit, the power of passion and perseverance, has served him well in the face of challenging markets, flawed assumptions, and the complexities of human nature.
-                </p>
-                <p class="leading-relaxed">
-                  His experience spans various tech industries, and he has also served on boards, advising both for-profit and non-profit organizations. And most of all, he is passionate about mentoring and sharing his knowledge with the emerging leaders that will help create a better future.
-                </p>
-                <p class="leading-relaxed">
-                  His services are focused on helping leadership teams pivot, turn-around or scale their business. I typically help with one or more of the following areas:
-                </p>
-                <ul class="list-disc pl-6 leading-relaxed">
-                  <li>Strategic Planning and Implementation</li>
-                  <li>Market Driven Product Roadmap</li>
-                  <li>Agile Product Development (how &amp; sw)</li>
-                  <li>Competency based hiring and performance coaching</li>
-                  <li>Strategic Partnerships (developing, structuring, managing)</li>
-                  <li>Fundraising</li>
-                  <li>Financial Modeling</li>
-                </ul>
-                <p class="leading-relaxed">
-                  Depending on the needs of the organization George can fill an advisory role (consulting, training, coaching) or a hands on role as a fractional member of the team.
-                </p>
+          {/*
+            Container for George Linscott's profile info (temporarily commented out)
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <div class="mb-8 max-w-md mx-auto">
+                <img
+                  src={georgeImage}
+                  alt="George Linscott"
+                  class="w-full rounded-lg shadow-lg"
+                  loading="lazy"
+                  width="448"
+                  height="448"
+                />
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold mb-4 text-left">Mr. George Linscott</h2>
+                <h3 class="text-xl text-primary mb-4 text-left">Managing Partner</h3>
+                <div class="space-y-4 text-gray-600">
+                  <p class="leading-relaxed">
+                    George’s guiding philosophy is that leadership is about creating a vastly better future for the organization, its team members, and its customers. It’s about one’s desire and ability to build a high-performance team focused on existing and emerging market opportunities that deliver strong economic outcomes.
+                  </p>
+                  <p class="leading-relaxed">
+                    His professional journey to date includes building and growing companies from startups to acquisitions. Along the way he has been “hands on” as required in all aspects of business, from raising funds and forming partnerships to developing products and leading teams. George’s grit, the power of passion and perseverance, has served him well in the face of challenging markets, flawed assumptions, and the complexities of human nature.
+                  </p>
+                  <p class="leading-relaxed">
+                    His experience spans various tech industries, and he has also served on boards, advising both for-profit and non-profit organizations. And most of all, he is passionate about mentoring and sharing his knowledge with the emerging leaders that will help create a better future.
+                  </p>
+                  <p class="leading-relaxed">
+                    His services are focused on helping leadership teams pivot, turn-around or scale their business. I typically help with one or more of the following areas:
+                  </p>
+                  <ul class="list-disc pl-6 leading-relaxed">
+                    <li>Strategic Planning and Implementation</li>
+                    <li>Market Driven Product Roadmap</li>
+                    <li>Agile Product Development (how &amp; sw)</li>
+                    <li>Competency based hiring and performance coaching</li>
+                    <li>Strategic Partnerships (developing, structuring, managing)</li>
+                    <li>Fundraising</li>
+                    <li>Financial Modeling</li>
+                  </ul>
+                  <p class="leading-relaxed">
+                    Depending on the needs of the organization George can fill an advisory role (consulting, training, coaching) or a hands on role as a fractional member of the team.
+                  </p>
+                </div>
               </div>
             </div>
-          </div> {/* End of George Linscott profile info card */}
+          */}
 
           <div class="text-center mt-16">
             <a
